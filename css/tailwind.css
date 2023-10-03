@@ -847,6 +847,10 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
+.bg-opacity-60 {
+  --tw-bg-opacity: 0.6;
+}
+
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
 }

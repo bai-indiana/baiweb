@@ -34,6 +34,8 @@
                 <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#events">Events</a>
                 </li>
                 <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#about">About</a>
+                </li>                
+                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#member">Member</a>
                 </li>
                 <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#contact">Contact</a>
                 </li>
@@ -61,9 +63,9 @@
             <div class="text-center">
                 <div class="inline-block">
                     <a class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition"
-                       href="#events">
-                        <i class="fas fa-coffee mr-3"></i>
-                        <span>Let's explore...</span>
+                       href="announcements.html">
+                       <i class="fas fa-bullhorn mr-3"></i>
+                       <span>Latest Announcements...</span>
                     </a>
                 </div>
             </div>
@@ -129,10 +131,49 @@
                     contribute a small donation through PayPal. We utilize these donations for a noble and impactful
                     purpose.. Thank you. </p>
             </div>
-            <a class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md" href="#contact">
-                <i class="far fa-comments mr-4"></i>
-                Contact
+            <div class="mt-5">
+            <a class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md" href="ec.html">
+                <i class="fa fa-users mr-3"></i>
+                Our Executive Committee
             </a>
+            </div>
+            <div class="mt-5 fa-pull-right" alt="download pdf file">
+            <a class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md" 
+            target="_blank" href="doc/By-laws of Bengali Association of  Indiana - M.pdf">
+                BAI By Laws
+                <i class="fa fa-book ml-3"></i>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Member -->
+<div class="parallax-window" data-image-src="img/bai-bg-member.jpg" data-parallax="scroll" id="member">
+    <div class="container mx-auto tm-container py-24 sm:py-48">
+        <div class="text-center mb-16">
+            <h2 class="bg-black tm-text-gold py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">Became Member</h2>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-around items-center">
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 tm-item-container">
+                <div class="flex items-start mb-6 tm-menu-item">
+                    <img alt="Membership" class="rounded-md" src="img/member-icon.png">
+                    <div class="ml-3 sm:ml-6">
+                        <h3 class="tm-text-gold font-semibold mb-2 sm:mb-3 ">Membership - $55</h3>
+                        <div class="text-white text-md sm:text-lg font-light mb-1">Pay PayPal</div>
+                        <div class="text-white text-md sm:text-sm font-light">Became a member of BAI for added benefits</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-50 tm-item-container">
+                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+                    <div class="text-right mr-6">
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Scan from your phone</h3>
+                    
+                        <div class="text-white text-md sm:text-lg font-light">This will take you to the payment page.</div>
+                    </div>
+                    <img alt="PayPal QR Code - Please scan" class="rounded-md" src="img/bai-paypal-qr.png">
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -146,7 +187,7 @@
                     Fill in the required fields, and we'll get back to you as soon as possible.
                 </p>
                 <p class="mb-10 text-lg">
-<!--                    <span class="block mb-2">Tel: <a class="hover:text-yellow-600 transition" href="tel:0100200340">010-020-0340</a></span>-->
+<!--                <span class="block mb-2">Tel: <a class="hover:text-yellow-600 transition" href="tel:0100200340">010-020-0340</a></span>-->
                     <span class="block">Email: <a class="hover:text-yellow-600 transition" href="mailto:ec@baiweb.org">ec@baiweb.org</a></span>
                 </p>
                 <div class="text-center">
@@ -176,18 +217,14 @@
                 <div class="text-white" id="result"></div>
             </div>
         </div>
-        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
-            <div class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
-                <span>Copyright &copy; 2023 Bengali Association of Indiana. All rights reserved.</span>
-                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
-            </div>
-        </footer>
+        <div id="footer"></div>
     </div>
 </div>
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/jquery.singlePageNav.min.js"></script>
+<script src="js/include.js"></script>
 <script>
         function contactUs(){
 

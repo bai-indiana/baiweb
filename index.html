@@ -2,171 +2,237 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Bengali Association of Indiana</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.min.css"> <!-- fontawesome -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+          rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/tailwind.css">
-    <link rel="stylesheet" href="css/bai.css">
-	
-	<style>
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+
+    <style>
         /* Define the CSS for the transparent white div */
         .transparent-white-div {
             background-color: rgba(255, 255, 255, 0.7); /* White color with 70% opacity */
         }
-    </style>
-    
-</head>
-<body>    
-    <!-- Home -->
-    <div id="home" class="parallax-window" data-parallax="scroll" data-image-src="img/bai-bg-01.jpg">
-        <nav id="tm-nav" class="fixed w-full">
-            <div class="tm-container mx-auto px-2 md:py-6 text-right">
-                <button class="md:hidden py-2 px-2" id="menu-toggle"><i class="fas fa-2x fa-bars tm-text-gold"></i></button>
-                <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
-                    <li class="inline-block mb-4 mx-4"><a href="#home" class="tm-text-gold py-1 md:py-3 px-4">Home</a></li>
-                    <li class="inline-block mb-4 mx-4"><a href="#events" class="tm-text-gold py-1 md:py-3 px-4">Events</a></li>
-                    <li class="inline-block mb-4 mx-4"><a href="#about" class="tm-text-gold py-1 md:py-3 px-4">About</a></li>
-                    <li class="inline-block mb-4 mx-4"><a href="#contact" class="tm-text-gold py-1 md:py-3 px-4">Contact</a></li>
-                </ul>
-            </div>            
-        </nav>
-        <div class="container mx-auto px-2 tm-home-width">
-            <div class="sm:pb-60 sm:pt-48 py-20">
-                <div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
-                    <h1 class="text-white text-5xl tm-logo-font mb-5">BAI</h1>
-                    <p class="tm-text-gold tm-text-2xl">Bengali Association of Indiana</p>
-                </div>    
-                <div class="bg-black bg-opacity-70 p-10 mb-5">
-                    <p class="text-white leading-8 text-sm font-light">
-                        The Bengali Association of Indiana (BAI) is a non-profit socio-cultural  organization. 
-						The main objectives of BAI are to engage in educational,  cultural, 
-						and religious celebrations of Bengal and the Indian  subcontinent. 
-						We foster the spirit of friendship and cooperation among  our members and local and global communities. 
-						The membership is open to  all who believe in the objectives of the BAI, irrespective of race,  religion, color, gender, age or national origin.
-                    	If you have any question, please <a rel="nofollow" href="#" target="_parent">send us a message</a>. </p>
-                </div>
-                <div class="text-center">
-                    <div class="inline-block">
-                        <a href="#events" class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition">
-                            <i class="fas fa-coffee mr-3"></i>
-                            <span>Let's explore...</span>                        
-                        </a>
-                    </div>                    
-                </div>                
-            </div>
-        </div>        
-    </div>
-    <!-- Events -->
-    <div id="events" class="parallax-window" data-parallax="scroll" data-image-src="img/bai-bg-02.jpg">
-        <div class="container mx-auto tm-container py-24 sm:py-48">
-            <div class="text-center mb-16">
-                <h2 class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md">Our Events</h2>
-            </div>            
-            <div class="flex flex-col lg:flex-row justify-around items-center">
-                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 tm-bg-brown tm-item-container">
-                    <div class="flex items-start mb-6 tm-menu-item">
-                        <img src="img/events1.png" alt="Ma Durga" class="rounded-md">
-                        <div class="ml-3 sm:ml-6">
-                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Durga Puja @ HTCI Temple</h3>
-                            <div class="text-white text-md sm:text-lg font-light mb-1">Date - Saturday, Oct 21 2023</div>
-                            <div class="text-white text-md sm:text-lg font-light">Time 6:30pm ~ 8:30pm</div>
-                        </div>                    
-                    </div>
-                    <div class="flex items-start mb-6 tm-menu-item">
-                        <img src="img/events2.png" alt="লক্ষ্মী পূজা" class="rounded-md">
-                        <div class="ml-3 sm:ml-6">
-                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Lokkhi Puja @ HTCI Temple</h3>
-                            <div class="text-white text-md sm:text-lg font-light mb-1">Date - Friday, Oct 27 2023</div>
-                            <div class="text-white text-md sm:text-lg font-light">Time 6:30pm ~ 8:00pm</div>
-                        </div>                    
-                    </div>						
-                </div>
-                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 tm-bg-brown tm-item-container">
-                    <div class="flex items-start justify-end mb-6 tm-menu-item-2">
-                        <div class="text-right mr-6">
-                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Bijoya </h3>
-                            <div class="text-white text-md sm:text-lg font-light mb-1">Date - We are currently actively engaged in the process of deliberation.</div>
-                            <div class="text-white text-md sm:text-lg font-light">Time - Noon</div>
-                        </div>
-                        <img src="img/events3.png" alt="বিজয়া" class="rounded-md">                   
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </div>
-    <div id="about" class="parallax-window" data-parallax="scroll" data-image-src="img/bai-bg-03.jpg">
-        <div class="container mx-auto tm-container py-24 sm:py-48">
-            <div class="tm-item-container sm:ml-auto sm:mr-12 mx-auto sm:px-0 px-4">
-                <div class="bg-white bg-opacity-80 p-12 pb-14 rounded-xl mb-5">
-                    <h2 class="mb-6 tm-text-green text-4xl font-medium">About BAI</h2>
-                    <p class="mb-6 text-base leading-8">
-                        The Bengali Association of Indiana (BAI) is a non-profit socio-cultural  organization. 
-						The main objectives of BAI are to engage in educational,  cultural, 
-						and religious celebrations of Bengal and the Indian  subcontinent. 
-						We foster the spirit of friendship and cooperation among  our members and local and global communities. 
-						The membership is open to  all who believe in the objectives of the BAI, irrespective of race,  religion, color, gender, age or national origin.
-                  </p>
-                    <p class="text-base leading-8">
-                        If you wish to <a rel="nofollow" href="#" target="_parent">support us</a>, You have the option to 
-						contribute a small donation through PayPal. We utilize these donations for a noble and impactful purpose.. Thank you. </p>
-                </div>
-                <a href="#contact" class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md">
-                    <i class="far fa-comments mr-4"></i>
-                    Contact
-                </a>
-            </div>           
-        </div>        
-    </div>
-    <div id="contact" class="parallax-window relative" data-parallax="scroll" data-image-src="img/bai-bg-04.jpg">
-        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
-            <div class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch">
-                <div class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container">
-                    <h2 class="text-3xl mb-6 tm-text-green">Contact Us</h2>
-                    <p class="mb-6 text-lg leading-8">
-                        Alternatively, you can use the contact form to send us a message directly. 
-						Fill in the required fields, and we'll get back to you as soon as possible.    
-                    </p>
-                    <p class="mb-10 text-lg">
-                        <span class="block mb-2">Tel: <a href="tel:0100200340" class="hover:text-yellow-600 transition">010-020-0340</a></span>
-                        <span class="block">Email: <a href="mailto:ec@baiweb.org" class="hover:text-yellow-600 transition">ec@baiweb.org</a></span>                        
-                    </p>
-                    <div class="text-center">
-                        <a href="https://www.google.com/maps" class="inline-block text-white text-2xl pl-10 pr-12 py-6 rounded-lg transition tm-bg-green">
-                            <i class="fas fa-map-marked-alt mr-8"></i>
-                            Open Maps
-                        </a>
-                    </div>                    
-                </div>
-                <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
-                    <form id="contactForm" method="POST" class="text-lg">
-                        <input type="text" id="name" name="name" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Name" required="" />
-                        <input type="email" id="emailId" name="emailId" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Email" required="" />
-                        <textarea rows="6" id="message" name="message" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Message..." required=""></textarea>
-                        <div class="text-right">
-                            <button type="submit" class="text-white hover:text-yellow-500 transition">Send it</button>
-                        </div>
-                        <div id="result" ></div>
-                      </form>
-                </div>
-            </div>
-            <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
-                <div class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
-                    <span>Copyright &copy; 2023 Bengali Association of Indiana. All rights reserved.</span>
-                    <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
-                </div>                
-            </footer>
-        </div>        
-    </div>    
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/jquery.singlePageNav.min.js"></script>
-    <script>
+    </style>
+
+</head>
+<body>
+<!-- Home -->
+<div class="parallax-window" data-image-src="img/bai-bg-01.jpg" data-parallax="scroll" id="home">
+    <nav class="fixed w-full" id="tm-nav">
+        <div class="tm-container mx-auto px-2 md:py-6 text-right">
+            <button class="md:hidden py-2 px-2" id="menu-toggle"><i class="fas fa-2x fa-bars tm-text-gold"></i></button>
+            <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
+                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#home">Home</a></li>
+                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#events">Events</a>
+                </li>
+                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#about">About</a>
+                </li>
+                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mx-auto px-2 tm-home-width">
+        <div class="sm:pb-60 sm:pt-48 py-20">
+            <div class="bg-black bg-opacity-70 p-12 mb-5 text-center">
+                <h1 class="text-white text-5xl tm-logo-font mb-5">BAI</h1>
+                <p class="tm-text-gold tm-text-2xl">Bengali Association of Indiana</p>
+            </div>
+            <div class="bg-black bg-opacity-70 p-10 mb-5">
+                <p class="text-white leading-8 text-sm font-light">
+                    The Bengali Association of Indiana (BAI) is a non-profit socio-cultural organization.
+                    The main objectives of BAI are to engage in educational, cultural,
+                    and religious celebrations of Bengal and the Indian subcontinent.
+                    We foster the spirit of friendship and cooperation among our members and local and global
+                    communities.
+                    The membership is open to all who believe in the objectives of the BAI, irrespective of race,
+                    religion, color, gender, age or national origin.
+                    If you have any question, please <a href="#contact" rel="nofollow" target="_parent">send us a message</a>.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="inline-block">
+                    <a class="flex justify-center items-center bg-black bg-opacity-70 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition"
+                       href="#events">
+                        <i class="fas fa-coffee mr-3"></i>
+                        <span>Let's explore...</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Events -->
+<div class="parallax-window" data-image-src="img/bai-bg-02.jpg" data-parallax="scroll" id="events">
+    <div class="container mx-auto tm-container py-24 sm:py-48">
+        <div class="text-center mb-16">
+            <h2 class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md">Our Events</h2>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-around items-center">
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                <div class="flex items-start mb-6 tm-menu-item">
+                    <img alt="Ma Durga" class="rounded-md" src="img/events1.png">
+                    <div class="ml-3 sm:ml-6">
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Durga Puja @ HTCI Temple</h3>
+                        <div class="text-white text-md sm:text-lg font-light mb-1">Date - Saturday, Oct 21 2023</div>
+                        <div class="text-white text-md sm:text-lg font-light">Time 6:30pm ~ 8:30pm</div>
+                    </div>
+                </div>
+                <div class="flex items-start mb-6 tm-menu-item">
+                    <img alt="লক্ষ্মী পূজা" class="rounded-md" src="img/events2.png">
+                    <div class="ml-3 sm:ml-6">
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Lokkhi Puja @ HTCI Temple</h3>
+                        <div class="text-white text-md sm:text-lg font-light mb-1">Date - Friday, Oct 27 2023</div>
+                        <div class="text-white text-md sm:text-lg font-light">Time 6:30pm ~ 8:00pm</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+                    <div class="text-right mr-6">
+                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Bijoya </h3>
+                        <div class="text-white text-md sm:text-lg font-light mb-1">Date - We are currently actively
+                            engaged in the process of deliberation.
+                        </div>
+                        <div class="text-white text-md sm:text-lg font-light">Time - Noon</div>
+                    </div>
+                    <img alt="বিজয়া" class="rounded-md" src="img/events3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="parallax-window" data-image-src="img/bai-bg-03.jpg" data-parallax="scroll" id="about">
+    <div class="container mx-auto tm-container py-24 sm:py-48">
+        <div class="tm-item-container sm:ml-auto sm:mr-12 mx-auto sm:px-0 px-4">
+            <div class="bg-white bg-opacity-80 p-12 pb-14 rounded-xl mb-5">
+                <h2 class="mb-6 tm-text-green text-4xl font-medium">About BAI</h2>
+                <p class="mb-6 text-base leading-8">
+                    The Bengali Association of Indiana (BAI) is a non-profit socio-cultural organization.
+                    The main objectives of BAI are to engage in educational, cultural,
+                    and religious celebrations of Bengal and the Indian subcontinent.
+                    We foster the spirit of friendship and cooperation among our members and local and global
+                    communities.
+                    The membership is open to all who believe in the objectives of the BAI, irrespective of race,
+                    religion, color, gender, age or national origin.
+                </p>
+                <p class="text-base leading-8">
+                    If you wish to <a href="#" rel="nofollow" target="_parent">support us</a>, You have the option to
+                    contribute a small donation through PayPal. We utilize these donations for a noble and impactful
+                    purpose.. Thank you. </p>
+            </div>
+            <a class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md" href="#contact">
+                <i class="far fa-comments mr-4"></i>
+                Contact
+            </a>
+        </div>
+    </div>
+</div>
+<div class="parallax-window relative" data-image-src="img/bai-bg-04.jpg" data-parallax="scroll" id="contact">
+    <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+        <div class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch">
+            <div class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container">
+                <h2 class="text-3xl mb-6 tm-text-green">Contact Us</h2>
+                <p class="mb-6 text-lg leading-8">
+                    Alternatively, you can use the contact form to send us a message directly.
+                    Fill in the required fields, and we'll get back to you as soon as possible.
+                </p>
+                <p class="mb-10 text-lg">
+<!--                    <span class="block mb-2">Tel: <a class="hover:text-yellow-600 transition" href="tel:0100200340">010-020-0340</a></span>-->
+                    <span class="block">Email: <a class="hover:text-yellow-600 transition" href="mailto:ec@baiweb.org">ec@baiweb.org</a></span>
+                </p>
+                <div class="text-center">
+                    <a class="inline-block text-white text-2xl pl-10 pr-12 py-6 rounded-lg transition tm-bg-green"
+                       href="https://www.google.com/maps">
+                        <i class="fas fa-map-marked-alt mr-8"></i>
+                        Open Maps
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
+                <form class="text-lg" id="contactForm" method="POST">
+                    <input class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" id="name" name="name"
+                           placeholder="Name"
+                           required="" type="text"/>
+                    <input class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" id="emailId" name="emailId"
+                           placeholder="Email"
+                           required="" type="email"/>
+                    <textarea class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" id="message" name="message"
+                              placeholder="Message..."
+                              required="" rows="6"></textarea>
+                    <div class="text-right">
+                        <button class="text-white hover:text-yellow-500 transition" onclick="contactUs()"
+                                type="button">Send it</button>
+                    </div>
+                </form>
+                <div class="text-white" id="result"></div>
+            </div>
+        </div>
+        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
+            <div class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                <span>Copyright &copy; 2023 Bengali Association of Indiana. All rights reserved.</span>
+                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+<script>
+        function contactUs(){
+
+            // Get the form element
+            const form = document.getElementById("contactForm");
+
+            // Create a FormData object to collect the form data
+            const formData = new FormData(form);
+            var params ='';
+
+            // Iterate over the FormData entries
+            for (const [name, value] of formData.entries()) {
+                  params += `${encodeURIComponent(name)}=${encodeURIComponent(value)}&`;
+            }
+
+            // Remove the trailing '&' character
+            if (params.length > 0) {
+                 params = params.slice(0, -1);
+            }
+
+            const resultDiv = document.getElementById("result");
+
+
+            var http = new XMLHttpRequest();
+            var url = 'https://baiweb-backend.azurewebsites.net/contact/message?'+params;
+
+            http.open('POST', url, true);
+
+            resultDiv.innerHTML = 'Sending....';
+
+            //Send the proper header information along with the request
+            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            http.onreadystatechange = function() {
+                //Call a function when the state changes.
+                if(http.readyState == 4 && http.status == 200) {
+                    resultDiv.innerHTML = 'Successfully Sent';
+                }
+            }
+            http.send();
+            resultDiv.innerHTML = 'We will respond to you shortly.</br> If you do not hear from us within 72 hours,</br> please send an email to ec@baiweb.org.';
+        }
+
+</script>
+<script>
 
         function checkAndShowHideMenu() {
             if(window.innerWidth < 768) {
@@ -213,28 +279,7 @@
                 });
             });
         });
-    </script>
 
-    <script>
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission.
-
-        const name = document.getElementById("name").value;
-        const emailId = document.getElementById("emailId").value;
-        const message = document.getElementById("message").value;
-
-        // Make an API request (replace with your API endpoint).
-        fetch(`https://baiweb-backend.azurewebsites.net/contact/message?name=${name}&emailId=${emailId}&message=${message}`)
-            .then((response) => response.json())
-            .then((data) => {
-                // Update the page content with the API response.
-                const resultDiv = document.getElementById("result");
-                resultDiv.innerHTML = `API Response: ${data.message}`;
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
-    });
 </script>
 
 </body>

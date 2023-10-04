@@ -73,7 +73,7 @@
         </div>
         <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
             <div class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
-                <span>Copyright &copy; 2023 Bengali Association of Indiana. All rights reserved.</span>
+                <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights reserved.</span>
                 <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
             </div>
         </footer>
@@ -83,6 +83,14 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/jquery.singlePageNav.min.js"></script>
+<script>
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+
+    // Update the content of the "year" span with the current year
+    document.getElementById("year").textContent = currentYear;
+</script>
+
 <script>
 
         function checkAndShowHideMenu() {

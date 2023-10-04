@@ -87,11 +87,12 @@
                         <div class="text-white text-md sm:text-lg font-light mb-1">Date - Saturday, Oct 21 2023</div>
                         <div class="text-white text-md sm:text-lg font-light">Time 6:30pm ~ 8:30pm</div>
                         <div class="mt-5">
-                            <a class="inline-block tm-bg-brown transition text-white text-xl pt-3 pb-4 px-8 rounded-md" target="_blank" href="https://www.google.com/maps/dir//Hindu+Temple+of+Central+Indiana/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x886b4977848e3fff:0xea36feb1eb937dc6?sa=X&ved=2ahUKEwiQm6WEjtuBAxWfm2oFHeBqC_cQ9Rd6BAhPEAA&hl=en-us&ved=2ahUKEwiQm6WEjtuBAxWfm2oFHeBqC_cQ9Rd6BAhcEAU">
+                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md" target="_blank" 
+                            href="https://www.google.com/maps/dir//Hindu+Temple+of+Central+Indiana/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x886b4977848e3fff:0xea36feb1eb937dc6?sa=X&ved=2ahUKEwiQm6WEjtuBAxWfm2oFHeBqC_cQ9Rd6BAhPEAA&hl=en-us&ved=2ahUKEwiQm6WEjtuBAxWfm2oFHeBqC_cQ9Rd6BAhcEAU">
                                 <i class="fas fa-map-marked-alt mr-3"></i>
                                 Open Map
                             </a>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-start mb-6 tm-menu-item">
@@ -100,6 +101,13 @@
                         <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Lokkhi Puja @ HTCI Temple</h3>
                         <div class="text-white text-md sm:text-lg font-light mb-1">Date - Friday, Oct 27 2023</div>
                         <div class="text-white text-md sm:text-lg font-light">Time 6:30pm ~ 8:00pm</div>
+                        <div class="mt-5">
+                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md" target="_blank" 
+                            href="https://www.google.com/maps/dir//Hindu+Temple+of+Central+Indiana/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x886b4977848e3fff:0xea36feb1eb937dc6?sa=X&ved=2ahUKEwiQm6WEjtuBAxWfm2oFHeBqC_cQ9Rd6BAhPEAA&hl=en-us&ved=2ahUKEwiQm6WEjtuBAxWfm2oFHeBqC_cQ9Rd6BAhcEAU">
+                                <i class="fas fa-map-marked-alt mr-3"></i>
+                                Open Map
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,7 +282,6 @@
             http.open('POST', url, true);
 
             resultDiv.innerHTML = 'Sending....';
-
             //Send the proper header information along with the request
             http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
@@ -282,6 +289,7 @@
                 //Call a function when the state changes.
                 if(http.readyState == 4 && http.status == 200) {
                     resultDiv.innerHTML = 'Successfully Sent';
+                    window.alert("Success");
                 }
             }
             http.send();

@@ -60,6 +60,10 @@ a.tm-bg-green:hover {
     background-color: #0a8585;
 }
 
+a.tm-bg-brown:hover {
+    background-color: #544639;
+}
+
 .tm-bg-brown {
     background-color: #544639;
 }

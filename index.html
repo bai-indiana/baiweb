@@ -225,7 +225,7 @@
 
             </div>
             <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
-                <form class="text-lg" id="contactForm" method="POST">
+                <form class="text-lg" id="contactForm" action="#contact" method="POST">
                     <input class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" id="name" name="name"
                            placeholder="Name"
                            required="" type="text"/>
@@ -236,10 +236,11 @@
                               placeholder="Message..."
                               required="" rows="6"></textarea>
                     <div class="text-right">
-                        <button class="text-white hover:text-yellow-500 transition" onclick="contactUs()"
+                        <button class="text-white hover:text-yellow-500 transition" onclick="validateAndSubmitContactUsForm()"
                                 type="button">Send it</button>
                     </div>
                 </form>
+                <p id="error-message" style="color: red;"></p>
                 <div class="text-white" id="result"></div>
             </div>
         </div>
@@ -263,11 +264,36 @@
     document.getElementById("year").textContent = currentYear;
 </script>
 <script>
-        function contactUs(){
+    function validateAndSubmitContactUsForm() {
+        var name = document.getElementById("name").value;
+        var emailId = document.getElementById("emailId").value;
+        var message = document.getElementById("message").value;
+        var errorMessage = document.getElementById("error-message");
+
+        errorMessage.innerHTML = ""; // Clear previous error message
+
+        if (name === "" || emailId === "" || message === "") {
+            errorMessage.innerHTML = "Please fill in all fields.";
+            return;
+        }
+
+        // Regular expression for basic email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailId)) {
+            errorMessage.innerHTML = "Please enter a valid email address.";
+            document.getElementById("emailId").focus();
+            return;
+        }
+
+        // If all validations pass, you can submit the form
+        submitContactUs();
+    }
+</script>
+<script>
+        function submitContactUs(){
 
             // Get the form element
             const form = document.getElementById("contactForm");
-
             // Create a FormData object to collect the form data
             const formData = new FormData(form);
             var params ='';

@@ -1121,9 +1121,32 @@ video {
     line-height: 1.75rem;
   }
 
+  .sm\:text-lg-events {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.849);
+  }
+
+  .sm\:text-sm-events {
+    font-size: 0.95rem;
+    line-height: 1.75rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.849);
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-xl-events {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.904);
+    transition: text-shadow 0.3s ease; /* Add a transition for a smooth effect */
+  }
+  .sm\:text-xl-events:hover {
+    font-size: 1.3rem;
+    text-shadow: 8px 8px 12px rgba(0, 0, 0, 0.904); /* Change the text shadow on hover */
   }
 }
 

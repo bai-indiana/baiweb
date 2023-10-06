@@ -132,6 +132,12 @@
                     </div> 
                     <img alt="বিজয়া" class="rounded-md" src="img/events3.png">
                 </div>
+                <div class="mt-5 fa-pull-right">
+                    <button id="shareButton" class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md" target="_blank">
+                        <i class="fa fa-share mr-3"></i>
+                        Share Events
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -266,6 +272,28 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/jquery.singlePageNav.min.js"></script>
+<script>
+        // Function to handle sharing when the button is clicked
+        document.getElementById('shareButton').addEventListener('click', function() {
+            if (navigator.share) {
+                // Check if the browser supports the Web Share API
+                navigator.share({
+                    title: 'Events',
+                    text: 'Bengali Association Events',
+                    url: window.location.href+'#events'
+                })
+                .then(function() {
+                    console.log('Successfully shared.');
+                })
+                .catch(function(error) {
+                    console.error('Error sharing:', error);
+                });
+            } else {
+                // Fallback for browsers that do not support the Web Share API
+                alert('Your browser does not support sharing. You can manually copy the URL from the address bar.');
+            }
+        });
+    </script>
 <script>
     // Get the current year
     var currentYear = new Date().getFullYear();

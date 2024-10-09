@@ -390,9 +390,9 @@
 
          const resultDiv = document.getElementById("result");
          var templateParams = {
-          from_name: document.getElementById("name"),
-          from_email: document.getElementById("emailId"),
-          message: document.getElementById("message")
+          from_name: document.getElementById("name").value,
+          from_email: document.getElementById("emailId").value,
+          message: document.getElementById("message").value
         };
         
         emailjs.send('admin@baiweb.org', 'first-template', templateParams).then(

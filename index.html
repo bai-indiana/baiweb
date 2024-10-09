@@ -13,7 +13,7 @@
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
-
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
         /* Define the CSS for the transparent white div */
         .transparent-white-div {
@@ -361,6 +361,25 @@
 <script>
         function submitContactUs(){
 
+         const resultDiv = document.getElementById("result");
+         var templateParams = {
+          from_name: document.getElementById("name"),
+          from_email: document.getElementById("emailId"),
+          message: document.getElementById("message")
+        };
+        
+        emailjs.send('admin@baiweb.org', 'first-template', templateParams).then(
+          (response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            resultDiv.innerHTML = 'We will respond to you shortly.</br> If you do not hear from us within 72 hours,</br> please send an email to ec@baiweb.org.';
+          },
+          (error) => {
+            console.log('FAILED...', error);
+          },
+        );
+
+            
+
             // Get the form element
             const form = document.getElementById("contactForm");
             // Create a FormData object to collect the form data
@@ -377,7 +396,6 @@
                  params = params.slice(0, -1);
             }
 
-            const resultDiv = document.getElementById("result");
 
 
             var http = new XMLHttpRequest();

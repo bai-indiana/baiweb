@@ -22,6 +22,14 @@
 
     </style>
 
+    <style>
+        .link-style {
+            cursor: pointer;
+            color: orange;
+            text-decoration: underline;
+        }
+     </style>
+
 </head>
 <body>
 <!-- Home -->
@@ -212,9 +220,11 @@
                 <div class="text-white sm:text-sm font-semibold">
                     For any donation use ->  
                     Zelle - 
-                        <span class="link-style"> bai.indiana&#64;gmail.com </span> 
+                        <span class="link-style" onclick="copyToClipboard('bai.indiana@gmail.com')"> bai.indiana&#64;gmail.com </span> 
                     or 
-                    Venmo <span class="link-style">BengaliAssociationOf-Indiana </span>
+                    Venmo - 
+                        <span class="link-style" onclick="copyToClipboard('BengaliAssociationOf-Indiana')">BengaliAssociationOf-Indiana</span>
+                    
                      
                 </div>
                 <!-- <div class="mt-5">
@@ -438,6 +448,15 @@
             });
         });
 
+</script>
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Copied to clipboard: ' + text);
+        }, (err) => {
+            console.error('Failed to copy: ', err);
+        });
+    }
 </script>
 
 </body>

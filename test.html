@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bengali Association of Indiana</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+          rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        /* Define the CSS for the transparent white div */
+        .transparent-white-div {
+            background-color: rgba(255, 255, 255, 0.7); /* White color with 70% opacity */
+        }
+
+    </style>
+
+    <style>
+        .link-style {
+            cursor: pointer;
+            color: orange;
+            text-decoration: underline;
+        }
+     </style>
+     <style>
+            /* Custom dropdown hover style */
+            [data-dropdown] > ul {
+                display: none;
+            }
+            [data-dropdown]:hover > ul {
+                display: block;
+            }
+     </style>
+
+</head>
+ <body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-gray-800">Logo</span>
+                    </div>
+                    <!-- Primary Menu -->
+                    <div class="hidden md:flex md:space-x-8 ml-10 items-center">
+                        <a href="#home" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium">Home</a>
+                        
+                        <!-- Dropdown: Events -->
+                        <div class="relative group" data-dropdown>
+                            <a href="#" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium">Events</a>
+                            <!-- Dropdown Menu -->
+                            <ul class="absolute left-0 bg-white border border-gray-200 shadow-lg py-2 w-48">
+                                <li>
+                                    <a href="#tsdp2025" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-url="https://test.com" target="_blank">TSDP-2025</a>
+                                </li>
+                                <li data-dropdown class="relative group">
+                                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">More Events</a>
+                                    <!-- Second Level Dropdown -->
+                                    <ul class="absolute left-full top-0 bg-white border border-gray-200 shadow-lg py-2 hidden group-hover:block w-48">
+                                        <li>
+                                            <a href="#event1" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Event 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#event2" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Event 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#about" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="#tsdp2025" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-url="https://test.com" target="_blank">TSDP-2025</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Open external link in new tab if data-url attribute is present
+        document.querySelectorAll('a[data-url]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.open(this.getAttribute('data-url'), '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

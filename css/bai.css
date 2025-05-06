@@ -64,7 +64,7 @@ a.tm-bg-gold:hover {
 }
 
 a.tm-bg-brown:hover {
-    background-color: #544639;
+    background-color: #886237;
 }
 
 .tm-bg-brown {
@@ -89,6 +89,24 @@ a.tm-bg-brown:hover {
 
 .tm-item-container {
     max-width: 520px;
+}
+
+.tm-tr-gold {
+    background-color: #CC9966;
+}
+
+tr.tm-tr-gold:hover  {
+    background-color: #cca866;
+    color: white;
+}
+
+.tm-tr-grey {
+    background-color: #f3f2f1;
+}
+
+tr.tm-tr-grey:hover  {
+    background-color: #c0c0bf;
+    color: white;
 }
 
 .input:focus {
@@ -175,3 +193,13 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
         margin-bottom: 10px;
     }
 }
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+    display: flex;
+  }

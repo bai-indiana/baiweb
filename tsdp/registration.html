@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Executive Committee - Bengali Association of Indiana</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+
+
+    <style>
+        /* Define the CSS for the transparent white div */
+        .transparent-white-div {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* White color with 70% opacity */
+        }
+
+        .active-tab {
+            font-weight: bolder;
+            font-size: 1.125rem;
+            letter-spacing: .05rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="registration">
+        <nav class="fixed w-full" id="tm-nav">
+            <div class="tm-container mx-auto px-2 md:py-6 text-right">
+                <button class="md:hidden py-2 px-2" id="menu-toggle"><i
+                        class="fas fa-2x fa-bars tm-text-gold"></i></button>
+                <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="index.html#home">Home</a></li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp.html">TSDP</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#registration">Registration</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#accommodation">Accommodation</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#food">Food</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#cultural">Cultural</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+            <div class="text-center mb-16">
+                <h2
+                    class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
+                    Registration Rates 2025</h2>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 ">
+                    <div class="flex flex-col items-center mb-6 tm-menu-item">
+                        <!-- <img alt="durga!!" class="rounded-md" src="img/events1.png"> -->
+                        <div class="ml-3 sm:ml-6">
+                            <!-- Registration Tabs -->
+                            <div class="w-full max-w-xl mt-6">
+                                <div class="flex border-b border-gray-300">
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold active-tab"
+                                        data-tab="standard">
+                                        Standard Registration
+                                    </button>
+                                    &nbsp;
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
+                                        data-tab="donors">
+                                        Individual Donors
+                                    </button>
+                                </div>
+
+                                <div id="standard" class="tab-content pt-3 rounded-md mt-4">
+
+                                    <table class="w-full text-left mt-4 border-collapse">
+                                        <thead class="bg-black bg-opacity-70 text-white">
+                                            <tr class="normal">
+                                                <th class="py-2 px-4">Registration Type</th>
+                                                <th class="py-2 px-4">Rates</th>
+                                                <th class="py-2 px-4">Late</th>
+                                                <th class="py-2 px-4">At The Gate</th>
+                                                <th class="py-2 px-4">Descriptions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-white bg-opacity-70 transition">
+                                                <td class="py-2 px-4">Family</td>
+                                                <td class="py-2 px-4">$350</td>
+                                                <td class="py-2 px-4">$390</td>
+                                                <td class="py-2 px-4">$460</td>
+                                                <td class="py-2 px-4">For Two Adults and Dependent children up to age 16
+                                                    years</td>
+                                            </tr>
+                                            <tr class="bg-gold bg-opacity-70 transition">
+                                                <td class="py-2 px-4">Single</td>
+                                                <td class="py-2 px-4">$125</td>
+                                                <td class="py-2 px-4">$145</td>
+                                                <td class="py-2 px-4">$180</td>
+                                                <td class="py-2 px-4">For One Adult Only</td>
+                                            </tr>
+                                            <tr class="bg-white bg-opacity-70 transition">
+                                                <td class="py-2 px-4">Student</td>
+                                                <td class="py-2 px-4">$75</td>
+                                                <td class="py-2 px-4">$90</td>
+                                                <td class="py-2 px-4">$100</td>
+                                                <td class="py-2 px-4">For Each Student</td>
+                                            </tr>
+                                            <tr class="bg-gold bg-opacity-70 transition">
+                                                <td class="py-2 px-4">Couple</td>
+                                                <td class="py-2 px-4">$250</td>
+                                                <td class="py-2 px-4">$290</td>
+                                                <td class="py-2 px-4">$360</td>
+                                                <td class="py-2 px-4">For a Couple only, or a couple with children under
+                                                    5 yrs</td>
+                                            </tr>
+                                            <tr class="bg-white bg-opacity-70 transition">
+                                                <td class="py-2 px-4">Visiting Parent</td>
+                                                <td class="py-2 px-4">$50</td>
+                                                <td class="py-2 px-4">$60</td>
+                                                <td class="py-2 px-4">$100</td>
+                                                <td class="py-2 px-4">For Each Visiting Parent</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mt-5 fa-pull-right">
+                                        <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                            target="_blank" href="https://tsdpregistration.azurewebsites.net/">
+                                            <i class="fas fa-sign-in-alt mr-3 text-gray-400"></i>
+                                            Register
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="donors" class="tab-content mt-4 hidden">
+                                    <!-- Doner informations-->
+                                    <div class="container mx-auto tm-container py-2 sm:py-2">
+                                        <div class="text-center mb-8">
+                                            <h2
+                                                class="bg-white tm-text-brown py-2 px-8 text-2xl font-light inline-block bg-opacity-90 rounded-md">
+                                                Become Doner</h2>
+                                        </div>
+                                        <div class="flex flex-col lg:flex-row justify-around items-start">
+                                            <div
+                                                class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                                                <div id="grand" class="flex items-start mb-6 tm-menu-item">
+                                                    <img alt="GRAND - $3000" class="rounded-md" src="img/grand.png">
+                                                    <div class="ml-3 sm:ml-6">
+                                                        <a href="https://tsdpregistration.azurewebsites.net/"
+                                                            target="_blank"
+                                                            class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                                            GRAND - $3000</a>
+
+                                                        <div
+                                                            class="text-white text-md sm:text-lg-events font-light mb-1">
+                                                            <p>Family Registration (2 adults and 2 dependent children
+                                                                upto 16, 2 visiting parent),
+                                                                Two nights hotel reservation for 1 room; Full page color
+                                                                advertisement in pujo brochure;
+                                                                Reserved seating in auditorium during evening cultural
+                                                                programs;
+                                                                Reserved Parking spot; Feature on website</p>
+                                                        </div>
+                                                        <div class="mt-5">
+                                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                                target="_blank"
+                                                                href="https://tsdpregistration.azurewebsites.net/">
+                                                                <i class="fas fa-gem mr-3"></i>
+                                                                Doner
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="pb-4">
+                                                <div id="gold" class="flex items-start mb-6 tm-menu-item">
+                                                    <img alt="Gold - $1500" class="rounded-md" src="img/gold.png">
+                                                    <div class="ml-3 sm:ml-6">
+                                                        <a href="https://tsdpregistration.azurewebsites.net/"
+                                                            target="_blank"
+                                                            class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                                            Gold - $1500</a>
+                                                        <div
+                                                            class="text-white text-md sm:text-lg-events font-light mb-1">
+                                                            <p>Family Registration (2 adults and 2 dependent children
+                                                                upto 16, 2 visiting parent), Half page color
+                                                                advertisement in pujo brochure; Reserved seating in
+                                                                auditorium during evening cultural programs; Reserved
+                                                                Parking spot; Feature on website</p>>
+                                                        </div>
+
+                                                        <div class="mt-5">
+                                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                                target="_blank"
+                                                                href="https://tsdpregistration.azurewebsites.net/">
+                                                                <i class="fas fa-trophy mr-3"></i>
+                                                                Doner
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="pb-4">
+                                                <div id="bronze" class="flex items-start mb-6 tm-menu-item">
+                                                    <img alt="Bronze - $600" class="rounded-md" src="img/bronze.png">
+                                                    <div class="ml-3 sm:ml-6">
+                                                        <a href="https://tsdpregistration.azurewebsites.net/"
+                                                            target="_blank"
+                                                            class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                                            Bronze - $600</a>
+                                                        <div
+                                                            class="text-white text-md sm:text-lg-events font-light mb-1">
+                                                            <p>Family Registration (2 adults and 2 dependent children
+                                                                upto 16), Quarter page color advertisement in pujo
+                                                                brochure; Feature on website</p>
+                                                        </div>
+
+                                                        <div class="mt-5">
+                                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                                target="_blank"
+                                                                href="https://tsdpregistration.azurewebsites.net/">
+                                                                <i class="fas fa-gift mr-3"></i>
+                                                                Doner
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                                                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+                                                    <div class="mr-6">
+                                                        <!--text-right  = this class control text allignment, start from right-->
+                                                        <a href="https://tsdpregistration.azurewebsites.net/"
+                                                            target="_blank"
+                                                            class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                                            Platinum - $2000</a>
+                                                        <div
+                                                            class="text-white text-md sm:text-lg-events font-light mb-1">
+                                                            <p>Family Registration (2 adults and 2 dependent children
+                                                                upto 16, 2 visiting parent), One night hotel reservation
+                                                                for 1 room; Full page color advertisement in pujo
+                                                                brochure; Reserved seating in auditorium during evening
+                                                                cultural programs; Reserved Parking spot; Feature on
+                                                                website</p>
+                                                        </div>
+
+                                                        <div class="mt-5">
+                                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                                target="_blank"
+                                                                href="https://tsdpregistration.azurewebsites.net/">
+                                                                <i class="fas fa-star mr-3"></i>
+                                                                Doner
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <img alt="Platinum - $2000" class="rounded-md"
+                                                        src="img/platinum.png">
+                                                </div>
+                                                <hr class="pb-4">
+                                                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+                                                    <div class="mr-6">
+                                                        <!--text-right  = this class control text allignment, start from right-->
+                                                        <a href="https://tsdpregistration.azurewebsites.net/"
+                                                            target="_blank"
+                                                            class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                                            Silver - $1000</a>
+                                                        <div
+                                                            class="text-white text-md sm:text-lg-events font-light mb-1">
+                                                            <p>Family Registration (2 adults and 2 dependent children
+                                                                upto 16, 2 visiting parent), Quarter page color
+                                                                advertisement in pujo brochure;Feature on website</p>
+                                                        </div>
+                                                        <div class="mt-5">
+                                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                                target="_blank"
+                                                                href="https://tsdpregistration.azurewebsites.net/">
+                                                                <i class="fas fa-medal" style="color: silver;"></i>
+                                                                Doner
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <img alt="Silver - $1000" class="rounded-md" src="img/silver.png">
+                                                </div>
+                                                <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+                                                    <div class="mr-6">
+                                                        <!--text-right  = this class control text allignment, start from right-->
+                                                        <a href="https://tsdpregistration.azurewebsites.net/"
+                                                            target="_blank"
+                                                            class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                                        </a>
+                                                        <div
+                                                            class="text-white text-md sm:text-lg-events font-light mb-1">
+                                                            <p> </p>
+                                                        </div>
+                                                        <div class="mt-5">
+                                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                                target="_blank"
+                                                                href="https://tsdpregistration.azurewebsites.net/">
+                                                                <!-- <i class="fas fa-medal" style="color: silver;"></i> -->
+
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <img alt="Silver - $1000" class="rounded-md" src="img/silver.png"> -->
+                                                </div>
+                                                <!-- <div class="mt-5 fa-pull-right">
+                                                    <button id="shareButton"
+                                                        class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                        target="_blank">
+                                                        <i class="fas fa-trophy mr-3 text-gray-400"></i>
+                                                        Share Events
+                                                    </button>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
+            <div
+                class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights
+                    reserved.</span>
+                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+
+        // Update the content of the "year" span with the current year
+        document.getElementById("year").textContent = currentYear;
+    </script>
+    <script>
+
+        function checkAndShowHideMenu() {
+            if (window.innerWidth < 768) {
+                $('#tm-nav ul').addClass('hidden');
+            } else {
+                $('#tm-nav ul').removeClass('hidden');
+            }
+        }
+
+        $(function () {
+            var tmNav = $('#tm-nav');
+
+            checkAndShowHideMenu();
+            window.addEventListener('resize', checkAndShowHideMenu);
+
+            $('#menu-toggle').click(function () {
+                $('#tm-nav ul').toggleClass('hidden');
+            });
+
+            $('#tm-nav ul li').click(function () {
+                if (window.innerWidth < 768) {
+                    $('#tm-nav ul').addClass('hidden');
+                }
+            });
+
+            $(document).scroll(function () {
+                var distanceFromTop = $(document).scrollTop();
+
+                if (distanceFromTop > 100) {
+                    tmNav.addClass('scroll');
+                } else {
+                    tmNav.removeClass('scroll');
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+    </script>
+
+<!--TAB JS-->
+    <script>
+        // Tab switching logic
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-tab');
+
+                // Reset styles for all buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active-tab');
+                    btn.classList.remove('tm-bg-gold');
+                    btn.classList.add('border-transparent');
+                });
+
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+
+                // Show selected tab and style it
+                button.classList.add('active-tab');
+                button.classList.remove('border-transparent');
+                button.classList.add('tm-bg-gold'); // Highlight border
+                document.getElementById(tab).classList.remove('hidden');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

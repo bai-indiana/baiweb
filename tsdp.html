@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -7,127 +8,335 @@
     <title>Executive Committee - Bengali Association of Indiana</title>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
     <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
 
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+
+
     <style>
         /* Define the CSS for the transparent white div */
         .transparent-white-div {
-            background-color: rgba(255, 255, 255, 0.7); /* White color with 70% opacity */
+            background-color: rgba(255, 255, 255, 0.7);
+            /* White color with 70% opacity */
         }
-
     </style>
 
 </head>
+
 <body>
-<div class="parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="contact">
-    <nav class="fixed w-full" id="tm-nav">
-        <div class="tm-container mx-auto px-2 md:py-6 text-right">
-            <button class="md:hidden py-2 px-2" id="menu-toggle"><i class="fas fa-2x fa-bars tm-text-gold"></i></button>
-            <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
-                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="index.html#home">Home</a></li>
-                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="index.html#events">Events</a>
-                </li>
-                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="index.html#about">About</a>
-                </li>
-                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="index.html#member">Member</a>
-                </li>
-                <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="index.html#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
-        <div class="text-center mb-16">
-            <h2 class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">Tri State Durga Puja (2025)</h2>
-        </div>
-        <div class="flex flex-col lg:flex-row justify-around items-center">
-            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 tm-item-container">
-                <div class="flex flex-col items-center mb-6 tm-menu-item">
-                    <img alt="durga!!" class="rounded-md" src="img/events1.png">
-                    <div class="ml-3 sm:ml-6">
-                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Tri State Durga Puja 2025</h3>
-                        <div class="text-white text-md sm:text-lg font-light mb-1">Indiana proudly takes the lead,</div>  
-                        <div class="text-white text-md sm:text-lg font-light mb-1">Hosting TSDP with joy and speed!</div>  
-                        <div class="text-white text-md sm:text-lg font-light mb-1">Kentucky, Ohio, and other states too,</div>  
-                        <div class="text-white text-md sm:text-lg font-light mb-1">We warmly extend our call to you.</div>  
-                        
-                        <div class="text-white text-md sm:text-lg font-light mb-1">Join us, unite, let spirits rise,</div>  
-                        <div class="text-white text-md sm:text-lg font-light mb-1">Together we’ll craft a grand surprise!</div>  
-                        <div class="text-white text-md sm:text-lg font-light mb-1">With hearts aligned and hands in play,</div>  
-                        <div class="text-white text-md sm:text-lg font-light mb-1">Let’s make TSDP 2025 shine our way!</div>  
+    <div class="parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="home">
+        <nav class="fixed w-full" id="tm-nav">
+            <div class="tm-container mx-auto px-2 md:py-6 text-right">
+                <button class="md:hidden py-2 px-2" id="menu-toggle"><i
+                        class="fas fa-2x fa-bars tm-text-gold"></i></button>
+                <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="index.html#home">Home</a></li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#home">TSDP</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="/tsdp/registration.html#registration">Registration</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#accommodation">Accommodation</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#food">Food</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#cultural">Cultural</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container mx-auto tm-container pt-24 pb-14 sm:py-24">
+            <div class="text-center mb-6">
+                <h2 class="bg-white tm-text-brown py-4 px-8 text-4xl font-medium inline-block rounded-md bg-opacity-70">
+                    Tri State Durga Puja (2025)</h2>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-around items-start">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <img alt="Durga Pujo" class="rounded-md" src="img/venue.png">
+                        <div class="ml-3 sm:ml-6">
+                            <a href="https://maps.app.goo.gl/BPsSPyScgdGku9QcA" target="_blank"
+                                class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">Durga Puja</a>
+                            <div class="text-white text-md sm:text-lg-events font-light mb-1">Venue : Eastwood Middle
+                                School</div>
+                            <div class="text-white text-md sm:text-lg-events font-light mb-1">Date : 27th, 28th
+                                September, 2025</div>
+                            <div class="text-white text-md sm:text-lg-events font-light">Time : Full Day Event</div>
+                            <div class="text-white text-md sm:text-lg-events font-light">Address : 4401 E 62nd St,
+                                Indianapolis, IN 46220</div>
+                            <div class="mt-5">
+                                <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                    target="_blank" href="https://maps.app.goo.gl/BPsSPyScgdGku9QcA">
+                                    <i class="fas fa-map-marked-alt mr-3"></i>
+                                    Open Map
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                    <div class="flex items-start justify-end mb-6 tm-menu-item-2">
 
+                        <div class="mr-6">
+                            <!--text-right  = this class control text allignment, start from right-->
+                            <img alt="Nandi Sisters" class="rounded-md" src="img/indy-durga-2021.jpg">
+                            <a href="https://tsdpregistration.azurewebsites.net/" target="_blank"
+                                class="text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-yellow">
+                                Saturday Evening 27th September</a>
+                            <div class="text-white text-md sm:text-lg-events font-light mb-1">
+
+                            </div>
+
+                            <div class="mt-5">
+                                <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                    target="_blank" href="https://tsdpregistration.azurewebsites.net/">
+                                    <i class="fas fa-star mr-3"></i>
+                                    More Event Details
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-50 tm-item-container">
-                <div class="flex flex-col items-center mb-6 tm-menu-item-2">
-                    <img alt="durga!!" class="rounded-md" src="img/indy-durga-2021.jpg">
-                    
-                    <div class="mt-3 text-center sm:mt-6">
-                        <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Durga Puja</h3>
+            <!-- Outer sponsor section -->
+            <div class="flex flex-col lg:flex-row justify-around items-start" >
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 " >
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div class="ml-3 sm:ml-6 w-full">
+                            <!-- Header -->
+                            <a href="#" target="_blank"
+                            class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our Sponsors</a>
+                            <!-- Scrolling container -->
+                            <div class="relative w-full overflow-hidden">
+                                <div class="flex gap-6 animate-scroll whitespace-nowrap w-max">
+                                    <!-- Sponsor Card 1 -->
+                                    <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
+                                        <img src="img/sponser1.jpg" alt="Sponsor 1" class="h-16 mx-auto mb-2" />
+                                        <h3 class="text-lg font-semibold">Sponsor Name 1</h3>
+                                        <p class="text-xs italic">Gold Sponsor</p>
+                                    </div>
+            
+                                    <!-- Sponsor Card 2 -->
+                                    <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
+                                        <img src="img/sponser1.jpg" alt="Sponsor 2" class="h-16 mx-auto mb-2" />
+                                        <h3 class="text-lg font-semibold">Sponsor Name 2</h3>
+                                        <p class="text-xs italic">Silver Sponsor</p>
+                                    </div>
+            
+                                    <!-- Sponsor Card 3 -->
+                                    <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
+                                        <img src="img/sponser1.jpg" alt="Sponsor 3" class="h-16 mx-auto mb-2" />
+                                        <h3 class="text-lg font-semibold">Sponsor Name 3</h3>
+
+                                        <p class="text-xs italic">Bronze Sponsor</p>
+                                    </div>
+            
+                                    <!-- Add more sponsor cards similarly -->
+                                </div>
+                            </div>
+            
+                            <!-- Note -->
+                            <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
+                                <p>
+                                    We thank our generous sponsors for supporting our event and helping bring the community together.
+                                </p>
+                            </div>
+            
+                            <hr class="my-4 border-gray-300">
+            
+                            <!-- Donate Button -->
+                            <div class="mt-5">
+                                <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                    target="_blank" href="/tsdp/registration.html">
+                                    <i class="fas fa-gift mr-3"></i>
+                                    Donate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
-        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
-            <div class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
-                <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights reserved.</span>
-                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
-            </div>
-        </footer>
     </div>
-</div>
+    </div>
+    <!-- Accommodation -->
+    <div class="parallax-window" data-image-src="" data-parallax="scroll" id="accommodation">
+        <div class="container mx-auto tm-container py-24 sm:py-48">
+            <div class="text-center mb-16">
+                <h2 class="bg-black tm-text-gold py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
+                    Accommodation</h2>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 tm-item-container">
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <img alt="Membership" class="rounded-md" src="img/grand.png">
+                        <div class="ml-3 sm:ml-6">
+                            <h3 class="tm-text-gold font-semibold mb-2 sm:mb-3 ">Hotel-1</h3>
+                            <div class="mt-5">
+                                <!-- <a class="inline-block tm-bg-blue transition text-white text-sm pt-2 pb-3 px-8 rounded-md" target="_blank"
+                               href="https://paypal.me/BAI2020?country.x=US&locale.x=en_US">
+                                <i class="fa fa-gift mr-3"></i>
+                                Pay By PayPal
+                            </a> -->
+                            </div>
+                            <div class="text-white text-md sm:text-sm font-light">Hotel Rates TBD</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-50 tm-item-container">
+                    <div class="flex items-start justify-end mb-6 tm-menu-item-2">
+                        <div class="mr-6"> <!--text-right  = this class control text allignment, start from right-->
+                            <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">Hotel-2</h3>
 
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/jquery.singlePageNav.min.js"></script>
-<script>
-    // Get the current year
-    var currentYear = new Date().getFullYear();
+                            <div class="text-white text-md sm:text-lg font-light">Hotel Rates TBD</div>
+                        </div>
+                        <img alt="Venmo QR Code - Please scan" class="rounded-md" src="img/grand.png">
+                    </div>
 
-    // Update the content of the "year" span with the current year
-    document.getElementById("year").textContent = currentYear;
-</script>
-<script>
+
+
+                </div>
+                <!-- <div class="mt-5">
+                    <a class="inline-block tm-bg-blue transition text-white text-xl pt-3 pb-4 px-8 rounded-md" href="ec.html">
+                        <i class="fa fa-gift mr-3"></i>
+                        Donate - 
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="parallax-window relative" data-image-src="img/bai-bg-04.jpg" data-parallax="scroll" id="contact">
+        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+            <div class="text-center mb-16">
+                <h2 class="bg-black tm-text-gold py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
+                    Chair Names</h2>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch">
+                <div class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container">
+
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-white bg-opacity-50 tm-item-container">
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                    <div class="flex items-start mb-6 tm-menu-item">
+                        <div>Name -></div>
+                        <div class="ml-3 sm:ml-6">
+                            email
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
+                <div
+                    class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                    <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights
+                        reserved.</span>
+                    <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+
+        // Update the content of the "year" span with the current year
+        document.getElementById("year").textContent = currentYear;
+    </script>
+    <script>
 
         function checkAndShowHideMenu() {
-            if(window.innerWidth < 768) {
-                $('#tm-nav ul').addClass('hidden');                
+            if (window.innerWidth < 768) {
+                $('#tm-nav ul').addClass('hidden');
             } else {
                 $('#tm-nav ul').removeClass('hidden');
             }
         }
 
-        $(function(){
+        $(function () {
             var tmNav = $('#tm-nav');
 
-           checkAndShowHideMenu();
+            checkAndShowHideMenu();
             window.addEventListener('resize', checkAndShowHideMenu);
 
-            $('#menu-toggle').click(function(){
+            $('#menu-toggle').click(function () {
                 $('#tm-nav ul').toggleClass('hidden');
             });
 
-            $('#tm-nav ul li').click(function(){
-                if(window.innerWidth < 768) {
+            $('#tm-nav ul li').click(function () {
+                if (window.innerWidth < 768) {
                     $('#tm-nav ul').addClass('hidden');
-                }                
+                }
             });
 
-            $(document).scroll(function() {
+            $(document).scroll(function () {
                 var distanceFromTop = $(document).scrollTop();
 
-                if(distanceFromTop > 100) {
+                if (distanceFromTop > 100) {
                     tmNav.addClass('scroll');
                 } else {
                     tmNav.removeClass('scroll');
                 }
             });
-            
+
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -139,7 +348,8 @@
             });
         });
 
-</script>
+    </script>
 
 </body>
+
 </html>

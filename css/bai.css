@@ -203,3 +203,12 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
     animation: scroll 20s linear infinite;
     display: flex;
   }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  
+  .blink-row {
+    animation: blink 3s infinite; /* 3 seconds = slower blink */
+  }

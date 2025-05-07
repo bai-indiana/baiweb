@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Executive Committee - Bengali Association of Indiana</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+
+
+    <style>
+        /* Define the CSS for the transparent white div */
+        .transparent-white-div {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* White color with 70% opacity */
+        }
+
+        .active-tab {
+            font-weight: bolder;
+            font-size: 1.125rem;
+            letter-spacing: .05rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="events">
+        <nav class="fixed w-full" id="tm-nav">
+            <div class="tm-container mx-auto px-2 md:py-6 text-right">
+                <button class="md:hidden py-2 px-2" id="menu-toggle"><i
+                        class="fas fa-2x fa-bars tm-text-gold"></i></button>
+                <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="index.html#home">Home</a></li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="tsdp.html">TSDP</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="registration.html#registration">Registration</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="tsdp.html#accommodation">Accommodation</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#food">Food</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="#events">Events</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="tsdp.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+            <div class="text-center mb-16">
+                <h2
+                    class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
+                    TSDP Events 2025</h2>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 ">
+                    <div class="flex flex-col items-center mb-6 tm-menu-item">
+                        <!-- <img alt="durga!!" class="rounded-md" src="img/events1.png"> -->
+                        <div class="ml-3 sm:ml-6">
+                            <!-- Events Tabs -->
+                            <div class="w-full max-w-xl mt-6">
+                                <div class="flex border-b border-gray-300">
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold active-tab"
+                                        data-tab="saturday-tab">
+                                        Saturday
+                                    </button>
+                                    &nbsp;
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
+                                        data-tab="sunday-tab">
+                                        Sunday
+                                    </button>
+                                </div>
+
+                                <div id="saturday-tab" class="tab-content pt-3 rounded-md mt-4">
+
+                                    <table id="saturday" class="w-full text-left mt-4 border-collapse">
+                                        <thead class="bg-black bg-opacity-70 text-white">
+                                            <tr>
+                                                <th class="py-2 px-4"></th>
+                                                <th class="py-2 px-4">Time</th>
+                                                <th class="py-2 px-4">Event</th>
+                                                <th class="py-2 px-4">Details</th>
+                                                <th class="py-2 px-4">State</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-gold bg-opacity-70 transition">
+                                                <td class="py-2 px-4 text-center">
+                                                    <i class="fas fa-praying-hands text-gray-500"></i>
+                                                </td>
+                                                <td class="py-2 px-4">11:30 AM - 12:30 PM</td>
+                                                <td class="py-2 px-4">Puja</td>
+                                                <td class="py-2 px-4">Puja & Anjali</td>
+                                                <td class="py-2 px-4">IN</td>
+                                            </tr>
+                                            <tr class="bg-white bg-opacity-70 transition">
+                                                <td class="py-2 px-4 text-center">
+                                                    <i class="fas fa-bullseye text-gray-600"></i>
+                                                    <i class="fas fa-music text-blue-500 ml-1"></i>
+                                                </td>
+                                                <td class="py-2 px-4">6:PM - 9:PM</td>
+                                                <td class="py-2 px-4">Nandy sisters performance</td>
+                                                <td class="py-2 px-4">Antara Nandy & Ankita Nandy</td>
+                                                <td class="py-2 px-4">Kolkata, WB</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div id="sunday-tab" class="tab-content mt-4 hidden">
+                                    <!-- Sunday Events informations-->
+                                    <table id="sunday" class="w-full text-left mt-4 border-collapse">
+                                        <thead class="bg-black bg-opacity-70 text-white">
+                                            <tr>
+                                                <th class="py-2 px-4"></th>
+                                                <th class="py-2 px-4">Time</th>
+                                                <th class="py-2 px-4">Event</th>
+                                                <th class="py-2 px-4">Details</th>
+                                                <th class="py-2 px-4">State</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-white bg-opacity-70 transition">
+                                                <td class="py-2 px-4 text-center">
+                                                    <i class="fas fa-utensils mr-3 text-gray-400"></i>
+                                                </td>
+                                                <td class="py-2 px-4">10:00 AM - 11:00 AM</td>
+                                                <td class="py-2 px-4">Breakfast</td>
+                                                <td class="py-2 px-4">Serve Breakfast</td>
+                                                <td class="py-2 px-4">IN</td>
+                                            </tr>
+                                            <tr class="bg-gold bg-opacity-70 transition">
+                                                <td class="py-2 px-4 text-center">
+                                                    <i class="fas fa-praying-hands  mr-3 text-purple-500"></i>
+                                                </td>
+                                                <td class="py-2 px-4">11:30 AM</td>
+                                                <td class="py-2 px-4">Sindur Khela</td>
+                                                <td class="py-2 px-4">Sindur khela outside</td>
+                                                <td class="py-2 px-4">IN</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mt-5 fa-pull-right">
+                                <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                    target="_blank" href="#">
+                                    <i class="fas fa-utensils mr-3 text-gray-400"></i>
+                                    Food Menu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
+            <div
+                class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights
+                    reserved.</span>
+                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+
+        // Update the content of the "year" span with the current year
+        document.getElementById("year").textContent = currentYear;
+    </script>
+    <script>
+
+        function checkAndShowHideMenu() {
+            if (window.innerWidth < 768) {
+                $('#tm-nav ul').addClass('hidden');
+            } else {
+                $('#tm-nav ul').removeClass('hidden');
+            }
+        }
+
+        $(function () {
+            var tmNav = $('#tm-nav');
+
+            checkAndShowHideMenu();
+            window.addEventListener('resize', checkAndShowHideMenu);
+
+            $('#menu-toggle').click(function () {
+                $('#tm-nav ul').toggleClass('hidden');
+            });
+
+            $('#tm-nav ul li').click(function () {
+                if (window.innerWidth < 768) {
+                    $('#tm-nav ul').addClass('hidden');
+                }
+            });
+
+            $(document).scroll(function () {
+                var distanceFromTop = $(document).scrollTop();
+
+                if (distanceFromTop > 100) {
+                    tmNav.addClass('scroll');
+                } else {
+                    tmNav.removeClass('scroll');
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+    </script>
+
+    <!--TAB JS-->
+    <script>
+        // Tab switching logic
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-tab');
+
+                // Reset styles for all buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active-tab');
+                    btn.classList.remove('tm-bg-gold');
+                    btn.classList.add('border-transparent');
+                });
+
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+
+                // Show selected tab and style it
+                button.classList.add('active-tab');
+                button.classList.remove('border-transparent');
+                button.classList.add('tm-bg-gold'); // Highlight border
+                document.getElementById(tab).classList.remove('hidden');
+            });
+        });
+    </script>
+
+
+    <!--Blinking Events-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const now = new Date();
+            const dayMap = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            const today = dayMap[now.getDay()];
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+            // Get active tab's table (visible one)
+            const allTables = document.querySelectorAll('table[id]');
+            allTables.forEach(table => {
+                const tableId = table.id.toLowerCase();
+                const isVisible = !table.closest('.tab-content')?.classList.contains('hidden');
+                if (!isVisible) return;
+
+                const rows = table.querySelectorAll('tbody tr');
+                let activeRowFound = false;
+                let nextRow = null;
+
+                rows.forEach(row => {
+                    const timeCell = row.querySelectorAll('td')[1];
+                    if (!timeCell) return;
+
+                    const timeText = timeCell.textContent.trim();
+                    let startMin = null, endMin = null;
+
+                    const timeRangeMatch = timeText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?\s*-\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i);
+                    if (timeRangeMatch) {
+                        startMin = parseTimeToMinutes(timeRangeMatch[1], timeRangeMatch[2], timeRangeMatch[3]);
+                        endMin = parseTimeToMinutes(timeRangeMatch[4], timeRangeMatch[5], timeRangeMatch[6]);
+                    } else {
+                        const singleTimeMatch = timeText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+                        if (singleTimeMatch) {
+                            startMin = parseTimeToMinutes(singleTimeMatch[1], singleTimeMatch[2], singleTimeMatch[3]);
+                            endMin = startMin + 60; // default duration
+                        }
+                    }
+
+                    if (startMin !== null && endMin !== null) {
+                        if (currentMinutes >= startMin && currentMinutes <= endMin) {
+                            row.classList.add('blink-row');
+                            activeRowFound = true;
+                        } else if (!activeRowFound && currentMinutes < startMin && !nextRow) {
+                            nextRow = row;
+                        }
+                    }
+                });
+
+                if (!activeRowFound && nextRow) {
+                    nextRow.classList.add('blink-row');
+                }
+            });
+
+            function parseTimeToMinutes(hourStr, minuteStr, ampm) {
+                let hour = parseInt(hourStr);
+                let minutes = minuteStr ? parseInt(minuteStr) : 0;
+                if (ampm?.toUpperCase() === 'PM' && hour !== 12) hour += 12;
+                if (ampm?.toUpperCase() === 'AM' && hour === 12) hour = 0;
+                return hour * 60 + minutes;
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

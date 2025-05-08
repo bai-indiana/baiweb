@@ -1059,6 +1059,18 @@ tr.bg-gold:hover {
   line-height: 2rem;
 }
 
+.transparent-image-50 {
+  opacity: 0.5; /* Adjust from 0 (fully transparent) to 1 (fully opaque) */
+}
+
+.transparent-image-30 {
+  opacity: 0.3; /* Adjust from 0 (fully transparent) to 1 (fully opaque) */
+}
+
+.transparent-image-15 {
+  opacity: 0.15; /* Adjust from 0 (fully transparent) to 1 (fully opaque) */
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));

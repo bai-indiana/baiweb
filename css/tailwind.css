@@ -1111,6 +1111,12 @@ tr.bg-gold:hover {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.space-y-3{
+  letter-spacing: .25rem
+}
+.space-y-5{
+  letter-spacing: .05rem
+}
 
 @media (min-width: 640px) {
   .sm\:mr-12 {

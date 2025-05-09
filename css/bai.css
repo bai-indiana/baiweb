@@ -37,6 +37,8 @@ footer span a { color: #FFF; }
 
 .tm-text-gold {
     color: #CC9966;
+    text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.904);
+    transition: text-shadow 0.3s ease; /* Add a transition for a smooth effect */
 }
 
 .tm-text-brown {
@@ -155,6 +157,9 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
     line-height: 2rem;
 }
 
+ 
+  
+
 @media (min-width: 768px) {
     #tm-nav.scroll .tm-container {
         padding-top: 10px;
@@ -196,12 +201,23 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-10%); }
+  }
+
+  .scroll-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
   }
   
   .animate-scroll {
-    animation: scroll 20s linear infinite;
+    animation: scroll 5s linear infinite;
     display: flex;
+    white-space: nowrap;
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
   }
 
   @keyframes blink {

@@ -892,6 +892,14 @@ tr.bg-gold:hover {
   --tw-bg-opacity: 0.9;
 }
 
+.bg-chef {
+  background-image: url('/img/ch.png'); 
+  background-repeat: no-repeat;
+  background-size: 50px 50px;           /* width height in pixels */
+  background-position: 10px center;     /* horizontal vertical */
+  padding-left: 40px;                   /* make space for the image inside element */
+}
+
 .p-8 {
   padding: 2rem;
 }

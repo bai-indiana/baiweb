@@ -14,6 +14,7 @@
     <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
+    <link href="css/sponser-scroll.css" rel="stylesheet">
 
 
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -48,7 +49,8 @@
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
                             href="#accommodation">Accommodation</a>
                     </li>
-                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp-food.html#food">Food</a>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
+                            href="tsdp-food.html#food">Food</a>
                     </li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
                             href="tsdp-events.html#events">Events</a>
@@ -112,67 +114,127 @@
                     </div>
                 </div>
             </div>
-            <!-- Outer sponsor section -->
-            <div class="flex flex-col lg:flex-row justify-around items-start">
-                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
-                    <div class="flex items-start mb-6 tm-menu-item">
-                        <div class="ml-3 sm:ml-6 w-full">
-                            <!-- Header -->
-                            <a href="#" target="_blank" class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our
-                                Sponsors</a>
-                            <!-- Scrolling container -->
-                            <div class="relative w-full overflow-hidden">
-                                <div class="flex gap-6 animate-scroll whitespace-nowrap w-max">
-                                    <!-- Sponsor Card 1 -->
-                                    <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
-                                        <img src="img/sponser1.jpg" alt="Sponsor 1" class="h-16 mx-auto mb-2 transparent-image-50" />
-                                        <h3 class="text-lg font-semibold">Sponsor Name 1</h3>
-                                        <p class="text-xs italic">Gold Sponsor</p>
-                                    </div>
+        </div>
+        <!-- Buttom sponsor section -->
+        <!-- <div class="flex flex-col lg:flex-row justify-around items-start">
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
+                <div class="flex items-start mb-6 tm-menu-item">
+                    <div class="ml-3 sm:ml-6 w-full">
+                         Header  
+                        <a href="#" target="_blank" class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our
+                            Sponsors</a>
+                         Scrolling container  
+                        <div class="relative w-full scroll-wrapper">
+                            <div class="flex gap-6 animate-scroll whitespace-nowrap w-max">
 
-                                    <!-- Sponsor Card 2 -->
-                                    <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
-                                        <img src="img/sponser1.jpg" alt="Sponsor 2" class="h-16 mx-auto mb-2 transparent-image-50" />
-                                        <h3 class="text-lg font-semibold">Sponsor Name 2</h3>
-                                        <p class="text-xs italic">Silver Sponsor</p>
-                                    </div>
-
-                                    <!-- Sponsor Card 3 -->
-                                    <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
-                                        <img src="img/sponser1.jpg" alt="Sponsor 3" class="h-16 mx-auto mb-2 transparent-image-50" />
-                                        <h3 class="text-lg font-semibold">Sponsor Name 3</h3>
-
-                                        <p class="text-xs italic">Bronze Sponsor</p>
-                                    </div>
-
-                                    <!-- Add more sponsor cards similarly -->
+                                 Original Sponsor Cards  
+                                <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
+                                    <img src="img/sponser1.jpg" alt="Sponsor 1"
+                                        class="h-16 mx-auto mb-2 transparent-image-50" />
+                                    <h3 class="text-lg font-semibold">Sponsor Name 1</h3>
+                                    <p class="text-xs italic">Gold Sponsor</p>
                                 </div>
-                            </div>
 
-                            <!-- Note -->
-                            <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
-                                <p>
-                                    We thank our generous sponsors for supporting our event and helping bring the
-                                    community together.
-                                </p>
-                            </div>
+                                <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
+                                    <img src="img/sponser1.jpg" alt="Sponsor 2"
+                                        class="h-16 mx-auto mb-2 transparent-image-50" />
+                                    <h3 class="text-lg font-semibold">Sponsor Name 2</h3>
+                                    <p class="text-xs italic">Silver Sponsor</p>
+                                </div>
 
-                            <hr class="my-4 border-gray-300">
+                                <div class="inline-block bg-white bg-opacity-10 rounded-lg p-8 w-64 text-black">
+                                    <img src="img/sponser1.jpg" alt="Sponsor 3"
+                                        class="h-16 mx-auto mb-2 transparent-image-50" />
+                                    <h3 class="text-lg font-semibold">Sponsor Name 3</h3>
+                                    <p class="text-xs italic">Bronze Sponsor</p>
+                                </div>
 
-                            <!-- Donate Button -->
-                            <div class="mt-5">
-                                <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
-                                    target="_blank" href="/tsdp/registration.html">
-                                    <i class="fas fa-gift mr-3"></i>
-                                    Donate
-                                </a>
+
                             </div>
+                        </div>
+
+
+                        Note  
+                        <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
+                            <p>
+                                We thank our generous sponsors for supporting our event and helping bring the
+                                community together.
+                            </p>
+                        </div>
+
+                        <hr class="my-4 border-gray-300">
+
+                         Donate Button  
+                        <div class="mt-5">
+                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                target="_blank" href="/tsdp/registration.html">
+                                <i class="fas fa-gift mr-3"></i>
+                                Donate
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div> -->
 
+
+        <!--Experiment-->
+        <div class="flex flex-col lg:flex-row justify-around items-start">
+            <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
+                <div class="flex items-start mb-6 tm-menu-item">
+                    <div class="ml-3 sm:ml-6 w-full">
+                        <!-- Header -->
+                        <a href="#" target="_blank" class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our
+                            Sponsors</a>
+                        <!-- Scrolling container -->
+                        <div class="wrapper-test">
+                            <div class="itemLeft item1"></div>
+                            <div class="itemLeft item2"></div>
+                            <div class="itemLeft item3"></div>
+                            <div class="itemLeft item4"></div>
+                            <div class="itemLeft item5"></div>
+                            <div class="itemLeft item6"></div>
+                            <div class="itemLeft item7"></div>
+                            <div class="itemLeft item8"></div>
+                          </div>
+                          <div class="wrapper-test">
+                            <div class="itemRight item1"></div>
+                            <div class="itemRight item2"></div>
+                            <div class="itemRight item3"></div>
+                            <div class="itemRight item4"></div>
+                            <div class="itemRight item5"></div>
+                            <div class="itemRight item6"></div>
+                            <div class="itemRight item7"></div>
+                            <div class="itemRight item8"></div>
+                          </div>
+
+
+                        <!-- Note -->
+                        <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
+                            <p>
+                                We thank our generous sponsors for supporting our event and helping bring the
+                                community together.
+                            </p>
+                        </div>
+
+                        <hr class="my-4 border-gray-300">
+
+                        <!-- Donate Button -->
+                        <div class="mt-5">
+                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                target="_blank" href="/tsdp/registration.html">
+                                <i class="fas fa-gift mr-3"></i>
+                                Donate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+ 
+
+
     </div>
     <!-- Accommodation -->
     <div class="parallax-window" data-image-src="img/accommodation.png" data-parallax="scroll" id="accommodation">

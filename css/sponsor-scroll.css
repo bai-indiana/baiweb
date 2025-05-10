@@ -26,6 +26,7 @@
       right: -211px;
     }
   }
+
   
   .itemLeft,
   .itemRight {
@@ -40,51 +41,72 @@
   }
   
   .itemLeft {
-    left: max(calc(211px * 8), 100%);
+    left: max(calc(211px * 6), 100%);
     animation-name: scrollLeft;
   }
+    
+  .item-left-1 {
+    animation-delay: calc(30s / 6 * (6 - 1) * -1);
+    background-image: url('../img/sponsor-1.jpg');
+  }
   
+  .item-left-2 {
+    animation-delay: calc(30s / 6 * (6 - 2) * -1);
+    background-image: url('../img/sponsor-2.jpg');
+  }
+  
+  .item-left-3 {
+    animation-delay: calc(30s / 6 * (6 - 3) * -1);
+    background-image: url('../img/sponsor-3.jpg');
+  }
+  
+  .item-left-4 {
+    animation-delay: calc(30s / 6 * (6 - 4) * -1);
+    background-image: url('../img/sponsor-4.jpg');
+  }
+  
+  .item-left-5 {
+    animation-delay: calc(30s / 6 * (6 - 5) * -1);
+    background-image: url('../img/sponsor-5.jpg');
+  }
+
+  .item-left-6 {
+    animation-delay: calc(30s / 6 * (6 - 6) * -1);
+    background-image: url('../img/sponsor-6.jpg');
+  }
+
   .itemRight {
-    right: max(calc(211px * 8), calc(100% + 211px));
+    right: max(calc(211px * 6), calc(100% + 211px));
     animation-name: scrollRight;
   }
   
-  .item1 {
-    animation-delay: calc(30s / 8 * (8 - 1) * -1);
-    background-image: url('../img/sponser1.jpg');
+
+  .item-right-1 {
+    animation-delay: calc(30s / 6 * (6 - 1) * -1);
+    background-image: url('../img/sponsor-7.jpg');
   }
   
-  .item2 {
-    animation-delay: calc(30s / 8 * (8 - 2) * -1);
-    background-image: url('../img/sponser1.jpg');
+  .item-right-2 {
+    animation-delay: calc(30s / 6 * (6 - 2) * -1);
+    background-image: url('../img/sponsor-8.jpg');
   }
   
-  .item3 {
-    animation-delay: calc(30s / 8 * (8 - 3) * -1);
-    background-image: url('../img/sponser1.jpg');
+  .item-right-3 {
+    animation-delay: calc(30s / 6 * (6 - 3) * -1);
+    background-image: url('../img/sponsor-9.jpg');
   }
   
-  .item4 {
-    animation-delay: calc(30s / 8 * (8 - 4) * -1);
-    background-image: url('../img/sponser1.jpg');
+  .item-right-4 {
+    animation-delay: calc(30s / 6 * (6 - 4) * -1);
+    background-image: url('../img/sponsor-10.jpg');
   }
   
-  .item5 {
-    animation-delay: calc(30s / 8 * (8 - 5) * -1);
-    background-image: url('../img/sponser1.jpg');
+  .item-right-5 {
+    animation-delay: calc(30s / 6 * (6 - 5) * -1);
+    background-image: url('../img/sponsor-11.jpg');
   }
   
-  .item6 {
-    animation-delay: calc(30s / 8 * (8 - 6) * -1);
-    background-image: url('../img/sponser1.jpg');
-  }
-  
-  .item7 {
-    animation-delay: calc(30s / 8 * (8 - 7) * -1);
-    background-image: url('../img/sponser1.jpg');
-  }
-  
-  .item8 {
-    animation-delay: calc(30s / 8 * (8 - 8) * -1);
-    background-image: url('../img/sponser1.jpg');
+  .item-right-6 {
+    animation-delay: calc(30s / 6 * (6 - 6) * -1);
+    background-image: url('../img/sponsor-12.jpg');
   }

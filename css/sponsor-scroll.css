@@ -42,8 +42,8 @@
 
 .itemLeft:hover,
 .itemRight:hover {
-  animation-play-state: paused;
-  transform: scale(1.5);
+  /* animation-play-state: paused; */
+  transform: scale(1);
   z-index: 10;
   opacity: 1;
   /* ensures hovered item stays above others */

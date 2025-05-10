@@ -37,7 +37,7 @@ footer span a { color: #FFF; }
 
 .tm-text-gold {
     color: #CC9966;
-    text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.904);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.904);
     transition: text-shadow 0.3s ease; /* Add a transition for a smooth effect */
 }
 

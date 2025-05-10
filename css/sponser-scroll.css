@@ -3,7 +3,7 @@
     width: 90%;
     max-width: 1536px;
     margin-inline: auto;
-    height: 380px;
+    height: 155px;
     position: relative;
     overflow: hidden;
     mask-image: linear-gradient(
@@ -17,20 +17,20 @@
   
   @keyframes scrollLeft {
     to {
-      left: -410px;
+      left: -211px;
     }
   }
   
   @keyframes scrollRight {
     to {
-      right: -410px;
+      right: -211px;
     }
   }
   
   .itemLeft,
   .itemRight {
-    width: 410px;
-    height: 380px;
+    width: 211px;
+    height: 155px;
     border-radius: 6px;
     position: absolute;
     animation-timing-function: linear;
@@ -40,12 +40,12 @@
   }
   
   .itemLeft {
-    left: max(calc(410px * 8), 100%);
+    left: max(calc(211px * 8), 100%);
     animation-name: scrollLeft;
   }
   
   .itemRight {
-    right: max(calc(410px * 8), calc(100% + 410px));
+    right: max(calc(211px * 8), calc(100% + 211px));
     animation-name: scrollRight;
   }
   

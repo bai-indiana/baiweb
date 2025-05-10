@@ -1,112 +1,121 @@
 .wrapper-test {
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 1536px;
-    margin-inline: auto;
-    height: 155px;
-    position: relative;
-    overflow: hidden;
-    mask-image: linear-gradient(
-      to right,
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 155px;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 1) 20%,
       rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0)
-    );
-  }
-  
-  @keyframes scrollLeft {
-    to {
-      left: -211px;
-    }
-  }
-  
-  @keyframes scrollRight {
-    to {
-      right: -211px;
-    }
-  }
+      rgba(0, 0, 0, 0));
+}
 
-  
-  .itemLeft,
-  .itemRight {
-    width: 211px;
-    height: 155px;
-    border-radius: 6px;
-    position: absolute;
-    animation-timing-function: linear;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    opacity: 0.7;
-  }
-  
-  .itemLeft {
-    left: max(calc(211px * 6), 100%);
-    animation-name: scrollLeft;
-  }
-    
-  .item-left-1 {
-    animation-delay: calc(30s / 6 * (6 - 1) * -1);
-    background-image: url('../img/sponsor-1.jpg');
-  }
-  
-  .item-left-2 {
-    animation-delay: calc(30s / 6 * (6 - 2) * -1);
-    background-image: url('../img/sponsor-2.jpg');
-  }
-  
-  .item-left-3 {
-    animation-delay: calc(30s / 6 * (6 - 3) * -1);
-    background-image: url('../img/sponsor-3.jpg');
-  }
-  
-  .item-left-4 {
-    animation-delay: calc(30s / 6 * (6 - 4) * -1);
-    background-image: url('../img/sponsor-4.jpg');
-  }
-  
-  .item-left-5 {
-    animation-delay: calc(30s / 6 * (6 - 5) * -1);
-    background-image: url('../img/sponsor-5.jpg');
-  }
 
-  .item-left-6 {
-    animation-delay: calc(30s / 6 * (6 - 6) * -1);
-    background-image: url('../img/sponsor-6.jpg');
+@keyframes scrollLeft {
+  to {
+    left: -211px;
   }
+}
 
-  .itemRight {
-    right: max(calc(211px * 6), calc(100% + 211px));
-    animation-name: scrollRight;
+@keyframes scrollRight {
+  to {
+    right: -211px;
   }
-  
+}
 
-  .item-right-1 {
-    animation-delay: calc(30s / 6 * (6 - 1) * -1);
-    background-image: url('../img/sponsor-7.jpg');
-  }
-  
-  .item-right-2 {
-    animation-delay: calc(30s / 6 * (6 - 2) * -1);
-    background-image: url('../img/sponsor-8.jpg');
-  }
-  
-  .item-right-3 {
-    animation-delay: calc(30s / 6 * (6 - 3) * -1);
-    background-image: url('../img/sponsor-9.jpg');
-  }
-  
-  .item-right-4 {
-    animation-delay: calc(30s / 6 * (6 - 4) * -1);
-    background-image: url('../img/sponsor-10.jpg');
-  }
-  
-  .item-right-5 {
-    animation-delay: calc(30s / 6 * (6 - 5) * -1);
-    background-image: url('../img/sponsor-11.jpg');
-  }
-  
-  .item-right-6 {
-    animation-delay: calc(30s / 6 * (6 - 6) * -1);
-    background-image: url('../img/sponsor-12.jpg');
-  }
+
+.itemLeft,
+.itemRight {
+  width: 211px;
+  height: 155px;
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  opacity: 0.7;
+  transition: transform 0.3s ease, animation-play-state 0s;
+}
+
+.itemLeft:hover,
+.itemRight:hover {
+  animation-play-state: paused;
+  transform: scale(1.5);
+  z-index: 10;
+  opacity: 1;
+  /* ensures hovered item stays above others */
+}
+
+.itemLeft {
+  left: max(calc(211px * 6), 100%);
+  animation-name: scrollLeft;
+}
+
+.item-left-1 {
+  animation-delay: calc(30s / 6 * (6 - 1) * -1);
+  background-image: url('../img/sponsor-1.jpg');
+}
+
+.item-left-2 {
+  animation-delay: calc(30s / 6 * (6 - 2) * -1);
+  background-image: url('../img/sponsor-2.jpg');
+}
+
+.item-left-3 {
+  animation-delay: calc(30s / 6 * (6 - 3) * -1);
+  background-image: url('../img/sponsor-3.jpg');
+}
+
+.item-left-4 {
+  animation-delay: calc(30s / 6 * (6 - 4) * -1);
+  background-image: url('../img/sponsor-4.jpg');
+}
+
+.item-left-5 {
+  animation-delay: calc(30s / 6 * (6 - 5) * -1);
+  background-image: url('../img/sponsor-5.jpg');
+}
+
+.item-left-6 {
+  animation-delay: calc(30s / 6 * (6 - 6) * -1);
+  background-image: url('../img/sponsor-6.jpg');
+}
+
+.itemRight {
+  right: max(calc(211px * 6), calc(100% + 211px));
+  animation-name: scrollRight;
+}
+
+
+.item-right-1 {
+  animation-delay: calc(30s / 6 * (6 - 1) * -1);
+  background-image: url('../img/sponsor-7.jpg');
+}
+
+.item-right-2 {
+  animation-delay: calc(30s / 6 * (6 - 2) * -1);
+  background-image: url('../img/sponsor-8.jpg');
+}
+
+.item-right-3 {
+  animation-delay: calc(30s / 6 * (6 - 3) * -1);
+  background-image: url('../img/sponsor-9.jpg');
+}
+
+.item-right-4 {
+  animation-delay: calc(30s / 6 * (6 - 4) * -1);
+  background-image: url('../img/sponsor-10.jpg');
+}
+
+.item-right-5 {
+  animation-delay: calc(30s / 6 * (6 - 5) * -1);
+  background-image: url('../img/sponsor-11.jpg');
+}
+
+.item-right-6 {
+  animation-delay: calc(30s / 6 * (6 - 6) * -1);
+  background-image: url('../img/sponsor-12.jpg');
+}

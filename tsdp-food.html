@@ -120,6 +120,8 @@
                                                         class="tm-text-gold text-xl font-semibold mb-2 flex items-center">
                                                         <span>
                                                             🍽️ Dinner
+                                                            <img alt="Sunday Brekfast" class="rounded-md"
+                                                                    src="img/food/friday-dinner.png">
                                                         </span>
                                                     </h3>
                                                     <ul class="text-white text-sm">
@@ -169,10 +171,16 @@
                                                             </li>
                                                         <li class="flex"><span
                                                                 class="w-28 font-semibold text-gray-300">Labra (Mixed Veg)
-                                                                </span></li>
+                                                            </span>
+                                                            <img alt="Sunday Brekfast" class="rounded-md"
+                                                                src="img/food/labra.png">
+                                                        </li>
                                                         <li class="flex"><span
                                                                 class="w-28 font-semibold text-gray-300">Cabbage
-                                                                Curry</span></li>
+                                                                Curry</span>
+                                                                <img alt="Sunday Brekfast" class="rounded-md"
+                                                                    src="img/food/cabbage-curry.png">
+                                                            </li>
                                                         <li class="flex"><span
                                                                 class="w-28 font-semibold text-gray-300">Jhur
                                                                 Jhure Aloo Bhaja
@@ -211,6 +219,8 @@
                                                                 class="w-28 font-semibold text-gray-300">Singara
                                                             </span></li>
                                                     </ul>
+                                                    <img alt="Evening Snacks" class="rounded-md"
+                                                    src="img/food/evening-snacks.png">
                                                 </div>
                                             </div>
                                         </div>
@@ -460,6 +470,40 @@
             });
         });
     </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const now = new Date();
+        const dayMap = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const today = dayMap[now.getDay()];
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+        // Automatically select tab based on current day
+        const activeTabId = today + '-tab';
+
+        // Set active tab button
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            if (btn.dataset.tab === activeTabId) {
+                btn.classList.add('active-tab');
+            } else {
+                btn.classList.remove('active-tab');
+            }
+        });
+
+        // Set visible content
+        document.querySelectorAll('.tab-content').forEach(content => {
+            if (content.id === activeTabId) {
+                content.classList.remove('hidden');
+            } else {
+                content.classList.add('hidden');
+            }
+        });
+ 
+    });
+</script>
+
 </body>
 
 </html>

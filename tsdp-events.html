@@ -19,7 +19,8 @@
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
-
+    <script src="js/blinking-row.js"></script>
+    <script src="js/menu.js"></script>
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -54,10 +55,11 @@
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
                             href="tsdp.html#accommodation">Accommodation</a>
                     </li>
-                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp-food.html#food">Food</a>
-                    </li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
-                            href="#events"><i class="fas fa-calendar-alt">Events</i></a>
+                            href="tsdp-food.html#food">Food</a>
+                    </li>
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="#events"><i
+                                class="fas fa-calendar-alt">Events</i></a>
                     </li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4"
                             href="tsdp.html#contact">Contact</a>
@@ -67,12 +69,13 @@
         </nav>
         <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
             <div class="text-center mb-16">
-                
+
                 <h2
                     class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
                     <img alt="under construction" class="rounded-md" src="img/uc.png">
-                    TSDP Events 2025</h2>
-                    
+                    TSDP Events 2025
+                </h2>
+
             </div>
             <div class="flex flex-col lg:flex-row justify-around items-center">
                 <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 ">
@@ -122,7 +125,7 @@
                                                     <i class="fas fa-bullseye text-gray-600"></i>
                                                     <i class="fas fa-music text-blue-500 ml-1"></i>
                                                 </td>
-                                                <td class="py-2 px-4">6:PM - 9:PM</td>
+                                                <td class="py-2 px-4">6:00 PM - 9:00 PM</td>
                                                 <td class="py-2 px-4">Nandy sisters performance</td>
                                                 <td class="py-2 px-4">Antara Nandy & Ankita Nandy</td>
                                                 <td class="py-2 px-4">Kolkata, WB</td>
@@ -157,7 +160,17 @@
                                                 <td class="py-2 px-4 text-center">
                                                     <i class="fas fa-praying-hands  mr-3 text-purple-500"></i>
                                                 </td>
-                                                <td class="py-2 px-4">11:30 AM</td>
+                                                <td class="py-2 px-4">11:30 AM - 12:30 PM</td>
+                                                <td class="py-2 px-4">Sindur Khela</td>
+                                                <td class="py-2 px-4">Sindur khela outside</td>
+                                                <td class="py-2 px-4">IN</td>
+                                            </tr>
+
+                                            <tr class="bg-gold bg-opacity-70 transition">
+                                                <td class="py-2 px-4 text-center">
+                                                    <i class="fas fa-praying-hands  mr-3 text-purple-500"></i>
+                                                </td>
+                                                <td class="py-2 px-4">8:30 PM - 10:00 PM</td>
                                                 <td class="py-2 px-4">Sindur Khela</td>
                                                 <td class="py-2 px-4">Sindur khela outside</td>
                                                 <td class="py-2 px-4">IN</td>
@@ -196,54 +209,6 @@
         // Update the content of the "year" span with the current year
         document.getElementById("year").textContent = currentYear;
     </script>
-    <script>
-
-        function checkAndShowHideMenu() {
-            if (window.innerWidth < 768) {
-                $('#tm-nav ul').addClass('hidden');
-            } else {
-                $('#tm-nav ul').removeClass('hidden');
-            }
-        }
-
-        $(function () {
-            var tmNav = $('#tm-nav');
-
-            checkAndShowHideMenu();
-            window.addEventListener('resize', checkAndShowHideMenu);
-
-            $('#menu-toggle').click(function () {
-                $('#tm-nav ul').toggleClass('hidden');
-            });
-
-            $('#tm-nav ul li').click(function () {
-                if (window.innerWidth < 768) {
-                    $('#tm-nav ul').addClass('hidden');
-                }
-            });
-
-            $(document).scroll(function () {
-                var distanceFromTop = $(document).scrollTop();
-
-                if (distanceFromTop > 100) {
-                    tmNav.addClass('scroll');
-                } else {
-                    tmNav.removeClass('scroll');
-                }
-            });
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-
-    </script>
 
     <!--TAB JS-->
     <script>
@@ -270,71 +235,6 @@
             });
         });
     </script>
-
-
-    <!--Blinking Events-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const now = new Date();
-            const dayMap = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-            const today = dayMap[now.getDay()];
-            const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-            // Get active tab's table (visible one)
-            const allTables = document.querySelectorAll('table[id]');
-            allTables.forEach(table => {
-                const tableId = table.id.toLowerCase();
-                const isVisible = !table.closest('.tab-content')?.classList.contains('hidden');
-                if (!isVisible) return;
-
-                const rows = table.querySelectorAll('tbody tr');
-                let activeRowFound = false;
-                let nextRow = null;
-
-                rows.forEach(row => {
-                    const timeCell = row.querySelectorAll('td')[1];
-                    if (!timeCell) return;
-
-                    const timeText = timeCell.textContent.trim();
-                    let startMin = null, endMin = null;
-
-                    const timeRangeMatch = timeText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?\s*-\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i);
-                    if (timeRangeMatch) {
-                        startMin = parseTimeToMinutes(timeRangeMatch[1], timeRangeMatch[2], timeRangeMatch[3]);
-                        endMin = parseTimeToMinutes(timeRangeMatch[4], timeRangeMatch[5], timeRangeMatch[6]);
-                    } else {
-                        const singleTimeMatch = timeText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
-                        if (singleTimeMatch) {
-                            startMin = parseTimeToMinutes(singleTimeMatch[1], singleTimeMatch[2], singleTimeMatch[3]);
-                            endMin = startMin + 60; // default duration
-                        }
-                    }
-
-                    if (startMin !== null && endMin !== null) {
-                        if (currentMinutes >= startMin && currentMinutes <= endMin) {
-                            row.classList.add('blink-row');
-                            activeRowFound = true;
-                        } else if (!activeRowFound && currentMinutes < startMin && !nextRow) {
-                            nextRow = row;
-                        }
-                    }
-                });
-
-                if (!activeRowFound && nextRow) {
-                    nextRow.classList.add('blink-row');
-                }
-            });
-
-            function parseTimeToMinutes(hourStr, minuteStr, ampm) {
-                let hour = parseInt(hourStr);
-                let minutes = minuteStr ? parseInt(minuteStr) : 0;
-                if (ampm?.toUpperCase() === 'PM' && hour !== 12) hour += 12;
-                if (ampm?.toUpperCase() === 'AM' && hour === 12) hour = 0;
-                return hour * 60 + minutes;
-            }
-        });
-    </script>
-
 
 
 </body>

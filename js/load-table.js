@@ -1,8 +1,8 @@
 function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
-    return fetch(`../${csvFileName}`)
+    return fetch(`${csvFileName}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`File not found: ../${csvFileName}`);
+                throw new Error(`File not found: ${csvFileName}`);
             }
             return response.text();
         })

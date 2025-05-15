@@ -19,6 +19,7 @@
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="js/load-table.js"></script>
 
 
     <style>
@@ -84,7 +85,9 @@
                 <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 ">
                     <div class="flex flex-col items-center mb-6 tm-menu-item">
                         <!-- <img alt="durga!!" class="rounded-md" src="img/events1.png"> -->
-                        <div class="ml-3 sm:ml-6">
+                        <div  class="bg-white sm:text-xl-events py-2 px-2 tm-text-yellow rounded-md bg-opacity-30 ">
+                        Definition Of Family : 2 Adults & 2 Dependent Children up to 22 years age</div>
+                        <div class="ml-3 sm:ml-6 mt-5">
                             <!-- Registration Tabs -->
                             <div class="w-full max-w-xl mt-6">
                                 <div class="flex border-b border-gray-300">
@@ -97,61 +100,15 @@
                                     <button
                                         class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
                                         data-tab="donors">
-                                        Individual Donors
+                                        Community Sponsorship
                                     </button>
                                 </div>
 
                                 <div id="standard" class="tab-content pt-3 rounded-md mt-4">
 
-                                    <table class="w-full text-left mt-4 border-collapse">
-                                        <thead class="bg-black bg-opacity-70 text-white">
-                                            <tr class="normal">
-                                                <th class="py-2 px-4">Registration Type</th>
-                                                <th class="py-2 px-4">Rates</th>
-                                                <th class="py-2 px-4">Late</th>
-                                                <th class="py-2 px-4">At The Gate</th>
-                                                <th class="py-2 px-4">Descriptions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="bg-white bg-opacity-70 transition">
-                                                <td class="py-2 px-4">Family</td>
-                                                <td class="py-2 px-4">$350</td>
-                                                <td class="py-2 px-4">$390</td>
-                                                <td class="py-2 px-4">$460</td>
-                                                <td class="py-2 px-4">For Two Adults and Dependent children up to age 16
-                                                    years</td>
-                                            </tr>
-                                            <tr class="bg-gold bg-opacity-70 transition">
-                                                <td class="py-2 px-4">Single</td>
-                                                <td class="py-2 px-4">$125</td>
-                                                <td class="py-2 px-4">$145</td>
-                                                <td class="py-2 px-4">$180</td>
-                                                <td class="py-2 px-4">For One Adult Only</td>
-                                            </tr>
-                                            <tr class="bg-white bg-opacity-70 transition">
-                                                <td class="py-2 px-4">Student</td>
-                                                <td class="py-2 px-4">$75</td>
-                                                <td class="py-2 px-4">$90</td>
-                                                <td class="py-2 px-4">$100</td>
-                                                <td class="py-2 px-4">For Each Student</td>
-                                            </tr>
-                                            <tr class="bg-gold bg-opacity-70 transition">
-                                                <td class="py-2 px-4">Couple</td>
-                                                <td class="py-2 px-4">$250</td>
-                                                <td class="py-2 px-4">$290</td>
-                                                <td class="py-2 px-4">$360</td>
-                                                <td class="py-2 px-4">For a Couple only, or a couple with children under
-                                                    5 yrs</td>
-                                            </tr>
-                                            <tr class="bg-white bg-opacity-70 transition">
-                                                <td class="py-2 px-4">Visiting Parent</td>
-                                                <td class="py-2 px-4">$50</td>
-                                                <td class="py-2 px-4">$60</td>
-                                                <td class="py-2 px-4">$100</td>
-                                                <td class="py-2 px-4">For Each Visiting Parent</td>
-                                            </tr>
-                                        </tbody>
+                                    <table id="sd-reg" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
                                     </table>
                                     <div class="mt-5 fa-pull-right">
                                         <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
@@ -167,7 +124,7 @@
                                         <div class="text-center mb-8">
                                             <h2
                                                 class="bg-white tm-text-brown py-2 px-8 text-2xl font-light inline-block bg-opacity-90 rounded-md">
-                                                Become Donor</h2>
+                                                Become Sponsor</h2>
                                         </div>
                                         <div class="flex flex-col lg:flex-row justify-around items-start">
                                             <div
@@ -206,7 +163,7 @@
                                                                 target="_blank"
                                                                 href="https://tsdpregistration.azurewebsites.net/">
                                                                 <i class="fas fa-gem mr-3"></i>
-                                                                Donor
+                                                                Sponsor
                                                             </a>
                                                         </div>
                                                     </div>
@@ -241,7 +198,7 @@
                                                                 target="_blank"
                                                                 href="https://tsdpregistration.azurewebsites.net/">
                                                                 <i class="fas fa-trophy mr-3"></i>
-                                                                Donor
+                                                                Sponsor
                                                             </a>
                                                         </div>
                                                     </div>
@@ -274,7 +231,7 @@
                                                                 target="_blank"
                                                                 href="https://tsdpregistration.azurewebsites.net/">
                                                                 <i class="fas fa-gift mr-3"></i>
-                                                                Donor
+                                                                Sponsor
                                                             </a>
                                                         </div>
                                                     </div>
@@ -316,7 +273,7 @@
                                                                 target="_blank"
                                                                 href="https://tsdpregistration.azurewebsites.net/">
                                                                 <i class="fas fa-star mr-3"></i>
-                                                                Donor
+                                                                Sponsor
                                                             </a>
                                                         </div>
                                                     </div>
@@ -352,7 +309,7 @@
                                                                 target="_blank"
                                                                 href="https://tsdpregistration.azurewebsites.net/">
                                                                 <i class="fas fa-medal" style="color: silver;"></i>
-                                                                Donor
+                                                                Sponsor
                                                             </a>
                                                         </div>
                                                     </div>
@@ -491,6 +448,20 @@
                 button.classList.add('tm-bg-gold'); // Highlight border
                 document.getElementById(tab).classList.remove('hidden');
             });
+        });
+    </script>
+
+
+    <!-- Populate registration rates table from csv -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadTableFromCSV('sd-reg', 'data/reg.csv');
+
+                // Your other code that depends on table being ready
+            } catch (error) {
+                console.error('Failed to load table:', error);
+            }
         });
     </script>
 

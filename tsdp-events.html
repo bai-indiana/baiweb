@@ -21,6 +21,7 @@
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/blinking-row.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/load-table.js"></script>
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -38,7 +39,7 @@
 </head>
 
 <body>
-    <div class="parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="events">
+    <div class="parallax-window relative" data-image-src="img/durga-bg.png" data-parallax="scroll" id="events">
         <nav class="fixed w-full" id="tm-nav">
             <div class="tm-container mx-auto px-2 md:py-6 text-right">
                 <button class="md:hidden py-2 px-2" id="menu-toggle"><i
@@ -87,6 +88,11 @@
                                 <div class="flex border-b border-gray-300">
                                     <button
                                         class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold active-tab"
+                                        data-tab="friday-tab">
+                                        Friday
+                                    </button>
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
                                         data-tab="saturday-tab">
                                         Saturday
                                     </button>
@@ -98,84 +104,28 @@
                                     </button>
                                 </div>
 
+                                <div id="friday-tab" class="tab-content pt-3 rounded-md mt-4">
+
+                                    <table id="friday" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                </div>
+
                                 <div id="saturday-tab" class="tab-content pt-3 rounded-md mt-4">
 
                                     <table id="saturday" class="w-full text-left mt-4 border-collapse">
-                                        <thead class="bg-black bg-opacity-70 text-white">
-                                            <tr>
-                                                <th class="py-2 px-4"></th>
-                                                <th class="py-2 px-4">Time</th>
-                                                <th class="py-2 px-4">Event</th>
-                                                <th class="py-2 px-4">Details</th>
-                                                <th class="py-2 px-4">State</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="bg-gold bg-opacity-70 transition">
-                                                <td class="py-2 px-4 text-center">
-                                                    <i class="fas fa-praying-hands text-gray-500"></i>
-                                                </td>
-                                                <td class="py-2 px-4">11:30 AM - 12:30 PM</td>
-                                                <td class="py-2 px-4">Puja</td>
-                                                <td class="py-2 px-4">Puja & Anjali</td>
-                                                <td class="py-2 px-4">IN</td>
-                                            </tr>
-                                            <tr class="bg-white bg-opacity-70 transition">
-                                                <td class="py-2 px-4 text-center">
-                                                    <i class="fas fa-bullseye text-gray-600"></i>
-                                                    <i class="fas fa-music text-blue-500 ml-1"></i>
-                                                </td>
-                                                <td class="py-2 px-4">6:00 PM - 9:00 PM</td>
-                                                <td class="py-2 px-4">Nandy sisters performance</td>
-                                                <td class="py-2 px-4">Antara Nandy & Ankita Nandy</td>
-                                                <td class="py-2 px-4">Kolkata, WB</td>
-                                            </tr>
-                                        </tbody>
+                                        <thead></thead>
+                                        <tbody></tbody>
                                     </table>
 
                                 </div>
                                 <div id="sunday-tab" class="tab-content mt-4 hidden">
                                     <!-- Sunday Events informations-->
                                     <table id="sunday" class="w-full text-left mt-4 border-collapse">
-                                        <thead class="bg-black bg-opacity-70 text-white">
-                                            <tr>
-                                                <th class="py-2 px-4"></th>
-                                                <th class="py-2 px-4">Time</th>
-                                                <th class="py-2 px-4">Event</th>
-                                                <th class="py-2 px-4">Details</th>
-                                                <th class="py-2 px-4">State</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="bg-white bg-opacity-70 transition">
-                                                <td class="py-2 px-4 text-center">
-                                                    <i class="fas fa-utensils mr-3 text-gray-400"></i>
-                                                </td>
-                                                <td class="py-2 px-4">10:00 AM - 11:00 AM</td>
-                                                <td class="py-2 px-4">Breakfast</td>
-                                                <td class="py-2 px-4">Serve Breakfast</td>
-                                                <td class="py-2 px-4">IN</td>
-                                            </tr>
-                                            <tr class="bg-gold bg-opacity-70 transition">
-                                                <td class="py-2 px-4 text-center">
-                                                    <i class="fas fa-praying-hands  mr-3 text-purple-500"></i>
-                                                </td>
-                                                <td class="py-2 px-4">11:30 AM - 12:30 PM</td>
-                                                <td class="py-2 px-4">Sindur Khela</td>
-                                                <td class="py-2 px-4">Sindur khela outside</td>
-                                                <td class="py-2 px-4">IN</td>
-                                            </tr>
-
-                                            <tr class="bg-gold bg-opacity-70 transition">
-                                                <td class="py-2 px-4 text-center">
-                                                    <i class="fas fa-praying-hands  mr-3 text-purple-500"></i>
-                                                </td>
-                                                <td class="py-2 px-4">8:30 PM - 10:00 PM</td>
-                                                <td class="py-2 px-4">Sindur Khela</td>
-                                                <td class="py-2 px-4">Sindur khela outside</td>
-                                                <td class="py-2 px-4">IN</td>
-                                            </tr>
-                                        </tbody>
+                                        <thead></thead>
+                                        <tbody></tbody>
                                     </table>
                                 </div>
                             </div>
@@ -235,6 +185,25 @@
             });
         });
     </script>
+
+
+
+    <!-- Populate table from csv then highlight table row for selected tab using time column -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadTableFromCSV('saturday', 'data/sat-events.csv', true);
+                await loadTableFromCSV('friday', 'data/fri-events.csv', true);
+                await loadTableFromCSV('sunday', 'data/sun-events.csv', true);
+                highlightActiveRow();  // Call highlightActiveRow after table is loaded
+
+                // Your other code that depends on table being ready
+            } catch (error) {
+                console.error('Failed to load table:', error);
+            }
+        });
+    </script>
+
 
 
 </body>

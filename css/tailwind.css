@@ -868,6 +868,10 @@ tr.bg-gold:hover {
   --tw-bg-opacity: 0;
 }
 
+.bg-opacity-30{
+  --tw-bg-opacity: 0.3;
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+function highlightActiveRow() {
     const now = new Date();
     const dayMap = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const today = dayMap[now.getDay()];
@@ -6,10 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Automatically select tab based on current day
     const activeTabId = today + '-tab';
+    const availableTabs = Array.from(document.querySelectorAll('.tab-btn')).map(btn => btn.dataset.tab);
+
+    let finalTabId = availableTabs.includes(activeTabId) ? activeTabId : availableTabs[0]; // Fallback to first tab
 
     // Set active tab button
     document.querySelectorAll('.tab-btn').forEach(btn => {
-        if (btn.dataset.tab === activeTabId) {
+        if (btn.dataset.tab === finalTabId) {
             btn.classList.add('active-tab');
         } else {
             btn.classList.remove('active-tab');
@@ -18,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set visible content
     document.querySelectorAll('.tab-content').forEach(content => {
-        if (content.id === activeTabId) {
+        if (content.id === finalTabId) {
             content.classList.remove('hidden');
         } else {
             content.classList.add('hidden');
@@ -54,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (singleTimeMatch) {
                     startMin = parseTimeToMinutes(singleTimeMatch[1], singleTimeMatch[2], singleTimeMatch[3]);
                     endMin = startMin + 60; // default duration
-
                 }
             }
 
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     nextRow = row;
                 }
             } else {
-                alert(eventName + " time format mismatch " + timeText)
+                alert(eventName + " time format mismatch " + timeText);
             }
         });
 
@@ -82,4 +84,4 @@ document.addEventListener('DOMContentLoaded', function () {
         if (ampm?.toUpperCase() === 'AM' && hour === 12) hour = 0;
         return hour * 60 + minutes;
     }
-});
+}

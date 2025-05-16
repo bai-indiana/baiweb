@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title></title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+
+    <style>
+        /* Define the CSS for the transparent white div */
+        .transparent-white-div {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* White color with 70% opacity */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="parallax-window relative" data-image-src="img/ec-bg.jpg" data-parallax="scroll" id="admin">
+
+        <!-- ... head and nav stays the same -->
+
+        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+            <div class="text-center mb-16">
+                <h2
+                    class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
+                    Maintenance Screen
+                </h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div
+                    class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-white bg-opacity-80 text-black shadow-lg">
+                    <h2 class="text-2xl font-semibold mb-4 border-b pb-2 text-center text-brown-700">Select Directory To Download Files</h2>
+
+                    <!-- Directory selection -->
+                    <div class="mb-4">
+                        <label for="directorySelect" class="block font-medium mb-1">Select Directory:</label>
+                        <select id="directorySelect" class="w-full p-2 border rounded-md text-black">
+                            <option value="">-- Select Directory --</option>
+                            <option value="doc">doc</option>
+                            <option value="img">img</option>
+                            <option value="data">data</option>
+                        </select>
+                    </div>
+                    <!-- File listing -->
+                    <div id="file-list"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+
+
+
+
+    <script>
+        async function fetchFiles(directory) {
+            if (!directory) {
+                document.getElementById('file-list').innerHTML = '';
+                return;
+            }
+
+            try {
+                const response = await fetch(`/${directory}/`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch directory listing');
+                }
+                const html = await response.text();
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Adjust selector according to your directory listing markup
+                const links = doc.querySelectorAll('#files a');
+
+                const fileList = document.getElementById('file-list');
+                fileList.innerHTML = '';
+
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    const text = link.querySelector('span.name').textContent;
+
+
+                    // Skip parent directory link
+                    if (text === '..') return;
+
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `${href}`;
+                    a.textContent = text;
+                    a.download = ''; // make it a download link
+                    li.appendChild(a);
+                    fileList.appendChild(li);
+                });
+            } catch (error) {
+                console.error(error);
+                document.getElementById('file-list').innerHTML = '<li>Error loading files.</li>';
+            }
+        }
+
+        document.getElementById('directorySelect').addEventListener('change', (event) => {
+            const dir = event.target.value;
+            fetchFiles(dir);
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

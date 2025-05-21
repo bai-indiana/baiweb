@@ -105,9 +105,9 @@
 
                         <div class="mr-6 text-center">
                             <!--text-right  = this class control text allignment, start from right-->
+
                             <div id="custom-media-carousel-wrapper">
                                 <div id="custom-carousel-inner">
-                                    <!-- Add your images and videos here -->
                                     <div class="custom-media-item">
                                         <img src="img/indy-durga-2021.jpg" alt="Image 1" />
                                     </div>
@@ -115,24 +115,29 @@
                                         <img src="img/ns/ns1.jpg" alt="Image 2" />
                                     </div>
                                     <div class="custom-media-item">
-                                        <img src="img/ns/ns2.jpg" alt="Image 2" />
+                                        <img src="img/ns/ns2.jpg" alt="Image 3" />
                                     </div>
                                     <div class="custom-media-item">
                                         <div class="custom-video-wrapper">
-                                            <video muted playsinline>
-                                                <source src="img/ns/ns3.mp4" type="video/mp4" />
-                                            </video>
+                                            <video muted preload="metadata" src="img/ns/ns3.mp4"></video>
                                             <button class="custom-mute-button">🔇</button>
+                                            <div class="progress-rect" aria-hidden="true">
+                                                <div class="progress-bar progress-top"></div>
+                                                <div class="progress-bar progress-right"></div>
+                                                <div class="progress-bar progress-bottom"></div>
+                                                <div class="progress-bar progress-left"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="custom-carousel-dots"></div>
                             </div>
+
+                            <div id="custom-carousel-dots"></div>
 
 
                             <script>
                                 window.addEventListener('DOMContentLoaded', () => {
-                                    initMediaCarousel(400,300, 6000); // 400px frame, 6 seconds per image
+                                    initMediaCarousel(400, 300, 6000); // 400px frame, 6 seconds per image
                                 });
                             </script>
 

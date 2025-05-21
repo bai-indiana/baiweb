@@ -1,44 +1,46 @@
 :root {
-    --custom-media-size: 400px;
-}
-
-#custom-media-carousel-wrapper {
-    width: var(--custom-media-size);
+    --custom-media-width: 400px;
+    --custom-media-height: 400px;
+  }
+  
+  #custom-media-carousel-wrapper {
+    width: var(--custom-media-width);
+    height: var(--custom-media-height);
     margin: 20px auto;
     overflow: hidden;
     position: relative;
-}
-
-#custom-carousel-inner {
+  }
+  
+  #custom-carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
-}
-
-.custom-media-item {
-    flex: 0 0 var(--custom-media-size);
-    height: var(--custom-media-size);
+  }
+  
+  .custom-media-item {
+    flex: 0 0 var(--custom-media-width);
+    height: var(--custom-media-height);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.custom-media-item img,
-.custom-media-item video {
-    width: var(--custom-media-size);
-    height: var(--custom-media-size);
+  }
+  
+  .custom-media-item img,
+  .custom-media-item video {
+    width: var(--custom-media-width);
+    height: var(--custom-media-height);
     object-fit: cover;
     border-radius: 12px;
     background: black;
-}
-
-.custom-video-wrapper {
+  }
+  
+  .custom-video-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
-}
-
-.custom-mute-button {
+  }
+  
+  .custom-mute-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -51,20 +53,20 @@
     font-size: 16px;
     display: none;
     cursor: pointer;
-}
-
-.custom-media-item.video-active .custom-mute-button {
+  }
+  
+  .custom-media-item.video-active .custom-mute-button {
     display: block;
-}
-
-#custom-carousel-dots {
+  }
+  
+  #custom-carousel-dots {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 10px;
-}
-
-#custom-carousel-dots .dot {
+  }
+  
+  #custom-carousel-dots .dot {
     width: 22px;
     height: 22px;
     background: #555;
@@ -76,9 +78,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
-}
-
-#custom-carousel-dots .dot.active {
+  }
+  
+  #custom-carousel-dots .dot.active {
     background: #fff;
     color: #000;
     font-weight: bold;
@@ -86,4 +88,5 @@
     height: 28px;
     font-size: 14px;
     line-height: 28px;
-}
+  }
+  

@@ -1,9 +1,10 @@
 :root {
-    --custom-media-size: 400px;
+    --custom-media-width: 400px;
+    --custom-media-height: 300;
 }
 
 #custom-media-carousel-wrapper {
-    width: var(--custom-media-size);
+    width: var(--custom-media-width);
     margin: 20px auto;
     overflow: hidden;
     position: relative;
@@ -15,8 +16,8 @@
 }
 
 .custom-media-item {
-    flex: 0 0 var(--custom-media-size);
-    height: var(--custom-media-size);
+    flex: 0 0 var(--custom-media-width);
+    height: var(--custom-media-height);
     position: relative;
     display: flex;
     justify-content: center;
@@ -25,8 +26,8 @@
 
 .custom-media-item img,
 .custom-media-item video {
-    width: var(--custom-media-size);
-    height: var(--custom-media-size);
+    width: var(--custom-media-width);
+    height: var(--custom-media-height);
     object-fit: cover;
     border-radius: 12px;
     background: black;

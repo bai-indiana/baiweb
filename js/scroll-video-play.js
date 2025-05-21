@@ -1,6 +1,5 @@
-function initMediaCarousel(width, height, imageDelay) {
-  document.documentElement.style.setProperty('--custom-media-width', width + 'px');
-  document.documentElement.style.setProperty('--custom-media-height', height + 'px');
+function initMediaCarousel(mediaSize, imageDelay) {
+  document.documentElement.style.setProperty('--custom-media-size', mediaSize + 'px');
 
   const container = document.getElementById('custom-carousel-inner');
   const items = container.querySelectorAll('.custom-media-item');
@@ -26,7 +25,7 @@ function initMediaCarousel(width, height, imageDelay) {
     if (index >= items.length) index = 0;
     currentIndex = index;
 
-    container.style.transform = `translateX(-${index * width}px)`;
+    container.style.transform = `translateX(-${index * mediaSize}px)`;
 
     dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');

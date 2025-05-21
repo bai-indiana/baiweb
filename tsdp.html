@@ -15,12 +15,17 @@
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
     <link href="css/sponsor-scroll.css" rel="stylesheet">
+    <link href="css/video-scroll.css" rel="stylesheet">
+
+
 
     <script src="js/tsdp-menu.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="js/scroll-video-play.js"></script>
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -30,12 +35,36 @@
         }
     </style>
 
+    <style>
+        #carousel-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+
+        .media-item {
+            display: inline-block;
+            width: 320px;
+            margin-right: 16px;
+            vertical-align: top;
+            border-radius: 10px;
+        }
+
+        video,
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="top parallax-window relative" data-image-src="img/durga-bg.png" data-parallax="scroll" id="tsdp">
         <nav class="fixed w-full" id="tm-nav">
-            
+
         </nav>
         <div class="container mx-auto tm-container pt-24 pb-14 sm:py-24">
             <div class="text-center mb-6  blink-row">
@@ -72,11 +101,58 @@
                     </div>
                 </div>
                 <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
+                    <!-- <div class="flex items-center justify-end mb-6 tm-menu-item-2">
+
+                        <div class="mr-6 text-center">
+                          
+                            <img alt="Nandi Sisters" class="mx-auto rounded-md" src="img/indy-durga-2021.jpg">
+                            <div class="text-white text-md sm:text-lg-events font-light mb-1">
+                            </div>
+                            <div class="mt-5">
+                                <a class="inline-block tm-bg-gold transition text-white text-lg pt-2 pb-3 px-8 rounded-md"
+                                    target="_blank" href="tsdp-events.html#events">
+                                    <i class="fas fa-calendar mr-3"></i>
+                                    Click here to see all event details
+                                </a>
+                            </div>
+                        </div>
+                    </div> -->
                     <div class="flex items-center justify-end mb-6 tm-menu-item-2">
 
                         <div class="mr-6 text-center">
                             <!--text-right  = this class control text allignment, start from right-->
-                            <img alt="Nandi Sisters" class="mx-auto rounded-md" src="img/indy-durga-2021.jpg">
+                            <div id="custom-media-carousel-wrapper">
+                                <div id="custom-carousel-inner">
+                                    <!-- Add your images and videos here -->
+                                    <div class="custom-media-item">
+                                        <img src="img/indy-durga-2021.jpg" alt="Image 1" />
+                                    </div>
+                                    <div class="custom-media-item">
+                                        <img src="img/ns/ns1.jpg" alt="Image 2" />
+                                    </div>
+                                    <div class="custom-media-item">
+                                        <img src="img/ns/ns2.jpg" alt="Image 2" />
+                                    </div>
+                                    <div class="custom-media-item">
+                                        <div class="custom-video-wrapper">
+                                            <video muted playsinline>
+                                                <source src="img/ns/ns3.mp4" type="video/mp4" />
+                                            </video>
+                                            <button class="custom-mute-button">🔇</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="custom-carousel-dots"></div>
+                            </div>
+
+
+                            <script>
+                                window.addEventListener('DOMContentLoaded', () => {
+                                    initMediaCarousel(400, 3000); // 400px frame, 3 seconds per image
+                                });
+                            </script>
+
+                            <!-- <img alt="Nandi Sisters" class="mx-auto rounded-md" src="img/indy-durga-2021.jpg"> -->
                             <div class="text-white text-md sm:text-lg-events font-light mb-1">
                             </div>
                             <div class="mt-5">
@@ -90,7 +166,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
         <!-- Buttom sponsor section (NEW Scroll) -->
         <div class="flex flex-col lg:flex-row justify-around items-start">
             <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
@@ -130,8 +206,8 @@
 
                         <!-- Donate Button -->
                         <div class="mt-5">
-                            <a  title="Click here to sponsor"
-                            class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                            <a title="Click here to sponsor"
+                                class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
                                 target="_blank" href="https://tsdpregistration.azurewebsites.net/">
                                 <i class="fas fa-gift mr-3"></i>
                                 Sponsor

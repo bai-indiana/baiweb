@@ -12,6 +12,7 @@ function initMediaCarousel(mediaSize, imageDelay) {
   items.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'dot';
+    dot.textContent = i + 1;
     dot.addEventListener('click', () => {
       clearTimeout(timeout);
       showItem(i);

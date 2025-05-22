@@ -125,29 +125,32 @@
 
 
 
-.sponsor-text {
+.sponsor-text-area {
   position: absolute;
   bottom: 4px;
   left: 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-text-area:hover {
+  transform: scale(1.2);
 }
 
 .static-text,
 .flash-text {
   font-family: 'Baloo 2', cursive;
-  font-size: 20px;  /* 30% smaller */
+  font-size: 20px; /* 30% smaller */
   font-weight: 900;
-
-  color: #000000;  /* solid black text */
-
-  /* Gold glowing shadows for 3D effect */
+  color: #000000;
   text-shadow:
     0 0 5px #FFD700,
     1px 1px 1px #b8860b,
     2px 2px 4px #FFA500,
     3px 3px 6px #FFD700;
+  margin: 0;
 }
 
 .static-text {
@@ -160,5 +163,6 @@
 
 @keyframes flash {
   0%, 100% { opacity: 1; }
-  50%      { opacity: 0.4; }
+  50% { opacity: 0.4; }
 }
+

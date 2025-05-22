@@ -56,7 +56,7 @@
 
 .item-left-1 {
   animation-delay: calc(30s / 6 * (6 - 1) * -1);
-  background-image: url('../img/sponsor-1.jpg');
+  background-image: url('../img/sponser/das-family.png');
 }
 
 .item-left-2 {
@@ -118,4 +118,47 @@
 .item-right-6 {
   animation-delay: calc(30s / 6 * (6 - 6) * -1);
   background-image: url('../img/sponsor-12.jpg');
+}
+
+
+
+
+
+
+.sponsor-text {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.static-text,
+.flash-text {
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px;  /* 30% smaller */
+  font-weight: 900;
+
+  color: #000000;  /* solid black text */
+
+  /* Gold glowing shadows for 3D effect */
+  text-shadow:
+    0 0 5px #FFD700,
+    1px 1px 1px #b8860b,
+    2px 2px 4px #FFA500,
+    3px 3px 6px #FFD700;
+}
+
+.static-text {
+  margin-bottom: 2px;
+}
+
+.flash-text {
+  animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
 }

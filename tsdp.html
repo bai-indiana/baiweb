@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;900&display=swap" rel="stylesheet" />
+
     <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
@@ -35,29 +37,6 @@
         }
     </style>
 
-    <style>
-        #carousel-wrapper {
-            overflow-x: auto;
-            white-space: nowrap;
-            scroll-behavior: smooth;
-            width: 100%;
-        }
-
-        .media-item {
-            display: inline-block;
-            width: 320px;
-            margin-right: 16px;
-            vertical-align: top;
-            border-radius: 10px;
-        }
-
-        video,
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-    </style>
 
 </head>
 
@@ -90,14 +69,15 @@
                                     Open Map
                                 </a>
                             </div>
-                            <div class="mt-5">
-                                <a class="inline-block tm-bg-gold transition text-white text-lg pt-2 pb-3 px-8 rounded-md"
-                                    target="_blank" href="tsdp-events.html#events">
-                                    <i class="fas fa-calendar mr-3"></i>
-                                    Click here to see all event details
-                                </a>
-                            </div>
+
                         </div>
+                    </div>
+                    <div class="mt-5 fa-pull-right">
+                        <a class="inline-block tm-bg-gold transition text-white text-lg pt-2 pb-3 px-8 rounded-md"
+                            target="_blank" href="tsdp-events.html#events">
+                            <i class="fas fa-calendar mr-3"></i>
+                            Click here to see all event details
+                        </a>
                     </div>
                 </div>
                 <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
@@ -132,7 +112,7 @@
 
                             <script>
                                 window.addEventListener('DOMContentLoaded', () => {
-                                    initMediaCarousel(400,300, 6000); // 400px frame, 6 seconds per image
+                                    initMediaCarousel(400, 300, 6000); // 400px frame, 6 seconds per image
                                 });
                             </script>
 
@@ -161,7 +141,12 @@
                             Sponsors</a>
                         <!-- Scrolling container -->
                         <div class="wrapper-test">
-                            <div class="itemLeft item-left-1"></div>
+                            <div class="itemLeft item-left-1">
+                                <div class="sponsor-text">
+                                    <div class="static-text">Das Family</div>
+                                    <div class="flash-text">GRAND</div>
+                                </div>
+                            </div>
                             <div class="itemLeft item-left-2"></div>
                             <div class="itemLeft item-left-3"></div>
                             <div class="itemLeft item-left-4"></div>

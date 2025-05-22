@@ -142,7 +142,7 @@
 .static-text,
 .flash-text {
   font-family: 'Baloo 2', cursive;
-  font-size: 20px; /* 30% smaller */
+  font-size: 17px;  
   font-weight: 900;
   color: #000000;
   text-shadow:
@@ -158,7 +158,7 @@
 }
 
 .flash-text {
-  animation: flash 1.5s infinite;
+  animation: flash .7s infinite;
 }
 
 @keyframes flash {

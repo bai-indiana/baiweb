@@ -41,7 +41,7 @@
             <div class="tm-container mx-auto px-2 md:py-6 text-right">
                 <button class="md:hidden py-2 px-2" id="menu-toggle"><i
                         class="fas fa-2x fa-bars tm-text-gold"></i></button>
-                <ul class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row">
+                <ul class="mb-3 md:mb-0 text-2xl font-semibold flex justify-end flex-col md:flex-row">
                     <li class="inline-block mb-4 mx-4">
                         <a class="tm-text-gold py-1 md:py-3 px-4" href="#home">Home</a>
                     </li>
@@ -533,15 +533,15 @@
                 }
             });
 
-            $(document).scroll(function () {
-                var distanceFromTop = $(document).scrollTop();
+            // $(document).scroll(function () {
+            //     var distanceFromTop = $(document).scrollTop();
 
-                if (distanceFromTop > 100) {
-                    tmNav.addClass('scroll');
-                } else {
-                    tmNav.removeClass('scroll');
-                }
-            });
+            //     if (distanceFromTop > 0) {
+            //         tmNav.addClass('scroll');
+            //     } else {
+            //         tmNav.removeClass('scroll');
+            //     }
+            // });
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {

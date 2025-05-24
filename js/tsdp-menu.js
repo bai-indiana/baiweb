@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         contact: "fas fa-envelope"
     };
 
+    
     // Initialize all icons as empty
     let homeIcon = "", tsdpIcon = "", registrationIcon = "", accommodationIcon = "", foodIcon = "", eventsIcon = "", contactIcon = "";
 
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
     // Build nav HTML with icons prepended
     const navHTML = `
-        <nav class="fixed w-full" id="tm-nav">
+        <nav class="fixed w-full  bg-black  text-2xl" id="tm-nav">
             <div class="tm-container mx-auto px-2 md:py-6 text-right">
                 <button class="md:hidden py-2 px-2" id="menu-toggle">
                     <i class="fas fa-2x fa-bars tm-text-gold"></i>

@@ -40,7 +40,8 @@
 </head>
 
 <body>
-    <div class="top parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="registration">
+    <div class="top parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll"
+        id="registration">
         <nav class="fixed w-full" id="tm-nav">
         </nav>
         <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
@@ -70,6 +71,17 @@
                                         data-tab="donors">
                                         Community Sponsorship
                                     </button>
+                                    &nbsp;
+                                    <button title="Click to see sponsor information"
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
+                                        data-tab="corporate">
+                                        Corporate Sponsorship
+                                    </button>
+                                    <button title="Click to see sponsor information"
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
+                                        data-tab="vendor">
+                                        Vendor Stalls
+                                    </button>
                                 </div>
 
                                 <div id="standard" class="tab-content pt-3 rounded-md mt-4">
@@ -94,7 +106,8 @@
                                             <h2
                                                 class="bg-white tm-text-brown py-2 px-8 text-lg font-light inline-block bg-opacity-90 rounded-md">
                                                 <a href="tsdp.html#sponsor-scroll" target="_blank">
-                                                    All sponsors will be acknowledged on the BAI TSDP website and across our social media platforms</a>
+                                                    All sponsors will be acknowledged on the BAI TSDP website and across
+                                                    our social media platforms</a>
                                             </h2>
                                         </div>
                                         <div class="flex flex-col lg:flex-row justify-around items-start">
@@ -151,7 +164,7 @@
                                                         <div
                                                             class="text-white text-md sm:text-lg-events font-light mb-1">
                                                             <ul>
-                                                                <li><i class="fas fa-check-circle"></i> 
+                                                                <li><i class="fas fa-check-circle"></i>
                                                                     Includes registration up to 4 family members [2
                                                                     adults + 2 dependent children]
                                                                 </li>
@@ -226,7 +239,7 @@
                                                         <div
                                                             class="text-white text-md sm:text-lg-events font-light mb-1">
                                                             <ul>
-                                                                <li><i class="fas fa-check-circle"></i>                                                                    
+                                                                <li><i class="fas fa-check-circle"></i>
                                                                     Includes registration up to 6 family members [4
                                                                     members, any age + 2 dependent children]
                                                                 </li>
@@ -329,6 +342,36 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div id="corporate" class="tab-content pt-3 rounded-md mt-4">
+                                    <div class="text-center mb-8"
+                                    title="Click to become a sponsor and support our cause">
+                                    <h2
+                                        class="bg-white tm-text-brown py-2 px-8 text-lg font-light inline-block bg-opacity-90 rounded-md">
+                                        <a href="tsdp.html#sponsor-scroll" target="_blank">
+                                            All sponsors will be acknowledged on the BAI TSDP website and across
+                                            our social media platforms</a>
+                                    </h2>
+                                </div>
+                                    <table id="corp-rates" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <div id="vendor" class="tab-content pt-3 rounded-md mt-4">
+                                    <div class="text-center mb-8"
+                                    title="Click to become a sponsor and support our cause">
+                                    <h2
+                                        class="bg-white tm-text-brown py-2 px-8 text-lg font-light inline-block bg-opacity-90 rounded-md">
+                                        <a href="tsdp.html#sponsor-scroll" target="_blank">
+                                            All sponsors will be acknowledged on the BAI TSDP website and across
+                                            our social media platforms</a>
+                                    </h2>
+                                </div>
+                                    <table id="vendor-rates" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
@@ -356,7 +399,7 @@
         // Update the content of the "year" span with the current year
         document.getElementById("year").textContent = currentYear;
     </script>
-     
+
 
     <!--TAB JS-->
     <script>
@@ -393,7 +436,34 @@
 
                 // Your other code that depends on table being ready
             } catch (error) {
-                console.error('Failed to load table:', error);
+                console.error('Failed to load standard registration table:', error);
+            }
+        });
+    </script>
+
+    <!-- Populate corporate rates table from csv -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadTableFromCSV('corp-rates', 'data/corp-sponsor.csv');
+
+                // Your other code that depends on table being ready
+            } catch (error) {
+                console.error('Failed to load corporate table:', error);
+            }
+        });
+    </script>
+
+
+    <!-- Populate vendor sponsor rates table from csv -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadTableFromCSV('vendor-rates', 'data/vendor-sponsor.csv');
+
+                // Your other code that depends on table being ready
+            } catch (error) {
+                console.error('Failed to load vendor table:', error);
             }
         });
     </script>

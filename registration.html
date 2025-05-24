@@ -125,7 +125,8 @@
                                                             class="text-white text-md sm:text-lg-events font-light mb-1">
                                                             <ul>
                                                                 <li><i class="fas fa-check-circle"></i> Includes
-                                                                    registration for up to 6 family members, any age</li>
+                                                                    registration for up to 6 family members, any age
+                                                                </li>
                                                                 <li><i class="fas fa-check-circle"></i> Full Page Color
                                                                     ad</li>
                                                                 <li><i class="fas fa-check-circle"></i> 1 hotel room for
@@ -371,101 +372,118 @@
                                         <thead></thead>
                                         <tbody></tbody>
                                     </table>
+                                    <div class="container mx-auto tm-container py-2 sm:py-2">
+                                        <div class="text-center pb-4 "
+                                            title="Click Here To Register">
+                                            <h2
+                                                class="bg-white tm-text-brown py-2 px-8 text-sm font-light inline-block bg-opacity-90 rounded-md">
+                                                <a href="https://tsdpregistration.azurewebsites.net/" target="_blank">
+                                                    Please 'register' as single for each adult</a>
+                                            </h2>
+                                        </div>
+                                        <div class="mt-5 fa-pull-right">
+                                            <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                                target="_blank" href="https://tsdpregistration.azurewebsites.net/">
+                                                <i class="fas fa-sign-in-alt mr-3 text-gray-400"></i>
+                                                Click Here To Register
+                                            </a>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
+
+
+
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
+            <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
+                <div
+                    class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                    <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights
+                        reserved.</span>
+                    <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
+                </div>
+            </footer>
         </div>
-        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
-            <div
-                class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
-                <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights
-                    reserved.</span>
-                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
-            </div>
-        </footer>
-    </div>
 
-    <script>
-        // Get the current year
-        var currentYear = new Date().getFullYear();
+        <script>
+            // Get the current year
+            var currentYear = new Date().getFullYear();
 
-        // Update the content of the "year" span with the current year
-        document.getElementById("year").textContent = currentYear;
-    </script>
+            // Update the content of the "year" span with the current year
+            document.getElementById("year").textContent = currentYear;
+        </script>
 
 
-    <!--TAB JS-->
-    <script>
-        // Tab switching logic
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const tab = button.getAttribute('data-tab');
+        <!--TAB JS-->
+        <script>
+            // Tab switching logic
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const tab = button.getAttribute('data-tab');
 
-                // Reset styles for all buttons
-                document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.classList.remove('active-tab');
-                    btn.classList.remove('tm-bg-gold');
-                    btn.classList.add('border-transparent');
+                    // Reset styles for all buttons
+                    document.querySelectorAll('.tab-btn').forEach(btn => {
+                        btn.classList.remove('active-tab');
+                        btn.classList.remove('tm-bg-gold');
+                        btn.classList.add('border-transparent');
+                    });
+
+                    // Hide all tab contents
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+
+                    // Show selected tab and style it
+                    button.classList.add('active-tab');
+                    button.classList.remove('border-transparent');
+                    button.classList.add('tm-bg-gold'); // Highlight border
+                    document.getElementById(tab).classList.remove('hidden');
                 });
-
-                // Hide all tab contents
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
-
-                // Show selected tab and style it
-                button.classList.add('active-tab');
-                button.classList.remove('border-transparent');
-                button.classList.add('tm-bg-gold'); // Highlight border
-                document.getElementById(tab).classList.remove('hidden');
             });
-        });
-    </script>
+        </script>
 
 
-    <!-- Populate registration rates table from csv -->
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                await loadTableFromCSV('sd-reg', 'data/reg.csv');
+        <!-- Populate registration rates table from csv -->
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    await loadTableFromCSV('sd-reg', 'data/reg.csv');
 
-                // Your other code that depends on table being ready
-            } catch (error) {
-                console.error('Failed to load standard registration table:', error);
-            }
-        });
-    </script>
+                    // Your other code that depends on table being ready
+                } catch (error) {
+                    console.error('Failed to load standard registration table:', error);
+                }
+            });
+        </script>
 
-    <!-- Populate corporate rates table from csv -->
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                await loadTableFromCSV('corp-rates', 'data/corp-sponsor.csv');
+        <!-- Populate corporate rates table from csv -->
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    await loadTableFromCSV('corp-rates', 'data/corp-sponsor.csv');
 
-                // Your other code that depends on table being ready
-            } catch (error) {
-                console.error('Failed to load corporate table:', error);
-            }
-        });
-    </script>
+                    // Your other code that depends on table being ready
+                } catch (error) {
+                    console.error('Failed to load corporate table:', error);
+                }
+            });
+        </script>
 
 
-    <!-- Populate vendor sponsor rates table from csv -->
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                await loadTableFromCSV('vendor-rates', 'data/vendor-sponsor.csv');
+        <!-- Populate vendor sponsor rates table from csv -->
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    await loadTableFromCSV('vendor-rates', 'data/vendor-sponsor.csv');
 
-                // Your other code that depends on table being ready
-            } catch (error) {
-                console.error('Failed to load vendor table:', error);
-            }
-        });
-    </script>
+                    // Your other code that depends on table being ready
+                } catch (error) {
+                    console.error('Failed to load vendor table:', error);
+                }
+            });
+        </script>
 
 
 </body>

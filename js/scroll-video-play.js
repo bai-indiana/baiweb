@@ -1,35 +1,3 @@
-function updateBorderProgress(video, wrapper) {
-  const top = wrapper.querySelector('.v-top');
-  const right = wrapper.querySelector('.v-right');
-  const bottom = wrapper.querySelector('.v-bottom');
-  const left = wrapper.querySelector('.v-left');
-
-  const width = video.offsetWidth;
-  const height = video.offsetHeight;
-  const perimeter = 2 * (width + height);
-
-  function animate() {
-    if (!video.paused && !video.ended) {
-      const percent = (video.currentTime / video.duration) * 100;
-      const progressPx = (percent / 100) * perimeter;
-      let remaining = progressPx;
-
-      top.style.width = `${Math.min(remaining, width)}px`;
-      remaining -= Math.min(remaining, width);
-
-      right.style.height = `${Math.min(remaining, height)}px`;
-      remaining -= Math.min(remaining, height);
-
-      bottom.style.width = `${Math.min(remaining, width)}px`;
-      remaining -= Math.min(remaining, width);
-
-      left.style.height = `${Math.min(remaining, height)}px`;
-      requestAnimationFrame(animate);
-    }
-  }
-  animate();
-}
-
 function initMediaCarousel(mediaWidth, mediaHeight, imageDelay) {
   document.documentElement.style.setProperty('--custom-media-width', mediaWidth + 'px');
   document.documentElement.style.setProperty('--custom-media-height', mediaHeight + 'px');
@@ -40,6 +8,7 @@ function initMediaCarousel(mediaWidth, mediaHeight, imageDelay) {
   let currentIndex = 0;
   let timeout = null;
 
+  // Create dots
   dotsContainer.innerHTML = '';
   items.forEach((_, i) => {
     const dot = document.createElement('div');
@@ -58,6 +27,7 @@ function initMediaCarousel(mediaWidth, mediaHeight, imageDelay) {
     currentIndex = index;
 
     container.style.transform = `translateX(-${index * mediaWidth}px)`;
+
     dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');
 
@@ -78,7 +48,6 @@ function initMediaCarousel(mediaWidth, mediaHeight, imageDelay) {
     } else if (media.tagName === 'VIDEO') {
       currentItem.classList.add('video-active');
       media.play().then(() => {
-        updateBorderProgress(media, media.parentElement);
         media.onended = () => showItem(index + 1);
       }).catch(() => {
         timeout = setTimeout(() => showItem(index + 1), imageDelay);
@@ -86,6 +55,7 @@ function initMediaCarousel(mediaWidth, mediaHeight, imageDelay) {
     }
   }
 
+  // Mute/unmute toggle
   document.querySelectorAll('.custom-mute-button').forEach(button => {
     button.addEventListener('click', () => {
       const video = button.previousElementSibling;

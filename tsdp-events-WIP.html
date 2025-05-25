@@ -54,7 +54,68 @@
                 </h2>
 
             </div>
- 
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 ">
+                    <div class="flex flex-col items-center mb-6 tm-menu-item">
+                        <!-- <img alt="durga!!" class="rounded-md" src="img/events1.png"> -->
+                        <div class="ml-3 sm:ml-6">
+                            <!-- Events Tabs -->
+                            <div class="w-full max-w-xl mt-6">
+                                <div class="flex border-b border-gray-300">
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold active-tab"
+                                        data-tab="friday-tab">
+                                        Friday
+                                    </button>
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
+                                        data-tab="saturday-tab">
+                                        Saturday
+                                    </button>
+                                    &nbsp;
+                                    <button
+                                        class="tab-btn bg-brown px-4 py-2 text-white border-b rounded-md tm-border-gold"
+                                        data-tab="sunday-tab">
+                                        Sunday
+                                    </button>
+                                </div>
+
+                                <div id="friday-tab" class="tab-content pt-3 rounded-md mt-4">
+
+                                    <table id="friday" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                </div>
+
+                                <div id="saturday-tab" class="tab-content pt-3 rounded-md mt-4">
+
+                                    <table id="saturday" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                </div>
+                                <div id="sunday-tab" class="tab-content mt-4 hidden">
+                                    <!-- Sunday Events informations-->
+                                    <table id="sunday" class="w-full text-left mt-4 border-collapse">
+                                        <thead></thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mt-5 fa-pull-right">
+                                <a class="inline-block tm-bg-gold transition text-white text-sm pt-2 pb-3 px-8 rounded-md"
+                                    target="_blank" href="tsdp-food.html#food">
+                                    <i class="fas fa-utensils mr-3 text-gray-400"></i>
+                                    Food Menu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
             <div

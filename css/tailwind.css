@@ -562,9 +562,9 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 540px) {
   .container {
-    max-width: 640px;
+    max-width: 540px;
   }
 }
 

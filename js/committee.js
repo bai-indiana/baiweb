@@ -2,6 +2,7 @@
 async function fetchCommitteeData() {
     try {
         const response = await fetch('data/TSDP-Committee2025.csv');
+        if (!response.ok) throw new Error('CSV file not found');
         const data = await response.text();
         const rows = data.trim().split('\n');
         const headers = rows[0].split(',');
@@ -18,6 +19,8 @@ async function fetchCommitteeData() {
         renderCommittees(committees);
     } catch (error) {
         console.error('Error fetching committee data:', error);
+        const container = document.getElementById('committee-container');
+        container.innerHTML = '<p class="text-red-600 font-semibold">Committee data not found.</p>';
     }
 }
 
@@ -69,6 +72,7 @@ function renderCommittees(committees) {
 
         const committeeName = committee['Committee Name'];
         const iconName = iconMap[committeeName] || 'users';
+        const email = committee['Contacts'];
 
         card.innerHTML = `
         <div class="flex items-center text-lg font-semibold mb-3 text-gray-800">
@@ -79,7 +83,10 @@ function renderCommittees(committees) {
         ${formatMultiLine('Co-Chair', committee['Co-Chair'])}
         <p class="flex items-center mt-1">
             <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-            <a href="mailto:${committee['Contacts']}" class="text-blue-600 underline">${committee['Contacts']}</a>
+            <a href="mailto:${email}" class="tm-text-black underline mr-2">${email}</a>
+            <span onclick="copyToClipboard('${email}')" class="cursor-pointer" title="Click To Copy email">
+                <i data-lucide="copy" class="w-4 h-4 text-gray-600 hover:text-black"></i>
+            </span>
         </p>
         ${formatScrollingMembers('Other Members', committee['Other Members'])}
         `;
@@ -88,6 +95,11 @@ function renderCommittees(committees) {
     });
 
     lucide.createIcons();
+}
+
+// Clipboard copy helper (silent)
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).catch(err => console.error('Copy failed:', err));
 }
 
 fetchCommitteeData();

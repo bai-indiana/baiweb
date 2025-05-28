@@ -45,8 +45,16 @@ footer span a { color: #FFF; }
     color: #544639;
 }
 
+.tm-text-black {
+    color: #000000;
+}
+
 .tm-text-green {
     color: #006666;
+}
+
+a.tm-text-black:hover {
+    color: #ff7300;
 }
 
 a.tm-bg-green:hover {
@@ -84,6 +92,7 @@ a.tm-bg-brown:hover {
 .tm-border-gold {
     border-color: #CC9966;
 }
+
 
 .tm-home-width {
     max-width: 436px;

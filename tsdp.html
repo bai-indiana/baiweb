@@ -15,9 +15,11 @@
 
     <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
     <link href="css/tailwind.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="css/bai.css" rel="stylesheet">
     <link href="css/sponsor-scroll.css" rel="stylesheet">
     <link href="css/video-scroll.css" rel="stylesheet">
+    
 
 
 
@@ -28,6 +30,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script src="js/scroll-video-play.js"></script>
+    <script src="js/committee.js"></script>
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -423,193 +426,17 @@
             <div class="text-center mb-16">
                 <h2
                     class="bg-black tm-text-gold py-6 px-12 text-4xl font-semibold inline-block rounded-md bg-opacity-70 shadow-lg">
-                    TSDP Committee Contacts
+                    TSDP Committee
                 </h2>
             </div>
             <!-- Wrap -->
             <div class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch">
 
-                <!-- Column Template -->
-                <div
-                    class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-90 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                <!-- Chair Grid -->
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-2" id="committee-container">
+                <!-- Dynamic DIV from committee.js  -->
 
-                    <!-- Example Block (Repeat as needed) -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <span class="mr-2">🪔</span> Puja
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Kalyani Bose</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:kaybose@gmail.com">kaybose@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Cultural -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="music" class="w-5 h-5 mr-2"></i> Cultural
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Anushree Bag</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:anushreembag@gmail.com">anushreembag@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Fundraising -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="dollar-sign" class="w-5 h-5 mr-2"></i> Fundraising
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Arnab Bag</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:bag.arnab@gmail.com">bag.arnab@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Food -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="utensils" class="w-5 h-5 mr-2"></i> Food
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Sudip Das
-                        </div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:sdas@butler.edu">sdas@butler.edu</a>
-                        </div>
-                    </div>
-
-                    <!-- Brochure -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="book-open" class="w-5 h-5 mr-2"></i> Brochure
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Arijit Bhowmik</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:tsdpbrochure@baiweb.org">tsdpbrochure@baiweb.org</a>
-                        </div>
-                    </div>
-
-                    <!-- Registration -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="clipboard-list" class="w-5 h-5 mr-2"></i> Registration
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Madhurima Banerjee</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:tsdpregistration@baiweb.org">tsdpregistration@baiweb.org</a>
-                        </div>
-                    </div>
-
-                    <!-- Venue -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="map-pin" class="w-5 h-5 mr-2"></i> Venue
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Soumi Mukhopadhyay</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:soumiroy@yahoo.com">soumiroy@yahoo.com</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column  -->
-                <!-- Right Column -->
-                <div
-                    class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-90 shadow-xl transform hover:scale-105 transition-transform duration-300">
-
-                    <!-- Operations -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="settings" class="w-5 h-5 mr-2"></i> Operations
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Dhiman Chaterjee</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:dhmnct@gmail.com">dhmnct@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Logistics -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="truck" class="w-5 h-5 mr-2"></i> Logistics
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Debabrata Dutta</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:deb_dutta2006@yahoo.com">deb_dutta2006@yahoo.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Decoration -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="brush" class="w-5 h-5 mr-2"></i> Decoration
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Asim Dey</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:asim03173@yahoo.com">asim03173@yahoo.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Kids -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="baby" class="w-5 h-5 mr-2"></i> Kids
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Madhurima Moulik</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:madhurimamoulik9@gmail.com">madhurimamoulik9@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Communications -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> Communications
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Kamalika Chatterjee</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:kamalika8@gmail.com">kamalika8@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <!-- Healthcare -->
-                    <div class="mb-6">
-                        <div class="flex items-center text-lg sm:text-xl-events mb-2 sm:mb-3 tm-text-brown">
-                            <i data-lucide="heart-pulse" class="w-5 h-5 mr-2"></i> Healthcare
-                        </div>
-                        <div class="ml-3 text-gray-800 font-semibold text-base sm:text-lg">Saumyadip Dasgupta</div>
-                        <div
-                            class="ml-3 sm:ml-6 flex items-center text-blue-600 hover:underline cursor-pointer text-sm sm:text-base">
-                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i>
-                            <a href="mailto:saumyadip_dasgupta@yahoo.com">saumyadip_dasgupta@yahoo.com</a>
-                        </div>
-                    </div>
-
-                </div>
+            </div>
 
             </div>
 

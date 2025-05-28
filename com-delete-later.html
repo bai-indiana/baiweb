@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>TSDP - Indiana</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;900&display=swap" rel="stylesheet" />
+
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+    <link href="css/sponsor-scroll.css" rel="stylesheet">
+    <link href="css/video-scroll.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="js/tsdp-menu.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="js/scroll-video-play.js"></script>
+</head>
+
+<body>
+    <div class="parallax-window relative" data-image-src="img/email-bg.jpg" data-parallax="scroll" id="contact">
+        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+            <div class="text-center mb-16">
+                <h2
+                    class="bg-black tm-text-gold py-6 px-12 text-4xl font-semibold inline-block rounded-md bg-opacity-70 shadow-lg">
+                    TSDP Committee Contacts
+                </h2>
+            </div>
+           
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-2" id="committee-container">
+                <!-- Dynamic DIV from committee.js  -->
+
+            </div>
+ 
+        </div>
+    </div>
+
+    <!-- Include the script to fetch and process the CSV -->
+    <script src="js/committee.js"></script>
+
+</body>
+
+</html>

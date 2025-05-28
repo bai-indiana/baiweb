@@ -233,3 +233,20 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
   .blink-row {
     animation: blink 3s infinite; /* 3 seconds = slower blink */
   }
+
+
+/* Scroll Vertically up to down*/
+@keyframes scrollUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  .animate-scroll-up {
+    animation: scrollUp 6s linear infinite;
+  }
+  .animate-scroll-up:hover {
+    animation-play-state: paused;
+  }

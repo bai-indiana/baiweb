@@ -31,6 +31,11 @@ footer span a { color: #FFF; }
     background: transparent;
 }
 
+.text-red-30{
+    color: rgb(253, 72, 0);
+    font: 30px;
+}
+
 .tm-text-yellow {
     color: #FC6;
 }

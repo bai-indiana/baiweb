@@ -1,8 +1,17 @@
 // Function to fetch and parse the CSV file
 async function fetchCommitteeData() {
+        /*
+    Open your CSV file in Google Sheets.
+    
+    Go to File > Share > Publish to web.
+    
+    Choose Comma-separated values (.csv) and copy the published CSV URL (will look like below):
+    */
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTA8L83Ws2PQ_Bm255fMCG3KMgmLs1r8nIpqqvtJykDXWwPPNss_AfqasypGeffBKsq6uDORI6GA6NM/pub?gid=1823466229&single=true&output=csv';
+
     try {
-        const response = await fetch('data/TSDP-Committee2025.csv');
-        if (!response.ok) throw new Error('CSV file not found');
+        const response = await fetch(csvUrl);
+        if (!response.ok) throw new Error('CSV file not found or not accessible');
         const data = await response.text();
         const rows = data.trim().split('\n');
         const headers = rows[0].split(',');
@@ -20,9 +29,10 @@ async function fetchCommitteeData() {
     } catch (error) {
         console.error('Error fetching committee data:', error);
         const container = document.getElementById('committee-container');
-        container.innerHTML = '<p class="text-red-600 font-semibold">Committee data not found.</p>';
+        container.innerHTML = '<p class="text-red-30 font-semibold">Committee data not found.</p>';
     }
 }
+
 
 // Format Co-Chair and Other Members
 function formatMultiLine(label, data) {

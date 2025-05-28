@@ -63,7 +63,7 @@ $(document).ready(function () {
         })
         .catch(error => {
             console.error('Error loading accommodation CSV:', error);
-            $('#hotel-container').html('<p class="text-red-500 font-bold text-center p-6">Unable to load accommodation data.</p>');
+            $('#hotel-container').html('<p class="text-red-30 font-bold text-center p-6">Unable to load accommodation data.</p>');
         });
 
     function parseCSV(text) {

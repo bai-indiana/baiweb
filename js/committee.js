@@ -49,7 +49,7 @@ function formatScrollingMembers(label, data) {
     if (names.length === 0) return '';
     return `
     <p><strong>${label}:</strong></p>
-    <div class="relative h-20 overflow-hidden">
+    <div class="relative h-30 overflow-hidden">
         <div class="absolute animate-scroll-up space-y-1 pl-4">
             ${names.map(n => `<div>${n}</div>`).join('')}
         </div>

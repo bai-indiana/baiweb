@@ -22,7 +22,7 @@
     <script src="js/blinking-row.js"></script>
     <script src="js/tsdp-menu.js"></script>
     <script src="js/load-table.js"></script>
- 
+
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -42,7 +42,7 @@
 <body>
     <div class="top parallax-window relative" data-image-src="img/durga-bg.png" data-parallax="scroll" id="events">
         <nav class="fixed w-full" id="tm-nav">
-            
+
         </nav>
         <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
             <div class="text-center mb-16">
@@ -54,7 +54,7 @@
                 </h2>
 
             </div>
- 
+
         </div>
         <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
             <div
@@ -107,9 +107,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                await loadTableFromCSV('saturday', 'data/sat-events.csv', true);
-                await loadTableFromCSV('friday', 'data/fri-events.csv', true);
-                await loadTableFromCSV('sunday', 'data/sun-events.csv', true);
+                await loadTableFromCSV('friday', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKHu_mr-ZdhS5AG3SOpSyxdH_oZoDQL7LQo9rsKWxwNKMz-1vfMEkDIyPRmNPDfBdJ9Ozcstus6AL9/pub?gid=1270809997&single=true&output=csv', true);
+                await loadTableFromCSV('saturday', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRouaBbJcnpukOgG9k1SgSasdZAs0BHp1wUAZDTIHh9xnGpJT9BfckgFju2QNmAy4za1n4VoQlc9KAI/pub?gid=1467858369&single=true&output=csv', true);
+                await loadTableFromCSV('sunday', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR29j3d6qdhs_3r5pPvP4bUrWgWn9ddCGP0CaAPXKDaISTT7lAKSdXxyekDJxnVPS7fvsBaYdYn3mZa/pub?gid=1815304374&single=true&output=csv', true);
                 highlightActiveRow();  // Call highlightActiveRow after table is loaded
 
                 // Your other code that depends on table being ready

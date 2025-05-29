@@ -450,8 +450,9 @@
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 try {
-                    await loadTableFromCSV('sd-reg', 'data/reg.csv');
-
+                   // await loadTableFromCSV('sd-reg', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0D6ZwzqCyQxhPSboHNYiU7O4J25V72hojWwtKwTfEq1btSmmW0LUEw5vL9Q45V4NHSttpR1qPhgxv/pub?gid=1434253748&single=true&output=csv');
+                    await loadTableFromCSV('sd-reg', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTqpKQzRIiLZyf312Lasi34Jc5sVTe_VZZFaGD6N6lh0_C2Nd9EzYp5leUH6S0VPq5xTeSsHGCkDrlC/pub?gid=2129637981&single=true&output=csv');
+ 
                     // Your other code that depends on table being ready
                 } catch (error) {
                     console.error('Failed to load standard registration table:', error);
@@ -463,7 +464,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 try {
-                    await loadTableFromCSV('corp-rates', 'data/corp-sponsor.csv');
+                    await loadTableFromCSV('corp-rates', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR-FUEIniljan7Uhausgkq1zfVRCnF6kAqNUSDoosYiVm6fai4RK0AwSIfxlMjyy8_ZnxfwWypB3QNs/pub?gid=1531473914&single=true&output=csv');
 
                     // Your other code that depends on table being ready
                 } catch (error) {
@@ -477,7 +478,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 try {
-                    await loadTableFromCSV('vendor-rates', 'data/vendor-sponsor.csv');
+                    await loadTableFromCSV('vendor-rates', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTcfbWc72qiFksEwg3b7WoEim9HgCgLoAttZvR1iZbFCZ07cDrj7rsEToERh1I6nGiZOy8ip_Kigbat/pub?gid=140992548&single=true&output=csv');
 
                     // Your other code that depends on table being ready
                 } catch (error) {

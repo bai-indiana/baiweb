@@ -259,7 +259,7 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
     }
   }
   .animate-scroll-up {
-    animation: scrollUp 6s linear infinite;
+    animation: scrollUp 25s linear infinite;
   }
   .animate-scroll-up:hover {
     animation-play-state: paused;

@@ -66,7 +66,7 @@
 
 .item-left-3 {
   animation-delay: calc(30s / 6 * (6 - 3) * -1);
-  background-image: url('../img/sponsor-3.jpg');
+  background-image: url('../img/sponser/bag-family.png');
 }
 
 .item-left-4 {
@@ -92,7 +92,7 @@
 
 .item-right-1 {
   animation-delay: calc(30s / 6 * (6 - 1) * -1);
-  background-image: url('../img/sponsor-7.jpg');
+  background-image: url('../img/sponsor/-7.jpg');
 }
 
 .item-right-2 {

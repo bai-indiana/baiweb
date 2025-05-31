@@ -61,7 +61,7 @@
 
 .item-left-2 {
   animation-delay: calc(30s / 6 * (6 - 2) * -1);
-  background-image: url('../img/sponsor-2.jpg');
+  background-image: url('../img/sponser/madhurimamoulik.png');
 }
 
 .item-left-3 {
@@ -139,30 +139,80 @@
   transform: scale(1.2);
 }
 
-.static-text,
-.flash-text {
+/* Base sponsor style */
+.sponsor-text {
   font-family: 'Baloo 2', cursive;
-  font-size: 17px;  
-  font-weight: 900;
+  margin-bottom: 2px;
   color: #000000;
+}
+
+/* Grand Sponsor */
+.grand {
+  font-size: 20px; /* was 24px */
+  font-weight: 900;
   text-shadow:
     0 0 5px #FFD700,
     1px 1px 1px #b8860b,
     2px 2px 4px #FFA500,
     3px 3px 6px #FFD700;
-  margin: 0;
 }
 
-.static-text {
-  margin-bottom: 2px;
+/* Platinum Sponsor */
+/* Platinum Sponsor */
+.platinum {
+  font-size: 18px; /* was 22px */
+  font-weight: 800;
+  color: #3e3e3e;
+  text-shadow:
+    0 0 2px #c0c0c0,   /* silver glow */
+    1px 1px 1px #a9a9a9, /* soft silver outline */
+    2px 2px 2px #808080; /* subtle silver depth */
 }
+
+/* Gold Sponsor */
+.gold {
+  font-size: 17px; /* was 20px */
+  font-weight: 700;
+  color: #4b2e00;
+  text-shadow:
+    0 0 2px #fff8dc,
+    1px 1px 1px #000000,
+    2px 2px 2px #fff8dc;
+}
+
+/* Silver Sponsor */
+.silver {
+  font-size: 16px; /* was 18px */
+  font-weight: 600;
+  color: #708090;
+  text-shadow:
+    0 0 2px #c0c0c0,
+    1px 1px 1px #a9a9a9;
+}
+
+/* Bronze Sponsor */
+.bronze {
+  font-size: 15px; /* was 16px */
+  font-weight: 500;
+  color: #8b4513;
+  text-shadow:
+    0 0 2px #cd7f32,
+    1px 1px 1px #a0522d;
+}
+
 
 .flash-text {
   animation: flash .7s infinite;
 }
 
 @keyframes flash {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
 
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}

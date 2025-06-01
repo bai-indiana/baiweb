@@ -14,12 +14,14 @@
     <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
+    <link href="css/sponsor-scroll.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/tsdp-menu.js"></script>
+
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -34,194 +36,7 @@
             letter-spacing: .05rem;
         }
     </style>
-    <style>
-        .sponsor-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: auto;
-            margin-bottom: 3rem;
-        }
 
-        .sponsor-scroll-container {
-            width: 100%;
-            height: 210px;
-            /* height for image + sponsor-captions */
-            overflow: hidden;
-            background: transparent;
-            /* Transparent background */
-            position: relative;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            /* border: 2px solid #ccc;  Remove this line to remove border */
-        }
-
-
-        .sponsor-scroll-anything {
-            display: flex;
-            gap: 1rem;
-            white-space: nowrap;
-            height: 210px;
-            align-items: flex-start;
-            padding: 0 10px;
-            width: max-content;
-        }
-
-        @keyframes sponsor-scroll-anything-left {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        @keyframes sponsor-scroll-anything-right {
-            0% {
-                transform: translateX(-50%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        #sponsor-scroll-content-top {
-            animation: sponsor-scroll-anything-left 30s linear infinite;
-            animation-play-state: running;
-        }
-
-        #sponsor-scroll-content-bottom {
-            animation: sponsor-scroll-anything-right 30s linear infinite;
-            animation-play-state: running;
-        }
-
-        .sponsor-scroll-box-sponsor-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 211px;
-            flex-shrink: 0;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .sponsor-scroll-box {
-            width: 211px;
-            height: 155px;
-            border-radius: 6px;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.8;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .sponsor-scroll-box-sponsor-wrapper:hover .sponsor-scroll-box {
-            opacity: 1;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            transform: scale(1.05);
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Sponsor sponsor-caption styles */
-        .sponsor-caption {
-            margin-top: 6px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            user-select: none;
-        }
-
-        .sub-sponsor-caption {
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-            user-select: none;
-        }
-
-        /* Sponsor Level Colors and Shadows */
-        .gold-sponsor {
-            color: #d4af37;
-            text-shadow: 0 0 8px #d4af37;
-        }
-
-        .silver-sponsor {
-            color: #c0c0c0;
-            text-shadow: 0 0 8px #c0c0c0;
-        }
-
-        .platinum-sponsor {
-            color: #e5e4e2;
-            text-shadow: 0 0 8px #b0b0b0;
-        }
-
-        .bronze-sponsor {
-            color: #cd7f32;
-            text-shadow: 0 0 8px #cd7f32;
-        }
-
-        .grand-sponsor {
-            color: #ff4c4c;
-            text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff0000;
-            animation: blink 1.5s infinite;
-        }
-
-        /* Blink animation */
-        @keyframes blink {
-
-            0%,
-            50%,
-            100% {
-                opacity: 1;
-            }
-
-            25%,
-            75% {
-                opacity: 0;
-            }
-        }
-
-        .sponsor-hover-photo-frame {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 300px;
-            transform: translate(-50%, -50%);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: transparent;
-            /* Transparent background */
-            border: 8px solid rgba(0, 0, 0, 0.5);
-            /* Semi-transparent black border */
-            border-radius: 20px;
-            /* Rounded corners */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-            display: none;
-            z-index: 9999;
-            pointer-events: none;
-        }
-
-        .sponsor-hover-photo-frame-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.2);
-            /* Slight dark overlay */
-            border-radius: 12px;
-            /* Rounded corners */
-            display: none;
-            z-index: 9998;
-            pointer-events: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -240,10 +55,13 @@
                 </h2>
 
             </div>
-
-            <div class="flex flex-col lg:flex-row justify-around items-center">
-                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-60 ">
-
+            <!--Sponsor Section-->
+            <div class="flex flex-col lg:flex-row justify-around items-center" id="sponsor-scroll">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
+                    <!-- Header -->
+                    <a href="#" target="_blank" class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our
+                        Sponsors</a>
+                    <!-- Scrolling container top -->
                     <div class="sponsor-wrapper">
                         <div class="sponsor-scroll-container">
                             <div class="sponsor-scroll-anything" id="sponsor-scroll-content-top">
@@ -251,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- Scrolling container bottom -->
                     <div class="sponsor-wrapper">
                         <div class="sponsor-scroll-container">
                             <div class="sponsor-scroll-anything" id="sponsor-scroll-content-bottom">
@@ -259,10 +77,31 @@
                             </div>
                         </div>
                     </div>
+                    <!--Photo Frame-->
+                    <div class="sponsor-hover-photo-frame" id="hoverFrame"></div>
+                    <div class="sponsor-hover-photo-frame-overlay" id="frameOverlay"></div>
+                    <!-- Note -->
+                    <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
+                        <p>
+                            We thank our sponsors for their generosity in supporting our event and helping bring the
+                            community together
+                        </p>
+                    </div>
+
+                    <hr class="my-4 border-gray-300">
+
+                    <!-- Donate Button -->
+                    <div class="mt-5">
+                        <a title="Click here to sponsor"
+                            class="inline-block tm-bg-gold transition text-black font-semibold  pt-2 pb-3 px-8 rounded-md"
+                            target="_blank" href="https://tsdpregistration.azurewebsites.net/">
+                            <i class="fas fa-gift mr-3"></i>
+                            Sponsor
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="sponsor-hover-photo-frame" id="hoverFrame"></div>
-            <div class="sponsor-hover-photo-frame-overlay" id="frameOverlay"></div>
+
 
 
         </div>
@@ -277,110 +116,8 @@
     </div>
     </div>
 
-    <script>
 
-        const community_sponsors = [
-            {
-                img: "/img/sponsor/das-family.png",
-                family: "Das Family",
-                level: "Grand Sponsor",
-                className: "grand-sponsor"
-            },
-            {
-                img: "/img/sponsor/madhurimamoulik.png",
-                family: "Madhuri Mamoulik", level: "Gold Sponsor",
-                className: "gold-sponsor"
-            },
-            {
-                img: "/img/sponsor/bag-family.png",
-                hoverImg: "/img/sponsor/bag-family-full.jpg",
-                family: "Bag Family",
-                level: "Grand Sponsor",
-                className: "grand-sponsor"
-            },
-            {
-                img: "/img/sponsor-1.jpg",
-
-                family: "Sponsor Family",
-                level: "Platinum Sponsor",
-                className: "platinum-sponsor"
-            },
-            {
-                img: "/img/sponsor-2.jpg",
-
-                family: "Sponsor Family",
-                level: "Silver Sponsor",
-                className: "silver-sponsor"
-            },
-            {
-                img: "/img/sponsor-3.jpg",
-                family: "Sponsor Family",
-                level: "Bronze Sponsor",
-                className: "bronze-sponsor"
-            }
-        ];
-
-        const corporate_sponsors = [
-            { img: "/img/sponsor-1.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "gold-sponsor" },
-            { img: "/img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "silver-sponsor" },
-            { img: "/img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "platinum-sponsor" },
-            { img: "/img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "bronze-sponsor" },
-            { img: "/img/sponsor-5.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "grand-sponsor" }
-        ];
-
-        function createSponsorHTML(sponsor) {
-            const hoverImg = sponsor.hoverImg || sponsor.img; // fallback to original if hover not provided
-            return `
-        <div class="sponsor-scroll-box-sponsor-wrapper" data-img="${sponsor.img}" data-hover="${hoverImg}">
-            <div class="sponsor-scroll-box" style="background-image:url('${sponsor.img}')"></div>
-            <div class="sponsor-caption ${sponsor.className}">${sponsor.family}</div>
-            <div class="sub-sponsor-caption ${sponsor.className}">${sponsor.level}</div>
-        </div>
-    `;
-        }
-
-        function populateSponsors(containerId, sponsor_category) {
-            const container = document.getElementById(containerId);
-            const content = sponsor_category.map(createSponsorHTML).join('');
-            container.innerHTML = content + content; // duplicate for seamless scroll
-        }
-
-        populateSponsors('sponsor-scroll-content-top', community_sponsors);
-        populateSponsors('sponsor-scroll-content-bottom', corporate_sponsors);
-
-
-
-
-
-        const hoverFrame = document.getElementById('hoverFrame');
-        const frameOverlay = document.getElementById('frameOverlay');
-
-        document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
-            box.addEventListener('mouseenter', () => {
-                const hoverImgUrl = box.dataset.hover; // <- use hover image
-                if (hoverImgUrl) {
-                    hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
-                    hoverFrame.style.display = 'block';
-                    frameOverlay.style.display = 'block';
-                    pauseAnimations();
-                }
-            });
-            box.addEventListener('mouseleave', () => {
-                hoverFrame.style.display = 'none';
-                frameOverlay.style.display = 'none';
-                resumeAnimations();
-            });
-        });
-
-        function pauseAnimations() {
-            document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'paused';
-            document.getElementById('sponsor-scroll-content-bottom').style.animationPlayState = 'paused';
-        }
-        function resumeAnimations() {
-            document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'running';
-            document.getElementById('sponsor-scroll-content-bottom').style.animationPlayState = 'running';
-        }
-    </script>
 </body>
+<script src="js/tsdp-sponsor.js"></script>
 
 </html>

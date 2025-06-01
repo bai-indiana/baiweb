@@ -56,17 +56,17 @@
 
 .item-left-1 {
   animation-delay: calc(30s / 6 * (6 - 1) * -1);
-  background-image: url('../img/sponser/das-family.png');
+  background-image: url('../img/sponsor/das-family.png');
 }
 
 .item-left-2 {
   animation-delay: calc(30s / 6 * (6 - 2) * -1);
-  background-image: url('../img/sponser/madhurimamoulik.png');
+  background-image: url('../img/sponsor/madhurimamoulik.png');
 }
 
 .item-left-3 {
   animation-delay: calc(30s / 6 * (6 - 3) * -1);
-  background-image: url('../img/sponser/bag-family.png');
+  background-image: url('../img/sponsor/bag-family.png');
 }
 
 .item-left-4 {

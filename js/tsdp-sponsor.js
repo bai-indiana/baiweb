@@ -2,38 +2,38 @@
 
 const community_sponsors = [
     {
-        img: "../img/sponsor/das-family.png",
+        img: "img/sponsor/das-family.png",
         family: "Das Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
     },
     {
-        img: "../img/sponsor/madhurimamoulik.png",
+        img: "img/sponsor/madhurimamoulik.png",
         family: "Madhuri Mamoulik",
         level: "Gold Sponsor",
         className: "gold-sponsor"
     },
     {
-        img: "../img/sponsor/bag-family.png",
-        hoverImg: "../img/sponsor/bag-family-full.jpg",
+        img: "img/sponsor/bag-family.png",
+        hoverImg: "img/sponsor/bag-family-full.jpg",
         family: "Bag Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
     },
     {
-        img: "../img/sponsor-1.jpg",
+        img: "img/sponsor-1.jpg",
         family: "Sponsor Family",
         level: "Platinum Sponsor",
         className: "platinum-sponsor"
     },
     {
-        img: "../img/sponsor-2.jpg",
+        img: "img/sponsor-2.jpg",
         family: "Sponsor Family",
         level: "Silver Sponsor",
         className: "silver-sponsor"
     },
     {
-        img: "../img/sponsor-3.jpg",
+        img: "img/sponsor-3.jpg",
         family: "Sponsor Family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
@@ -41,11 +41,11 @@ const community_sponsors = [
 ];
 
 const corporate_sponsors = [
-    { img: "../img/sponsor-1.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "gold-sponsor" },
-    { img: "../img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "silver-sponsor" },
-    { img: "../img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "platinum-sponsor" },
-    { img: "../img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "bronze-sponsor" },
-    { img: "../img/sponsor-5.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "grand-sponsor" }
+    { img: "img/sponsor-1.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "gold-sponsor" },
+    { img: "img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "silver-sponsor" },
+    { img: "img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "platinum-sponsor" },
+    { img: "img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "bronze-sponsor" },
+    { img: "img/sponsor-5.jpg", family: "Sponsor Name", level: "Sponsor Type", className: "grand-sponsor" }
 ];
 
 function createSponsorHTML(sponsor) {

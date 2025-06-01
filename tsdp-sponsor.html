@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Sponsor</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet"> <!-- fontawesome -->
+    <link href="css/tailwind.css" rel="stylesheet">
+    <link href="css/bai.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="js/tsdp-menu.js"></script>
+
+    <style>
+        /* Define the CSS for the transparent white div */
+        .transparent-white-div {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* White color with 70% opacity */
+        }
+
+        .active-tab {
+            font-weight: bolder;
+            font-size: 1.125rem;
+            letter-spacing: .05rem;
+        }
+    </style>
+    <style>
+        .sponsor-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            margin-bottom: 3rem;
+        }
+
+        .sponsor-scroll-container {
+            width: 100%;
+            height: 210px;
+            /* height for image + sponsor-captions */
+            overflow: hidden;
+            background: transparent;
+            /* Transparent background */
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            /* border: 2px solid #ccc;  Remove this line to remove border */
+        }
+
+
+        .sponsor-scroll-anything {
+            display: flex;
+            gap: 1rem;
+            white-space: nowrap;
+            height: 210px;
+            align-items: flex-start;
+            padding: 0 10px;
+            width: max-content;
+        }
+
+        @keyframes sponsor-scroll-anything-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes sponsor-scroll-anything-right {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        #sponsor-scroll-content-top {
+            animation: sponsor-scroll-anything-left 30s linear infinite;
+            animation-play-state: running;
+        }
+
+        #sponsor-scroll-content-bottom {
+            animation: sponsor-scroll-anything-right 30s linear infinite;
+            animation-play-state: running;
+        }
+
+        .sponsor-scroll-box-sponsor-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 211px;
+            flex-shrink: 0;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .sponsor-scroll-box {
+            width: 211px;
+            height: 155px;
+            border-radius: 6px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .sponsor-scroll-box-sponsor-wrapper:hover .sponsor-scroll-box {
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transform: scale(1.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Sponsor sponsor-caption styles */
+        .sponsor-caption {
+            margin-top: 6px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            user-select: none;
+        }
+
+        .sub-sponsor-caption {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            user-select: none;
+        }
+
+        /* Sponsor Level Colors and Shadows */
+        .gold-sponsor {
+            color: #d4af37;
+            text-shadow: 0 0 8px #d4af37;
+        }
+
+        .silver-sponsor {
+            color: #c0c0c0;
+            text-shadow: 0 0 8px #c0c0c0;
+        }
+
+        .platinum-sponsor {
+            color: #e5e4e2;
+            text-shadow: 0 0 8px #b0b0b0;
+        }
+
+        .bronze-sponsor {
+            color: #cd7f32;
+            text-shadow: 0 0 8px #cd7f32;
+        }
+
+        .grand-sponsor {
+            color: #ff4c4c;
+            text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff0000;
+            animation: blink 1.5s infinite;
+        }
+
+        /* Blink animation */
+        @keyframes blink {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+
+        .sponsor-hover-photo-frame {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 300px;
+            transform: translate(-50%, -50%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: transparent;
+            /* Transparent background */
+            border: 8px solid rgba(0, 0, 0, 0.5);
+            /* Semi-transparent black border */
+            border-radius: 20px;
+            /* Rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            display: none;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .sponsor-hover-photo-frame-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.2);
+            /* Slight dark overlay */
+            border-radius: 12px;
+            /* Rounded corners */
+            display: none;
+            z-index: 9998;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top parallax-window relative" data-image-src="img/durga-bg.jpg" data-parallax="scroll" id="food">
+        <nav class="fixed w-full" id="tm-nav">
+
+        </nav>
+        <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+            <div class="text-center mb-16">
+
+                <h2
+                    class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70 bg-chef">
+
+                    TSDP Food 2025
+                </h2>
+
+            </div>
+
+            <div class="flex flex-col lg:flex-row justify-around items-center">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-black bg-opacity-60 ">
+
+                    <div class="sponsor-wrapper">
+                        <div class="sponsor-scroll-container">
+                            <div class="sponsor-scroll-anything" id="sponsor-scroll-content-top">
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/das-family.png"
+                                    data-family="Das Family" data-level="Gold Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/das-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption gold-sponsor">Das Family</div>
+                                    <div class="sub-sponsor-caption gold-sponsor">Gold Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/madhurimamoulik.png"
+                                    data-family="Madhuri Mamoulik" data-level="Silver Sponsor">
+                                    <div class="sponsor-scroll-box"
+                                        style="background-image:url('/img/sponser/madhurimamoulik.png')">
+                                    </div>
+                                    <div class="sponsor-caption silver-sponsor">Madhuri Mamoulik</div>
+                                    <div class="sub-sponsor-caption silver-sponsor">Silver Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/bag-family-full.jpg"
+                                    data-family="Bag Family" data-level="Platinum Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/bag-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption platinum-sponsor">Bag Family</div>
+                                    <div class="sub-sponsor-caption platinum-sponsor">Platinum Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-4.jpg" data-family="Smith Family"
+                                    data-level="Bronze Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-4.jpg')"></div>
+                                    <div class="sponsor-caption bronze-sponsor">Smith Family</div>
+                                    <div class="sub-sponsor-caption bronze-sponsor">Bronze Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-6.jpg"
+                                    data-family="Johnson Family" data-level="Grand Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-6.jpg')"></div>
+                                    <div class="sponsor-caption grand-sponsor">Johnson Family</div>
+                                    <div class="sub-sponsor-caption grand-sponsor">Grand Sponsor</div>
+                                </div>
+
+                                <!-- Duplicate for seamless scroll -->
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/das-family.png"
+                                    data-family="Das Family" data-level="Gold Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/das-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption gold-sponsor">Das Family</div>
+                                    <div class="sub-sponsor-caption gold-sponsor">Gold Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/madhurimamoulik.png"
+                                    data-family="Madhuri Mamoulik" data-level="Silver Sponsor">
+                                    <div class="sponsor-scroll-box"
+                                        style="background-image:url('/img/sponser/madhurimamoulik.png')">
+                                    </div>
+                                    <div class="sponsor-caption silver-sponsor">Madhuri Mamoulik</div>
+                                    <div class="sub-sponsor-caption silver-sponsor">Silver Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/bag-family.png"
+                                    data-family="Bag Family" data-level="Platinum Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/bag-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption platinum-sponsor">Bag Family</div>
+                                    <div class="sub-sponsor-caption platinum-sponsor">Platinum Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-4.jpg" data-family="Smith Family"
+                                    data-level="Bronze Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-4.jpg')"></div>
+                                    <div class="sponsor-caption bronze-sponsor">Smith Family</div>
+                                    <div class="sub-sponsor-caption bronze-sponsor">Bronze Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-6.jpg"
+                                    data-family="Johnson Family" data-level="Grand Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-6.jpg')"></div>
+                                    <div class="sponsor-caption grand-sponsor">Johnson Family</div>
+                                    <div class="sub-sponsor-caption grand-sponsor">Grand Sponsor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-wrapper">
+                        <div class="sponsor-scroll-container">
+                            <div class="sponsor-scroll-anything" id="sponsor-scroll-content-bottom">
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/das-family.png"
+                                    data-family="Das Family" data-level="Gold Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/das-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption gold-sponsor">Das Family</div>
+                                    <div class="sub-sponsor-caption gold-sponsor">Gold Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/madhurimamoulik.png"
+                                    data-family="Madhuri Mamoulik" data-level="Silver Sponsor">
+                                    <div class="sponsor-scroll-box"
+                                        style="background-image:url('/img/sponser/madhurimamoulik.png')">
+                                    </div>
+                                    <div class="sponsor-caption silver-sponsor">Madhuri Mamoulik</div>
+                                    <div class="sub-sponsor-caption silver-sponsor">Silver Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/bag-family.png"
+                                    data-family="Bag Family" data-level="Platinum Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/bag-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption platinum-sponsor">Bag Family</div>
+                                    <div class="sub-sponsor-caption platinum-sponsor">Platinum Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-4.jpg" data-family="Smith Family"
+                                    data-level="Bronze Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-4.jpg')"></div>
+                                    <div class="sponsor-caption bronze-sponsor">Smith Family</div>
+                                    <div class="sub-sponsor-caption bronze-sponsor">Bronze Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-6.jpg"
+                                    data-family="Johnson Family" data-level="Grand Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-6.jpg')"></div>
+                                    <div class="sponsor-caption grand-sponsor">Johnson Family</div>
+                                    <div class="sub-sponsor-caption grand-sponsor">Grand Sponsor</div>
+                                </div>
+
+                                <!-- Duplicate for seamless scroll -->
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/das-family.png"
+                                    data-family="Das Family" data-level="Gold Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/das-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption gold-sponsor">Das Family</div>
+                                    <div class="sub-sponsor-caption gold-sponsor">Gold Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/madhurimamoulik.png"
+                                    data-family="Madhuri Mamoulik" data-level="Silver Sponsor">
+                                    <div class="sponsor-scroll-box"
+                                        style="background-image:url('/img/sponser/madhurimamoulik.png')">
+                                    </div>
+                                    <div class="sponsor-caption silver-sponsor">Madhuri Mamoulik</div>
+                                    <div class="sub-sponsor-caption silver-sponsor">Silver Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponser/bag-family.png"
+                                    data-family="Bag Family" data-level="Platinum Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponser/bag-family.png')">
+                                    </div>
+                                    <div class="sponsor-caption platinum-sponsor">Bag Family</div>
+                                    <div class="sub-sponsor-caption platinum-sponsor">Platinum Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-4.jpg" data-family="Smith Family"
+                                    data-level="Bronze Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-4.jpg')"></div>
+                                    <div class="sponsor-caption bronze-sponsor">Smith Family</div>
+                                    <div class="sub-sponsor-caption bronze-sponsor">Bronze Sponsor</div>
+                                </div>
+                                <div class="sponsor-scroll-box-sponsor-wrapper" data-img="/img/sponsor-6.jpg"
+                                    data-family="Johnson Family" data-level="Grand Sponsor">
+                                    <div class="sponsor-scroll-box" style="background-image:url('/img/sponsor-6.jpg')"></div>
+                                    <div class="sponsor-caption grand-sponsor">Johnson Family</div>
+                                    <div class="sub-sponsor-caption grand-sponsor">Grand Sponsor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sponsor-hover-photo-frame" id="hoverFrame"></div>
+            <div class="sponsor-hover-photo-frame-overlay" id="frameOverlay"></div>
+
+
+        </div>
+        <footer class="absolute bottom-0 left-0 w-full transparent-white-div">
+            <div
+                class="text-black container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between">
+                <span>Copyright &copy; <span id="year"></span> Bengali Association of Indiana. All rights
+                    reserved.</span>
+                <!--<span class="mt-5 md:mt-0">Design: <a href="# target="_parent">Sudip</a></span>-->
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        const hoverFrame = document.getElementById('hoverFrame');
+        const frameOverlay = document.getElementById('frameOverlay');
+
+        document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                const imgUrl = box.dataset.img;
+                if (imgUrl) {
+                    hoverFrame.style.backgroundImage = `url(${imgUrl})`;
+                    hoverFrame.style.display = 'block';
+                    frameOverlay.style.display = 'block';
+                    pauseAnimations();
+                }
+            });
+            box.addEventListener('mouseleave', () => {
+                hoverFrame.style.display = 'none';
+                frameOverlay.style.display = 'none';
+                resumeAnimations();
+            });
+        });
+
+        function pauseAnimations() {
+            document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'paused';
+            document.getElementById('sponsor-scroll-content-bottom').style.animationPlayState = 'paused';
+        }
+        function resumeAnimations() {
+            document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'running';
+            document.getElementById('sponsor-scroll-content-bottom').style.animationPlayState = 'running';
+        }
+    </script>
+</body>
+
+</html>

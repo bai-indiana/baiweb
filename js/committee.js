@@ -1,12 +1,5 @@
 // Function to fetch and parse the CSV file
 async function fetchCommitteeData() {
-        /*
-    Open your CSV file in Google Sheets.
-    
-    Go to File > Share > Publish to web.
-    
-    Choose Comma-separated values (.csv) and copy the published CSV URL (will look like below):
-    */
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTA8L83Ws2PQ_Bm255fMCG3KMgmLs1r8nIpqqvtJykDXWwPPNss_AfqasypGeffBKsq6uDORI6GA6NM/pub?gid=1823466229&single=true&output=csv';
 
     try {
@@ -33,7 +26,6 @@ async function fetchCommitteeData() {
     }
 }
 
-
 // Format Co-Chair and Other Members
 function formatMultiLine(label, data) {
     if (!data) return '';
@@ -42,28 +34,30 @@ function formatMultiLine(label, data) {
     return `<p><strong>${label}:</strong><br>${names.map(n => `<span class="ml-4 block">${n}</span>`).join('')}</p>`;
 }
 
-// Scrollable Other Members (like movie credits)
+// Scrollable Other Members
 function formatScrollingMembers(label, data, committeeName) {
     if (!data) return '';
     const names = data.split(';').map(name => name.trim()).filter(name => name !== '');
     if (names.length === 0) return '';
 
-    // Set scroll speed based on committee
-    let scrollSpeed = '25s'; // default
-    if (committeeName === 'Food') {
-        scrollSpeed = '40s'; // faster scroll for Food committee
-    }
+    const scrollDuration = committeeName === 'Food' ? '40s' : '25s';
 
     return `
     <p><strong>${label}:</strong></p>
-    <div class="relative h-30 overflow-hidden">
-        <div class="absolute animate-scroll-up space-y-1 pl-4" style="--scroll-speed: ${scrollSpeed};">
+    <div class="sponsor-scroll-wrapper">
+        <div class="scroll-content space-y-1 pl-4" style="--scroll-duration: ${scrollDuration};">
+            <div>&nbsp;</div> <!-- Top blank row -->
+             <div>&nbsp;</div> <!-- Top blank row -->
             ${names.map(n => `<div>${n}</div>`).join('')}
+            <div>&nbsp;</div> <!-- Bottom blank row -->
+            <div>&nbsp;</div> <!-- Bottom blank row -->
         </div>
     </div>`;
 }
 
-// Function to render committee cards
+
+
+// Render committee cards
 function renderCommittees(committees) {
     const container = document.getElementById('committee-container');
 
@@ -112,11 +106,34 @@ function renderCommittees(committees) {
     });
 
     lucide.createIcons();
+
+    // 🚀 Animate scroll for Other Members
+    document.querySelectorAll('.sponsor-scroll-wrapper').forEach(wrapper => {
+        const speed = parseFloat(wrapper.dataset.speed || '0.4');
+        let isPaused = false;
+
+        const scrollStep = () => {
+            if (!isPaused) {
+                wrapper.scrollTop += speed;
+                if (wrapper.scrollTop >= wrapper.scrollHeight - wrapper.clientHeight) {
+                    wrapper.scrollTop = 0;
+                }
+            }
+            requestAnimationFrame(scrollStep);
+        };
+
+        wrapper.addEventListener('mouseenter', () => { isPaused = true; });
+        wrapper.addEventListener('mouseleave', () => { isPaused = false; });
+        wrapper.addEventListener('wheel', () => { isPaused = true; });
+
+        requestAnimationFrame(scrollStep);
+    });
 }
 
-// Clipboard copy helper (silent)
+// Clipboard copy helper
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).catch(err => console.error('Copy failed:', err));
 }
 
+// Start everything
 fetchCommitteeData();

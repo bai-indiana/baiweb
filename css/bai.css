@@ -249,23 +249,29 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
   }
 
 
-@keyframes scrollUp {
-  0% {
-    transform: translateY(20%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+
+.sponsor-scroll-wrapper {
+  position: relative;
+  height: 7.5rem;
+  overflow: hidden;
 }
 
-.animate-scroll-up {
-  --scroll-speed: 25s; /* default value */
-  animation: scrollUp var(--scroll-speed) linear infinite;
+.scroll-content {
+  display: inline-block;
+  animation: scroll-up-down var(--scroll-duration, 25s) linear infinite alternate;
+  will-change: transform;
 }
 
-.animate-scroll-up:hover {
+/* Pause on hover */
+.sponsor-scroll-wrapper:hover .scroll-content {
   animation-play-state: paused;
 }
 
-
-  
+@keyframes scroll-up-down {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(calc(-100% + 7.5rem));
+  }
+}

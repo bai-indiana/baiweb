@@ -249,18 +249,23 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
   }
 
 
-/* Scroll Vertically up to down*/
 @keyframes scrollUp {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
+  0% {
+    transform: translateY(20%);
   }
-  .animate-scroll-up {
-    animation: scrollUp 25s linear infinite;
+  100% {
+    transform: translateY(-100%);
   }
-  .animate-scroll-up:hover {
-    animation-play-state: paused;
-  }
+}
+
+.animate-scroll-up {
+  --scroll-speed: 25s; /* default value */
+  animation: scrollUp var(--scroll-speed) linear infinite;
+}
+
+.animate-scroll-up:hover {
+  animation-play-state: paused;
+}
+
+
+  

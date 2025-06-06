@@ -43,14 +43,21 @@ function formatMultiLine(label, data) {
 }
 
 // Scrollable Other Members (like movie credits)
-function formatScrollingMembers(label, data) {
+function formatScrollingMembers(label, data, committeeName) {
     if (!data) return '';
     const names = data.split(';').map(name => name.trim()).filter(name => name !== '');
     if (names.length === 0) return '';
+
+    // Set scroll speed based on committee
+    let scrollSpeed = '25s'; // default
+    if (committeeName === 'Food') {
+        scrollSpeed = '40s'; // faster scroll for Food committee
+    }
+
     return `
     <p><strong>${label}:</strong></p>
     <div class="relative h-30 overflow-hidden">
-        <div class="absolute animate-scroll-up space-y-1 pl-4">
+        <div class="absolute animate-scroll-up space-y-1 pl-4" style="--scroll-speed: ${scrollSpeed};">
             ${names.map(n => `<div>${n}</div>`).join('')}
         </div>
     </div>`;
@@ -98,7 +105,7 @@ function renderCommittees(committees) {
                 <i data-lucide="copy" class="w-4 h-4 text-gray-600 hover:text-black"></i>
             </span>
         </p>
-        ${formatScrollingMembers('Other Members', committee['Other Members'])}
+        ${formatScrollingMembers('Other Members', committee['Other Members'], committeeName)}
         `;
 
         container.appendChild(card);

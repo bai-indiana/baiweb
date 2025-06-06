@@ -92,17 +92,17 @@
 
 .item-right-1 {
   animation-delay: calc(30s / 6 * (6 - 1) * -1);
-  background-image: url('../img/sponsor/-7.jpg');
+  background-image: url('../img/sponsor/das-family.png');
 }
 
 .item-right-2 {
   animation-delay: calc(30s / 6 * (6 - 2) * -1);
-  background-image: url('../img/sponsor-8.jpg');
+  background-image: url('../img/sponsor/madhurimamoulik.png');
 }
 
 .item-right-3 {
   animation-delay: calc(30s / 6 * (6 - 3) * -1);
-  background-image: url('../img/sponsor-9.jpg');
+  background-image: url('../img/sponsor/bag-family.png');
 }
 
 .item-right-4 {

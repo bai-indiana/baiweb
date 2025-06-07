@@ -1,6 +1,6 @@
 // Function to fetch and parse the CSV file
 async function fetchCommitteeData() {
-    const csvUrl = 'data/TSDP-Committee2025.csv';
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQtABn9B48hVUe6_VEVF6jiicyuUaAM_aUlpPFFC3Ddgap2XXJL40gorA7uTmLCzEEo3gWV3UCwTIfR/pub?gid=2029730703&single=true&output=csv';
 
     try {
         const response = await fetch(csvUrl);

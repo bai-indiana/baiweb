@@ -36,7 +36,7 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
                 const row = document.createElement('tr');
                 row.className = idx % 2 === 0
                     ? 'bg-gold text-center  bg-opacity-70 transition'
-                    : 'bg-white text-center  bg-opacity-70 transition';
+                    : 'bg-gold1 text-center  bg-opacity-70 transition';
 
                 cols.forEach((col, colIndex) => {
                     const td = document.createElement('td');

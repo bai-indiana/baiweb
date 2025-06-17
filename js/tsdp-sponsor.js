@@ -21,16 +21,18 @@ const community_sponsors = [
         className: "grand-sponsor"
     },
     {
-        img: "img/sponsor-1.jpg",
-        family: "Sponsor Family",
-        level: "Platinum Sponsor",
-        className: "platinum-sponsor"
+        img: "img/sponsor/Roy-family.png",
+        hoverImg: "img/sponsor/Roy-family-full.jpg",
+        family: "Roy Family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
     },
     {
-        img: "img/sponsor-2.jpg",
-        family: "Sponsor Family",
-        level: "Silver Sponsor",
-        className: "silver-sponsor"
+        img: "img/sponsor/Chandrama-Chakrabarti-family.png",
+        hoverImg: "img/sponsor/Chandrama-Chakrabarti-family.png",
+        family: "Roy Family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
     },
     {
         img: "img/sponsor-3.jpg",

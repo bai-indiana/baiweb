@@ -71,12 +71,12 @@
 
 .item-left-4 {
   animation-delay: calc(30s / 6 * (6 - 4) * -1);
-  background-image: url('../img/sponsor-4.jpg');
+  background-image: url('../img/sponsor/Roy-family.png');
 }
 
 .item-left-5 {
   animation-delay: calc(30s / 6 * (6 - 5) * -1);
-  background-image: url('../img/sponsor-5.jpg');
+  background-image: url('../img/sponsor/Chandrama-Chakrabarti-family.png');
 }
 
 .item-left-6 {

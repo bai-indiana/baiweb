@@ -2,9 +2,44 @@
 .sponsor-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1000px;
     margin: auto;
     margin-bottom: 3rem;
+}
+
+
+/* iPhone SE and small phones */
+@media (max-width: 375px) {
+    .sponsor-wrapper {
+        max-width: 375px;
+    }
+}
+
+/* iPhone 12 / medium phones */
+@media (min-width: 376px){
+    .sponsor-wrapper {
+         max-width: 376px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+    .sponsor-wrapper {
+        max-width: 600px;
+    }
+}
+
+/* Small Desktop */
+@media (min-width: 900px) {
+    .sponsor-wrapper {
+        max-width: 900ppx;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .sponsor-wrapper {
+        max-width: 1200px;
+    }
 }
 
 .sponsor-scroll-container {

@@ -245,7 +245,7 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
   }
   
   .blink-row {
-    animation: blink 3s infinite; /* 3 seconds = slower blink */
+    animation: blink 5s infinite; /* 3 seconds = slower blink */
   }
 
 

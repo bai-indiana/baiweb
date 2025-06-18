@@ -1,5 +1,4 @@
-// sponsor.js
-
+//tsdp-sponsor.js
 const community_sponsors = [
     {
         img: "img/sponsor/das-family.png",
@@ -64,7 +63,7 @@ function createSponsorHTML(sponsor) {
 function populateSponsors(containerId, sponsor_category) {
     const container = document.getElementById(containerId);
     const content = sponsor_category.map(createSponsorHTML).join('');
-    container.innerHTML = content + content;
+    container.innerHTML = content + content; // Repeat for continuous scroll effect
 }
 
 populateSponsors('sponsor-scroll-content-top', community_sponsors);
@@ -72,41 +71,6 @@ populateSponsors('sponsor-scroll-content-bottom', corporate_sponsors);
 
 const hoverFrame = document.getElementById('hoverFrame');
 const frameOverlay = document.getElementById('frameOverlay');
-
-document.addEventListener("DOMContentLoaded", function () {
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
-        const showHover = () => {
-            const hoverImgUrl = box.dataset.hover;
-            if (hoverImgUrl) {
-                hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
-                hoverFrame.style.display = 'block';
-                frameOverlay.style.display = 'block';
-                pauseAnimations();
-            }
-        };
-
-        const hideHover = () => {
-            hoverFrame.style.display = 'none';
-            frameOverlay.style.display = 'none';
-            resumeAnimations();
-        };
-
-        if (isTouchDevice) {
-            // For iPhones and other touch devices
-            box.addEventListener('touchstart', showHover);
-            box.addEventListener('touchend', hideHover);
-            box.addEventListener('touchcancel', hideHover);
-        } else {
-            // For desktops and non-touch devices
-            box.addEventListener('mouseenter', showHover);
-            box.addEventListener('mouseleave', hideHover);
-        }
-    });
-});
-
-
 
 function pauseAnimations() {
     document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'paused';
@@ -117,3 +81,44 @@ function resumeAnimations() {
     document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'running';
     document.getElementById('sponsor-scroll-content-bottom').style.animationPlayState = 'running';
 }
+
+function showHover(box) {
+    const hoverImgUrl = box.dataset.hover;
+    if (hoverImgUrl) {
+        hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
+        hoverFrame.style.display = 'block';
+        frameOverlay.style.display = 'block';
+        pauseAnimations();
+    }
+}
+
+function hideHover() {
+    hoverFrame.style.display = 'none';
+    frameOverlay.style.display = 'none';
+    resumeAnimations();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
+        if (isTouchDevice) {
+            box.addEventListener('touchstart', function (e) {
+                e.stopPropagation(); // Prevent bubbling to document
+                showHover(box);
+            });
+        } else {
+            box.addEventListener('mouseenter', () => showHover(box));
+            box.addEventListener('mouseleave', hideHover);
+        }
+    });
+
+    if (isTouchDevice) {
+        document.addEventListener('touchstart', function (e) {
+            const isSponsorBox = e.target.closest('.sponsor-scroll-box-sponsor-wrapper');
+            if (!isSponsorBox) {
+                hideHover();
+            }
+        });
+    }
+});

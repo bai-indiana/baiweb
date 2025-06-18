@@ -16,7 +16,8 @@
   <link href="css/tailwind.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="css/bai.css" rel="stylesheet">
-  <link href="css/sponsor-scroll.css" rel="stylesheet">
+  <!-- <link href="css/sponsor-scroll.css" rel="stylesheet"> -->
+  <link href="css/sponsor-scroll-new.css" rel="stylesheet">
   <link href="css/video-scroll.css" rel="stylesheet">
 
 
@@ -148,15 +149,14 @@
       </div>
     </div>
     <!-- Buttom sponsor section (NEW Scroll) -->
-    <div class="flex flex-col lg:flex-row justify-around items-start" id="sponsor-scroll">
+     <!-- <div class="flex flex-col lg:flex-row justify-around items-start" id="sponsor-scroll">
       <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
         <div class="flex items-start mb-6 tm-menu-item">
           <div class="ml-3 sm:ml-6 w-full">
-            <!-- Header -->
+             
             <a href="#" target="_blank" class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our
               Sponsors</a>
-            <!-- Scrolling container -->
-            <!-- TOP -->
+ 
             <div class="wrapper-test">
               <div class="itemLeft item-left-1">
                 <div class="sponsor-text-area">
@@ -195,7 +195,7 @@
                 </div>
               </div>
             </div>
-            <!-- BOTTOM -->
+  
             <div class="wrapper-test">
               <div class="itemRight item-right-1">
                 <div class="sponsor-text-area">
@@ -236,7 +236,7 @@
             </div>
 
 
-            <!-- Note -->
+  
             <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
               <p>
                 We thank our sponsors for their generosity in supporting our event and helping bring the
@@ -246,7 +246,7 @@
 
             <hr class="my-4 border-gray-300">
 
-            <!-- Donate Button -->
+     
             <div class="mt-5">
               <a title="Click here to sponsor"
                 class="inline-block tm-bg-gold transition text-black font-semibold  pt-2 pb-3 px-8 rounded-md"
@@ -258,7 +258,56 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+ <!--Sponsor Section-->
+            <div class="flex flex-col lg:flex-row justify-around items-center" id="sponsor-scroll">
+                <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 ">
+                    <!-- Header -->
+                    <a href="#" target="_blank" class="text-2xl mb-2 sm:mb-3 tm-text-yellow text-center ">Our
+                        Sponsors</a>
+                    <!-- Scrolling container top -->
+                    <div class="sponsor-wrapper">
+                        <div class="sponsor-scroll-container">
+                            <div class="sponsor-scroll-anything" id="sponsor-scroll-content-top">
+                                <!-- Community Sponsor templates inserted via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scrolling container bottom -->
+                    <div class="sponsor-wrapper">
+                        <div class="sponsor-scroll-container">
+                            <div class="sponsor-scroll-anything" id="sponsor-scroll-content-bottom">
+                                <!-- Corporate Sponsor templates inserted via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--Photo Frame-->
+                    <div class="sponsor-hover-photo-frame" id="hoverFrame"></div>
+                    <div class="sponsor-hover-photo-frame-overlay" id="frameOverlay"></div>
+                    <!-- Note -->
+                    <div class="text-white text-md sm:text-lg-events font-light mb-1 mt-4">
+                        <p>
+                            We thank our sponsors for their generosity in supporting our event and helping bring the
+                            community together
+                        </p>
+                    </div>
+
+                    <hr class="my-4 border-gray-300">
+
+                    <!-- Donate Button -->
+                    <div class="mt-5">
+                        <a title="Click here to sponsor"
+                            class="inline-block tm-bg-gold transition text-black font-semibold  pt-2 pb-3 px-8 rounded-md"
+                            target="_blank" href="https://tsdpregistration.azurewebsites.net/">
+                            <i class="fas fa-gift mr-3"></i>
+                            Sponsor
+                        </a>
+                    </div>
+                </div>
+            </div>
+    <script src="js/tsdp-sponsor.js"></script>
+
   </div>
   <!-- Committee -->
   <div class="parallax-window relative" data-image-src="img/email-bg.jpg" data-parallax="scroll" id="committee">

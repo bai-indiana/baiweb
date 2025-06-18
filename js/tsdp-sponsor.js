@@ -30,7 +30,7 @@ const community_sponsors = [
     {
         img: "img/sponsor/Chandrama-Chakrabarti-family.png",
         hoverImg: "img/sponsor/Chandrama-Chakrabarti-family.png",
-        family: "Roy Family",
+        family: "Chakrabarti Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
     },

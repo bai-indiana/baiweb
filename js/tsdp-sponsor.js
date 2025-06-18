@@ -81,6 +81,7 @@ function resumeAnimations() {
     document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'running';
     document.getElementById('sponsor-scroll-content-bottom').style.animationPlayState = 'running';
 }
+let autoCloseTimeout; // global timer reference
 
 function showHover(box) {
     const hoverImgUrl = box.dataset.hover;
@@ -89,6 +90,11 @@ function showHover(box) {
         hoverFrame.style.display = 'block';
         frameOverlay.style.display = 'block';
         pauseAnimations();
+
+        clearTimeout(autoCloseTimeout); // clear existing timer
+        autoCloseTimeout = setTimeout(() => {
+            hideHover();
+        }, 10000); // 10 seconds
     }
 }
 
@@ -96,14 +102,7 @@ function hideHover() {
     hoverFrame.style.display = 'none';
     frameOverlay.style.display = 'none';
     resumeAnimations();
-
-    // Clear previous timer if any
-    clearTimeout(autoCloseTimeout);
-
-    // Auto-close after 10 seconds
-    autoCloseTimeout = setTimeout(() => {
-        hideHover();
-    }, 10000);
+    clearTimeout(autoCloseTimeout); // stop any running timer
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -561,8 +561,9 @@
                 anchor.addEventListener('click', function (e) {
                     const url = this.getAttribute('data-url');
                     if (url) {
-                        // Open the external link in a new tab
-                        window.open(url, '_blank');
+                        // Open the external link in the same tab
+                        e.preventDefault();
+                        window.location.href = url;
                     } else {
                         // Smooth scroll for internal links
                         e.preventDefault();

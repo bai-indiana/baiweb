@@ -76,36 +76,36 @@ const frameOverlay = document.getElementById('frameOverlay');
 document.addEventListener("DOMContentLoaded", function () {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
-        const showHover = () => {
-            const hoverImgUrl = box.dataset.hover;
-            if (hoverImgUrl) {
-                hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
-                hoverFrame.style.display = 'block';
-                frameOverlay.style.display = 'block';
-                pauseAnimations();
-            }
-        };
+    const hoverFrame = document.getElementById('hoverFrame');      // Make sure this exists
+    const frameOverlay = document.getElementById('frameOverlay');  // Make sure this exists
 
-        const hideHover = () => {
-            hoverFrame.style.display = 'none';
-            frameOverlay.style.display = 'none';
-            resumeAnimations();
-        };
-
-        if (isTouchDevice) {
-            // For iPhones and other touch devices
-            box.addEventListener('touchstart', showHover);
-            box.addEventListener('touchend', hideHover);
-            box.addEventListener('touchcancel', hideHover);
-        } else {
-            // For desktops and non-touch devices
-            box.addEventListener('mouseenter', showHover);
-            box.addEventListener('mouseleave', hideHover);
+    const showHover = (box) => {
+        const hoverImgUrl = box.dataset.hover;
+        if (hoverImgUrl) {
+            hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
+            hoverFrame.style.display = 'block';
+            frameOverlay.style.display = 'block';
+            pauseAnimations();
         }
+    };
+
+    const hideHover = () => {
+        hoverFrame.style.display = 'none';
+        frameOverlay.style.display = 'none';
+        resumeAnimations();
+    };
+
+    document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
+        // Desktop: hover events
+        box.addEventListener('mouseenter', () => showHover(box));
+        box.addEventListener('mouseleave', hideHover);
+
+        // Mobile: touch events
+        box.addEventListener('touchstart', () => showHover(box), { passive: true });
+        box.addEventListener('touchend', hideHover, { passive: true });
+        box.addEventListener('touchcancel', hideHover, { passive: true });
     });
 });
-
 
 
 function pauseAnimations() {

@@ -31,7 +31,7 @@
 /* Small Desktop */
 @media (min-width: 900px) {
     .sponsor-wrapper {
-        max-width: 900px;
+        max-width: 900ppx;
     }
 }
 
@@ -188,18 +188,4 @@
     display: none;
     z-index: 9998;
     pointer-events: none;
-}
-
-.sponsor-hover-photo-frame,
-.sponsor-hover-photo-frame-overlay {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.sponsor-hover-photo-frame.show,
-.sponsor-hover-photo-frame-overlay.show {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
 }

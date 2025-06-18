@@ -15,14 +15,14 @@ const community_sponsors = [
     },
     {
         img: "img/sponsor/bag-family.png",
-        hoverImg: "img/sponsor/bag-family-full.jpg",
+        hoverImg: "img/sponsor/full/bag-family-full.jpg",
         family: "Bag Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
     },
     {
         img: "img/sponsor/Roy-family.png",
-        hoverImg: "img/sponsor/Roy-family-full.jpg",
+        hoverImg: "img/sponsor/full/Roy-family-full.jpg",
         family: "Roy Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"

@@ -74,39 +74,23 @@ const hoverFrame = document.getElementById('hoverFrame');
 const frameOverlay = document.getElementById('frameOverlay');
 
 document.addEventListener("DOMContentLoaded", function () {
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    const hoverFrame = document.getElementById('hoverFrame');      // Make sure this exists
-    const frameOverlay = document.getElementById('frameOverlay');  // Make sure this exists
-
-    const showHover = (box) => {
-        const hoverImgUrl = box.dataset.hover;
-        if (hoverImgUrl) {
-            hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
-            hoverFrame.style.display = 'block';
-            frameOverlay.style.display = 'block';
-            pauseAnimations();
-        }
-    };
-
-    const hideHover = () => {
-        hoverFrame.style.display = 'none';
-        frameOverlay.style.display = 'none';
-        resumeAnimations();
-    };
-
     document.querySelectorAll('.sponsor-scroll-box-sponsor-wrapper').forEach(box => {
-        // Desktop: hover events
-        box.addEventListener('mouseenter', () => showHover(box));
-        box.addEventListener('mouseleave', hideHover);
-
-        // Mobile: touch events
-        box.addEventListener('touchstart', () => showHover(box), { passive: true });
-        box.addEventListener('touchend', hideHover, { passive: true });
-        box.addEventListener('touchcancel', hideHover, { passive: true });
+        box.addEventListener('mouseenter', () => {
+            const hoverImgUrl = box.dataset.hover;
+            if (hoverImgUrl) {
+                hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
+                hoverFrame.style.display = 'block';
+                frameOverlay.style.display = 'block';
+                pauseAnimations();
+            }
+        });
+        box.addEventListener('mouseleave', () => {
+            hoverFrame.style.display = 'none';
+            frameOverlay.style.display = 'none';
+            resumeAnimations();
+        });
     });
 });
-
 
 function pauseAnimations() {
     document.getElementById('sponsor-scroll-content-top').style.animationPlayState = 'paused';

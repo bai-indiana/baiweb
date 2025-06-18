@@ -96,6 +96,14 @@ function hideHover() {
     hoverFrame.style.display = 'none';
     frameOverlay.style.display = 'none';
     resumeAnimations();
+
+    // Clear previous timer if any
+    clearTimeout(autoCloseTimeout);
+
+    // Auto-close after 10 seconds
+    autoCloseTimeout = setTimeout(() => {
+        hideHover();
+    }, 10000);
 }
 
 document.addEventListener("DOMContentLoaded", function () {

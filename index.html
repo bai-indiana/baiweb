@@ -47,7 +47,7 @@
                     </li>
                     <li class="inline-block mb-4 mx-4">
                         <a class="tm-text-gold py-1 md:py-3 px-4" href="#tsdp2025"
-                            data-url="bai-indiana.github.io/baiweb/tsdp.html#tsdp">TSDP-2025</a>
+                            data-url="https://bai-indiana.github.io/baiweb/tsdp.html#tsdp">TSDP-2025</a>
                     </li>
                     <li class="inline-block mb-4 mx-4">
                         <a class="tm-text-gold py-1 md:py-3 px-4" href="#events">Events</a>
@@ -561,9 +561,8 @@
                 anchor.addEventListener('click', function (e) {
                     const url = this.getAttribute('data-url');
                     if (url) {
-                        // Open the external link in the same tab
-                        e.preventDefault();
-                        window.location.href = url;
+                        // Open the external link in a new tab
+                        window.open(url, '_blank');
                     } else {
                         // Smooth scroll for internal links
                         e.preventDefault();

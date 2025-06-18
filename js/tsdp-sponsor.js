@@ -87,22 +87,19 @@ function showHover(box) {
     const hoverImgUrl = box.dataset.hover;
     if (hoverImgUrl) {
         hoverFrame.style.backgroundImage = `url(${hoverImgUrl})`;
-        hoverFrame.style.display = 'block';
-        frameOverlay.style.display = 'block';
+        hoverFrame.classList.add('show');
+        frameOverlay.classList.add('show');
         pauseAnimations();
 
-        clearTimeout(autoCloseTimeout); // clear existing timer
-        autoCloseTimeout = setTimeout(() => {
-            hideHover();
-        }, 10000); // 10 seconds
+        clearTimeout(window.autoCloseTimer);
+        window.autoCloseTimer = setTimeout(hideHover, 10000); // auto close after 10s
     }
 }
 
 function hideHover() {
-    hoverFrame.style.display = 'none';
-    frameOverlay.style.display = 'none';
+    hoverFrame.classList.remove('show');
+    frameOverlay.classList.remove('show');
     resumeAnimations();
-    clearTimeout(autoCloseTimeout); // stop any running timer
 }
 
 document.addEventListener("DOMContentLoaded", function () {

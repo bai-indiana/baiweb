@@ -125,6 +125,13 @@ tr.tm-tr-grey:hover  {
     color: white;
 }
 
+.js-table-text {
+    font-weight: 600;
+    color: #000000;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.904);
+    transition: text-shadow 0.3s ease; /* Add a transition for a smooth effect */
+}
+
 .input:focus {
     outline: none !important;
     border:1px solid #CC9966;

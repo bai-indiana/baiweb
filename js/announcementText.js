@@ -1,5 +1,6 @@
 // announcementText.js
 
+
 (function () {
   // Inject required CSS for animation
   const style = document.createElement("style");

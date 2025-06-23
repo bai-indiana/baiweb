@@ -22,16 +22,8 @@
     <script src="js/blinking-row.js"></script>
     <script src="js/tsdp-menu.js"></script>
     <script src="js/load-table.js"></script>
+      <script src="js/announcementText.js"></script>
  
-    <style>
-        .letter {
-            opacity: 0;
-            transition: opacity 0.2s ease-in;
-        }
-        .letter.visible {
-            opacity: 1;
-        }
-    </style>
 
     <style>
         /* Define the CSS for the transparent white div */
@@ -60,7 +52,7 @@
                     class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md bg-opacity-70">
                     
                     TSDP Events 2025 - 
-                   <span id="coming-soon-text" class="ml-2"></span>
+                  <span class="announcement-text">Coming Soon</span>
 
                     
                 </h2>
@@ -191,42 +183,7 @@
             }
         });
     </script>
-
-    <script>
-        const fullText = "Coming Soon";
-        const container = document.getElementById("coming-soon-text");
-
-        let cycleDuration = 1000 + fullText.length * 150 + 1000; // show + type + buffer
-
-        function runAnimation() {
-        // Step 1: Show full text
-        container.textContent = fullText;
-
-        // Step 2: After 1s, clear and type letter-by-letter
-        setTimeout(() => {
-            container.textContent = "";
-
-            [...fullText].forEach((char, index) => {
-            const span = document.createElement("span");
-            span.textContent = char;
-            span.classList.add("letter");
-            container.appendChild(span);
-
-            setTimeout(() => {
-                span.classList.add("visible");
-            }, index * 150);
-            });
-        }, 1000); // Wait 1s before typing
-        }
-
-        // Start loop
-        runAnimation();
-        setInterval(runAnimation, cycleDuration); // Repeat reliably
-    </script>
-
-
-
-
+ 
 </body>
 
 </html>

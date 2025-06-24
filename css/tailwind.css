@@ -859,8 +859,8 @@ tr.bg-white:hover {
 }
 
 tr.bg-gold:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(224, 184, 132, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(204, 153, 102, var(--tw-bg-opacity));
   color: white;
 }
 
@@ -870,8 +870,8 @@ tr.bg-gold:hover {
 }
 
 tr.bg-gold1:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(224, 184, 132, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.8;
+  background-color: rgba(234, 183, 143, var(--tw-bg-opacity));
   color: white;
 }
 

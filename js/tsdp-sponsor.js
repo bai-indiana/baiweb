@@ -8,7 +8,7 @@ const community_sponsors = [
     },
     {
         img: "img/sponsor/madhurimamoulik.png",
-        family: "Madhuri Mamoulik",
+        family: "Mamoulik Family",
         level: "Gold Sponsor",
         className: "gold-sponsor"
     },
@@ -39,6 +39,13 @@ const community_sponsors = [
         family: "Sumana Sinha",
         level: "Sponsor",
         className: "general-sponsor"
+    },
+    {
+        img: "img/sponsor/Banerjee-family.png",
+        hoverImg: "img/sponsor/full/Banerjee-family-full.jpg",
+        family: "Banerjee Family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
     }
 ];
 

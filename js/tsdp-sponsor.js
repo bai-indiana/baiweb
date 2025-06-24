@@ -8,7 +8,7 @@ const community_sponsors = [
     },
     {
         img: "img/sponsor/madhurimamoulik.png",
-        family: "Mamoulik Family",
+        family: "Moulik Family",
         level: "Gold Sponsor",
         className: "gold-sponsor"
     },

@@ -46,6 +46,20 @@ const community_sponsors = [
         family: "Banerjee Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/deb-family.png",
+        hoverImg: "img/sponsor/full/deb-family-full.jpg",
+        family: "Deb Family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/ghosh-family.png",
+        hoverImg: "img/sponsor/full/ghosh-family-full.jpg",
+        family: "Ghosh Family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
     }
 ];
 

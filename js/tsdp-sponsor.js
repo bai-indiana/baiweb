@@ -60,6 +60,13 @@ const community_sponsors = [
         family: "Ghosh Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/Sanjay-Gupta.png",
+        hoverImg: "img/sponsor/full/Sanjay-Gupta-full.jpg",
+        family: "Sanjay Gupta",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 

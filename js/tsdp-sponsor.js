@@ -67,6 +67,20 @@ const community_sponsors = [
         family: "Sanjay Gupta",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Mukherjee-family.png",
+        hoverImg: "img/sponsor/full/Mukherjee-family-full.jpg",
+        family: "Mukherjee Family",
+        level: "Sponsor",
+        className: "general-sponsor"
+    },
+    {
+        img: "img/sponsor/subho-family.png",
+        hoverImg: "img/sponsor/full/subho-family-full.jpg",
+        family: "Mukherjee family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 

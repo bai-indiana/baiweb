@@ -81,6 +81,13 @@ const community_sponsors = [
         family: "Mukherjee family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/chakrabarti-family.png",
+        hoverImg: "img/sponsor/full/chakrabarti-family-full.jpg",
+        family: "Chakrabarti family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
     }
 ];
 

@@ -72,8 +72,8 @@ const community_sponsors = [
         img: "img/sponsor/Mukherjee-family.png",
         hoverImg: "img/sponsor/full/Mukherjee-family-full.jpg",
         family: "Mukherjee Family",
-        level: "Sponsor",
-        className: "general-sponsor"
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     },
     {
         img: "img/sponsor/subho-family.png",

@@ -90,6 +90,13 @@ const community_sponsors = [
         className: "grand-sponsor"
     },
     {
+        img: "img/sponsor/Mandal-Viswam-family-grand.png",
+        hoverImg: "img/sponsor/full/Mandal-Viswam-family-full-grand.jpg",
+        family: "Mandal & Viswam family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
+    },
+    {
         img: "img/sponsor/Mukhopadhyay-family.png",
         hoverImg: "img/sponsor/full/Mukhopadhyay-family-full.jpg",
         family: "Mukhopadhyay family",
@@ -116,6 +123,20 @@ const community_sponsors = [
         family: "Chatterjee family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Sinha-Mukherjee-family-platinum.png",
+        hoverImg: "img/sponsor/full/Sinha-Mukherjee-family-full-platinum.jpg",
+        family: "Sinha & Mukherjee family",
+        level: "Platinum Sponsor",
+        className: "platinum-sponsor"
+    },
+    {
+        img: "img/sponsor/Banerjee-family-gold.png",
+        hoverImg: "img/sponsor/full/Banerjee-family-full-gold.jpg",
+        family: "Banerjee family",
+        level: "Gold Sponsor",
+        className: "gold-sponsor"
     }
 ];
 

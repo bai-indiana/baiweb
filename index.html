@@ -566,8 +566,8 @@
                 anchor.addEventListener('click', function (e) {
                     const url = this.getAttribute('data-url');
                     if (url) {
-                        // Open the external link in a new tab
-                        window.open(url, '_blank');
+                        // Redirect to the external link in the same tab
+                        window.location.href = url;
                     } else {
                         // Smooth scroll for internal links
                         e.preventDefault();
@@ -577,6 +577,7 @@
                     }
                 });
             });
+
         });
 
     </script>

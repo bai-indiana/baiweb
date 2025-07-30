@@ -151,6 +151,27 @@ const community_sponsors = [
         family: "Mitra family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/Dey-family-Platinum.png",
+        hoverImg: "img/sponsor/full/Dey-family-full-Platinum.jpg",
+        family: "Dey family",
+        level: "Platinum Sponsor",
+        className: "platinum-sponsor"
+    },
+    {
+        img: "img/sponsor/Kar-family-sponsor.png",
+        hoverImg: "img/sponsor/full/Kar-family-full-sponsor.jpg",
+        family: "Kar family",
+        level: "Sponsor",
+        className: "general-sponsor"
+    },
+    {
+        img: "img/sponsor/Saha-family-Grand.png",
+        hoverImg: "img/sponsor/full/Saha-family-full-Grand.jpg",
+        family: "Saha family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
     }
 ];
 
@@ -161,6 +182,10 @@ const corporate_sponsors = [
     { img: "img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Bronze", className: "bronze-sponsor" },
     { img: "img/sponsor-5.jpg", family: "Sponsor Name", level: "Sponsor Grand", className: "grand-sponsor" }
 ];
+
+// New: Filter exclusive grand sponsors
+const exclusive_grand_sponsors = community_sponsors.filter(s => s.level === "Grand Sponsor");
+
 
 function createSponsorHTML(sponsor) {
     const hoverImg = sponsor.hoverImg || sponsor.img;
@@ -178,6 +203,7 @@ function populateSponsors(containerId, sponsor_category) {
     const content = sponsor_category.map(createSponsorHTML).join('');
     container.innerHTML = content + content; // Repeat for continuous scroll effect
 }
+
 
 populateSponsors('sponsor-scroll-content-top', community_sponsors);
 populateSponsors('sponsor-scroll-content-bottom', corporate_sponsors);

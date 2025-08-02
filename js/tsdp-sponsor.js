@@ -172,11 +172,30 @@ const community_sponsors = [
         family: "Saha family",
         level: "Grand Sponsor",
         className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/Bhattacharjee-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Bhattacharjee-family-full-Bronze.jpg",
+        family: "Bhattacharjee family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Ghosh-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Ghosh-family-full-Bronze.jpg",
+        family: "Ghosh family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 
 const corporate_sponsors = [
-    { img: "img/sponsor-1.jpg", family: "Sponsor Name", level: "Sponsor Gold", className: "gold-sponsor" },
+    { 
+        img: "img/sponsor/Beenu-Sikabd-Corporate-sponsor-250.png",
+        hoverImg: "img/sponsor/full/Beenu-Sikabd-Corporate-sponsor-full-250.jpg",
+        family: "Beenu Sikabd", 
+        level: "Sponsor", 
+        className: "general-sponsor" },
     { img: "img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Silver", className: "silver-sponsor" },
     { img: "img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Platinum", className: "platinum-sponsor" },
     { img: "img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Bronze", className: "bronze-sponsor" },

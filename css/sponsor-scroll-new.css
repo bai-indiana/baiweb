@@ -73,7 +73,7 @@
 }
 
 #sponsor-scroll-content-top {
-    animation: sponsor-scroll-anything-left 30s linear infinite;
+    animation: sponsor-scroll-anything-left 50s linear infinite;
     animation-play-state: running;
 }
 

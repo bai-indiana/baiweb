@@ -34,6 +34,12 @@ const community_sponsors = [
         className: "grand-sponsor"
     },
     {
+        img: "img/sponsor/Kar-family-Silver.png",
+        hoverImg: "img/sponsor/full/Kar-family-full-Silver.jpg",
+        family: "Kar Family",
+        level: "Silver Sponsor",
+        className: "silver-sponsor"
+    },{
         img: "img/sponsor/Sumana-Sinha.png",
         hoverImg: "img/sponsor/full/Sumana-Sinha-full.jpg",
         family: "Sumana Sinha",
@@ -184,6 +190,13 @@ const community_sponsors = [
         img: "img/sponsor/Ghosh-family-Bronze.png",
         hoverImg: "img/sponsor/full/Ghosh-family-full-Bronze.jpg",
         family: "Ghosh family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Roy-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Roy-family-full-Bronze.jpg",
+        family: "Roy family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
     }

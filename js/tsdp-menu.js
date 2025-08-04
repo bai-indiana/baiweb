@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp.html#tsdp">${tsdpIcon}TSDP</a></li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="registration.html#registration">${registrationIcon}Registration</a></li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp-accommodation.html#accommodation">${accommodationIcon}Accommodation</a></li>
-                  
+                    <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp-food.html#food">${foodIcon}Food</a></li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp-events.html#events">${eventsIcon}Events</a></li>
                     <li class="inline-block mb-4 mx-4"><a class="tm-text-gold py-1 md:py-3 px-4" href="tsdp.html#committee">${contactIcon}Committee</a></li>
                 </ul>

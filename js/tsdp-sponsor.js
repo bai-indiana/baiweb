@@ -39,7 +39,8 @@ const community_sponsors = [
         family: "Kar Family",
         level: "Silver Sponsor",
         className: "silver-sponsor"
-    },{
+    },
+    {
         img: "img/sponsor/Sumana-Sinha.png",
         hoverImg: "img/sponsor/full/Sumana-Sinha-full.jpg",
         family: "Sumana Sinha",
@@ -131,13 +132,6 @@ const community_sponsors = [
         className: "bronze-sponsor"
     },
     {
-        img: "img/sponsor/Sinha-Mukherjee-family-platinum.png",
-        hoverImg: "img/sponsor/full/Sinha-Mukherjee-family-full-platinum.jpg",
-        family: "Sinha & Mukherjee family",
-        level: "Platinum Sponsor",
-        className: "platinum-sponsor"
-    },
-    {
         img: "img/sponsor/Banerjee-family-gold.png",
         hoverImg: "img/sponsor/full/Banerjee-family-full-gold.jpg",
         family: "Banerjee family",
@@ -197,6 +191,27 @@ const community_sponsors = [
         img: "img/sponsor/Roy-family-Bronze.png",
         hoverImg: "img/sponsor/full/Roy-family-full-Bronze.jpg",
         family: "Roy family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Das-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Das-family-full-Bronze.jpg",
+        family: "Das family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Shaw-family-Silver.png",
+        hoverImg: "img/sponsor/full/Shaw-family-full-Silver.jpg",
+        family: "Shaw Family",
+        level: "Silver Sponsor",
+        className: "silver-sponsor"
+    },
+    {
+        img: "img/sponsor/Manna-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Manna-family-full-Bronze.jpg",
+        family: "Manna family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
     }

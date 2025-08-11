@@ -226,8 +226,8 @@ const community_sponsors = [
         img: "img/sponsor/Saha-family-Bronze.png",
         hoverImg: "img/sponsor/full/Saha-family-full-Bronze.jpg",
         family: "Saha family",
-        level: "Gold  Sponsor",
-        className: "gold-sponsor"
+        level: "Bronze  Sponsor",
+        className: "bronze-sponsor"
     },
     {
         img: "img/sponsor/Rathmann-Family-Gold.png",

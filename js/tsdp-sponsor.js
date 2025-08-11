@@ -214,6 +214,27 @@ const community_sponsors = [
         family: "Manna family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Dutta-Family-Bronze.png",
+        hoverImg: "img/sponsor/full/Dutta-Family-full-Bronze.jpg",
+        family: "Dutta family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Saha-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Saha-family-full-Bronze.jpg",
+        family: "Saha family",
+        level: "Bronze  Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Rathmann-Family-Gold.png",
+        hoverImg: "img/sponsor/full/Rathmann-Family-full-Gold.jpg",
+        family: "Rathmann  family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 

@@ -252,11 +252,7 @@ const corporate_sponsors = [
         family: "Patel", 
         level: "Platinum Sponsor", 
         className: "platinum-sponsor" 
-    },
-    { img: "img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Silver", className: "silver-sponsor" },
-    { img: "img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Platinum", className: "platinum-sponsor" },
-    { img: "img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Bronze", className: "bronze-sponsor" },
-    { img: "img/sponsor-5.jpg", family: "Sponsor Name", level: "Sponsor Grand", className: "grand-sponsor" }
+    }
 ];
 
 // New: Filter exclusive grand sponsors

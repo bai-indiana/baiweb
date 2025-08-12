@@ -235,6 +235,20 @@ const community_sponsors = [
         family: "Rathmann  family",
         level: "Gold Sponsor",
         className: "gold-sponsor"
+    },
+    {
+        img: "img/sponsor/Banerjee-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Banerjee-family-full-Bronze.jpg",
+        family: "Banerjee  family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Rajib-Sinha-Bronze.png",
+        hoverImg: "img/sponsor/full/Rajib-Sinha-full-Bronze.jpg",
+        family: "Banerjee  family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 
@@ -252,6 +266,13 @@ const corporate_sponsors = [
         family: "Patel", 
         level: "Sponsor", 
         className: "platinum-sponsor" 
+    },
+    { 
+        img: "img/sponsor/manzil-500.png",
+        hoverImg: "img/sponsor/full/manzil-500.jpg",
+        family: "Vylla (Manzil Kohli)", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
     }
 ];
 

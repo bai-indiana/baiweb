@@ -244,7 +244,15 @@ const corporate_sponsors = [
         hoverImg: "img/sponsor/full/Beenu-Sikabd-Corporate-sponsor-full-250.jpg",
         family: "Beenu Sikabd", 
         level: "Sponsor", 
-        className: "general-sponsor" },
+        className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/Patel-IN-AD-2000.png",
+        hoverImg: "img/sponsor/full/Patel-IN-AD-2000.jpg",
+        family: "Patel", 
+        level: "Sponsor $2000", 
+        className: "general-sponsor" 
+    },
     { img: "img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Silver", className: "silver-sponsor" },
     { img: "img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Platinum", className: "platinum-sponsor" },
     { img: "img/sponsor-4.jpg", family: "Sponsor Name", level: "Sponsor Bronze", className: "bronze-sponsor" },

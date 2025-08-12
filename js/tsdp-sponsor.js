@@ -250,8 +250,8 @@ const corporate_sponsors = [
         img: "img/sponsor/Patel-IN-AD-2000.png",
         hoverImg: "img/sponsor/full/Patel-IN-AD-2000.jpg",
         family: "Patel", 
-        level: "Sponsor $2000", 
-        className: "general-sponsor" 
+        level: "Platinum Sponsor", 
+        className: "platinum-sponsor" 
     },
     { img: "img/sponsor-2.jpg", family: "Sponsor Name", level: "Sponsor Silver", className: "silver-sponsor" },
     { img: "img/sponsor-3.jpg", family: "Sponsor Name", level: "Sponsor Platinum", className: "platinum-sponsor" },

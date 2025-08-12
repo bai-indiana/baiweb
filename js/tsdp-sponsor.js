@@ -247,10 +247,10 @@ const corporate_sponsors = [
         className: "general-sponsor" 
     },
     { 
-        img: "img/sponsor/Patel-IN-AD-2000.png",
-        hoverImg: "img/sponsor/full/Patel-IN-AD-2000.jpg",
+        img: "img/sponsor/Patel-IN-AD-750.png",
+        hoverImg: "img/sponsor/full/Patel-IN-AD-750.jpg",
         family: "Patel", 
-        level: "Platinum Sponsor", 
+        level: "Sponsor", 
         className: "platinum-sponsor" 
     }
 ];

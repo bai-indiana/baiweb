@@ -246,7 +246,7 @@ const community_sponsors = [
     {
         img: "img/sponsor/Rajib-Sinha-Bronze.png",
         hoverImg: "img/sponsor/full/Rajib-Sinha-full-Bronze.jpg",
-        family: "Banerjee  family",
+        family: "Rajib Sinha family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
     }

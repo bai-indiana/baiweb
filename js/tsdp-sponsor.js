@@ -233,8 +233,8 @@ const community_sponsors = [
         img: "img/sponsor/Rathmann-Family-Gold.png",
         hoverImg: "img/sponsor/full/Rathmann-Family-full-Gold.jpg",
         family: "Rathmann  family",
-        level: "Bronze Sponsor",
-        className: "bronze-sponsor"
+        level: "Gold Sponsor",
+        className: "gold-sponsor"
     }
 ];
 

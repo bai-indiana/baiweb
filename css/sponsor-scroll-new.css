@@ -127,37 +127,54 @@
     user-select: none;
 }
 
- .heritage-sponsor {
-    color: #8b0000; /* deep heritage red */
+
+/*-----Heritage Sponsor styling start-----*/
+/* Heritage Sponsor styling */
+.heritage-sponsor {
+    color: #8b0000; /* Deep heritage red */
     text-shadow: 
-        0 0 6px #ffd700, 
-        0 0 12px #b8860b, 
+        0 0 6px #ffd700,
+        0 0 12px #b8860b,
         0 0 18px #ffd700;
     font-weight: bold;
-    animation: heritage-pulse 3s infinite ease-in-out;
+    animation: heritage-heartbeat 2s infinite ease-in-out; /* Heartbeat effect */
 }
 
-@keyframes heritage-pulse {
+/* Heartbeat animation: two quick pulses, then pause */
+@keyframes heritage-heartbeat {
     0% {
         text-shadow: 
-            0 0 6px #ffd700, 
-            0 0 12px #b8860b, 
+            0 0 6px #ffd700,
+            0 0 12px #b8860b,
             0 0 18px #ffd700;
     }
-    50% {
+    15% {
         text-shadow: 
-            0 0 10px #ffec8b, 
-            0 0 20px #ffd700, 
+            0 0 10px #ffec8b,
+            0 0 20px #ffd700,
             0 0 30px #ffec8b;
+    }
+    30% {
+        text-shadow: 
+            0 0 6px #ffd700,
+            0 0 12px #b8860b,
+            0 0 18px #ffd700;
+    }
+    45% {
+        text-shadow: 
+            0 0 12px #ffec8b,
+            0 0 24px #ffd700,
+            0 0 36px #ffec8b;
     }
     100% {
         text-shadow: 
-            0 0 6px #ffd700, 
-            0 0 12px #b8860b, 
+            0 0 6px #ffd700,
+            0 0 12px #b8860b,
             0 0 18px #ffd700;
     }
 }
 
+/*-----Heritage Sponsor styling end-----*/
 
 .gold-sponsor {
     color: #d4af37;

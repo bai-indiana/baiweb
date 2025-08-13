@@ -254,6 +254,13 @@ const community_sponsors = [
 
 const corporate_sponsors = [
     { 
+        img: "img/sponsor/Dr-Ajay-Joshi-Heritage.png",
+        hoverImg: "img/sponsor/full/Dr-Ajay-Joshi-Heritage.jpg",
+        family: "Dr Ajay Joshi", 
+        level: "Heritage Sponsor", 
+        className: "heritage-sponsor" 
+    },
+    { 
         img: "img/sponsor/Beenu-Sikabd-Corporate-sponsor-250.png",
         hoverImg: "img/sponsor/full/Beenu-Sikabd-Corporate-sponsor-full-250.jpg",
         family: "Beenu Sikabd", 
@@ -271,6 +278,13 @@ const corporate_sponsors = [
         img: "img/sponsor/manzil-500.png",
         hoverImg: "img/sponsor/full/manzil-500.jpg",
         family: "Vylla (Manzil Kohli)", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/Hoosier-Pediatric-Dental-Group.png",
+        hoverImg: "img/sponsor/full/Hoosier-Pediatric-Dental-Group.jpg",
+        family: "Hoosier Pediatric Dental", 
         level: "Sponsor", 
         className: "general-sponsor" 
     }

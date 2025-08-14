@@ -255,6 +255,13 @@ const community_sponsors = [
         family: "Rajib Sinha family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Bala-family-bronze.png",
+        hoverImg: "img/sponsor/full/Bala-family-full-bronze.jpg",
+        family: "Rajib Sinha family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 
@@ -291,6 +298,13 @@ const corporate_sponsors = [
         img: "img/sponsor/Hoosier-Pediatric-Dental-Group.png",
         hoverImg: "img/sponsor/full/Hoosier-Pediatric-Dental-Group.jpg",
         family: "Hoosier Pediatric Dental", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/chowrastha.png",
+        hoverImg: "img/sponsor/full/chowrastha.jpg",
+        family: "Desi Chowrastha - An Indian Eatery", 
         level: "Sponsor", 
         className: "general-sponsor" 
     }

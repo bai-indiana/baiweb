@@ -6,7 +6,7 @@ const community_sponsors = [
         level: "Grand Sponsor",
         className: "grand-sponsor"
     },    {
-        img: "img/sponsor/Majumdar-family-full-Grand.png",
+        img: "img/sponsor/Majumdar-family-Grand.png",
         hoverImg: "img/sponsor/full/Majumdar-family-full-Grand.jpg",
         family: "Majumdar Family",
         level: "Grand Sponsor",

@@ -1,0 +1,63 @@
+Subir,Chakrabarti,3000
+Sudip,Biswas,3000
+Nandita,Das,3000
+Asit,Saha,3000
+Sujoy,Deb,3000
+Ashis,Chakrabarti,3000
+Prithwiraj,Ghosh,3000
+Ambar,Banerjee,3000
+Anindita," Sen",3000
+Anushree,M Bag,3000
+Saumyadip,Dasgupta,3000
+Arnav,Mitra,3000
+Snehasis,Mukhopadhyay,3000
+Sajal,Bose,3000
+Madhuchhanda,Mandal,3000
+Sukanta,Majumdar,3000
+Dhiman,Chatterjee,3000
+Bhaskar,Mukhopadhyay,2000
+Asim,Dey,2000
+Moumita,Mukherjee,2000
+Arijit,Bhowmik,2000
+Aniruddha,Biswas,2000
+Arnab,Banerjee,1500
+MADHURIMA,MOULIK,1500
+Suman,BHATTACHARJEE,1500
+Suchitrita," Rathmann",1500
+Shruti,Shaw,1000
+Debangshu,Sadhukhan,1000
+ABHIJIT,DAS,1000
+Moumita,Kar,1000
+Anirban,Banerjee,750
+Parama,Paul,750
+Subir,Ghosh,750
+Sourav,Saha,750
+Radhika,Mathur  Sinha,750
+Amitabho,Bhattacharjee,750
+Ajit,Roy,750
+Shantanu,Manna,750
+Madhubanti,Dutta,750
+Arunima,Ram,750
+Subha,Mukherjee,750
+Ranajoy,Majumdar,750
+sanjay,gupta,750
+Raghunath,Mukherjee,750
+Monish,Chatterjee,750
+Rajib,Sinha,750
+Arpita,Bala,600
+RUDRA,RATH,400
+Bhuban,Mishra,400
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+
+Query => select U.[fname], U.[lname] , R.[m_amount] from [dbo].[payment_registration] R join [dbo].[tsdp_user] U on U.id=R.user_id where year(R.[date_of_reg]) = 2025 AND [conf_status] = 1
+AND R.[m_amount] > 350 order by R.[m_amount] desc

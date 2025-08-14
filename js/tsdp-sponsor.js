@@ -304,7 +304,7 @@ const corporate_sponsors = [
     { 
         img: "img/sponsor/chowrastha.png",
         hoverImg: "img/sponsor/full/chowrastha.jpg",
-        family: "Desi Chowrastha - An Indian Eatery", 
+        family: "Desi Chowrastha", 
         level: "Sponsor", 
         className: "general-sponsor" 
     }

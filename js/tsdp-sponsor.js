@@ -259,7 +259,7 @@ const community_sponsors = [
     {
         img: "img/sponsor/Bala-family-bronze.png",
         hoverImg: "img/sponsor/full/Bala-family-full-bronze.jpg",
-        family: "Rajib Sinha family",
+        family: "Bala family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
     }

@@ -300,14 +300,14 @@ const corporate_sponsors = [
         family: "Hoosier Pediatric Dental", 
         level: "Sponsor", 
         className: "general-sponsor" 
-    },
-    { 
-        img: "img/sponsor/chowrastha.png",
-        hoverImg: "img/sponsor/full/chowrastha.jpg",
-        family: "Desi Chowrastha", 
-        level: "Sponsor", 
-        className: "general-sponsor" 
-    }
+    // },
+    // { 
+    //     img: "img/sponsor/chowrastha.png",
+    //     hoverImg: "img/sponsor/full/chowrastha.jpg",
+    //     family: "Desi Chowrastha", 
+    //     level: "Sponsor", 
+    //     className: "general-sponsor" 
+    // }
 ];
 
 // New: Filter exclusive grand sponsors

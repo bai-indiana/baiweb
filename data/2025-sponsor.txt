@@ -44,7 +44,7 @@ sanjay,gupta,750
 Raghunath,Mukherjee,750
 Monish,Chatterjee,750
 Rajib,Sinha,750
-Arpita,Bala,600ss
+Arpita,Bala,600
 
 .
 .

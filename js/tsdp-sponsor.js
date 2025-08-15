@@ -262,6 +262,20 @@ const community_sponsors = [
         family: "Bala family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Das-Family-platinum.png",
+        hoverImg: "img/sponsor/full/Das-Family-full-platinum.jpg",
+        family: "Das family",
+        level: "Platinum Sponsor",
+        className: "platinum-sponsor"
+    },
+    {
+        img: "img/sponsor/Karmakar-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Karmakar-family-full-Bronze.jpg",
+        family: "Karmakar family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
     }
 ];
 

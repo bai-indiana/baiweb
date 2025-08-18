@@ -264,11 +264,11 @@ const community_sponsors = [
         className: "bronze-sponsor"
     },
     {
-        img: "img/sponsor/Das-Family-platinum.png",
-        hoverImg: "img/sponsor/full/Das-Family-full-platinum.jpg",
-        family: "Das family",
-        level: "Platinum Sponsor",
-        className: "platinum-sponsor"
+        img: "img/sponsor/Das-Family-silver.png",
+        hoverImg: "img/sponsor/full/Das-Family-full-silver.jpg",
+        family: "Dan family",
+        level: "Silver Sponsor",
+        className: "silver-sponsor"
     },
     {
         img: "img/sponsor/Karmakar-family-Bronze.png",
@@ -276,6 +276,41 @@ const community_sponsors = [
         family: "Karmakar family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Chatterjee-family-grand.png",
+        hoverImg: "img/sponsor/full/Chatterjee-family-full-grand.jpg",
+        family: "Chatterjee family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/Biswas-family-Platinum.png",
+        hoverImg: "img/sponsor/full/Biswas-family-full-Platinum.jpg",
+        family: "Biswas family",
+        level: "Platinum Sponsor",
+        className: "platinum-sponsor"
+    },
+    {
+        img: "img/sponsor/Mukhopadhyay-family-Silver.png",
+        hoverImg: "img/sponsor/full/Mukhopadhyay-family-full-Silver.jpg",
+        family: "Mukhopadhyay family",
+        level: "Silver Sponsor",
+        className: "silver-sponsor"
+    },
+    {
+        img: "img/sponsor/Mohapatra-family-Bronze.png",
+        hoverImg: "img/sponsor/full/Mohapatra-family-full-Bronze.jpg",
+        family: "Mohapatra family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
+        img: "img/sponsor/Mukhopadhyay-family-platinum.png",
+        hoverImg: "img/sponsor/full/Mukhopadhyay-family-full-platinum.png",
+        family: "Mukhopadhyay family",
+        level: "Platinum Sponsor",
+        className: "platinum-sponsor"
     }
 ];
 
@@ -319,6 +354,13 @@ const corporate_sponsors = [
         img: "img/sponsor/chowrastha.png",
         hoverImg: "img/sponsor/full/chowrastha.jpg",
         family: "Desi Chowrastha", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/SW Constructions.png",
+        hoverImg: "img/sponsor/full/SW-Constructions.jpg",
+        family: "SW Constructions", 
         level: "Sponsor", 
         className: "general-sponsor" 
     }

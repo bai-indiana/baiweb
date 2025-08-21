@@ -311,6 +311,20 @@ const community_sponsors = [
         family: "Mukhopadhyay family",
         level: "Platinum Sponsor",
         className: "platinum-sponsor"
+    },
+    {
+        img: "img/sponsor/Bose-family-Grand.png",
+        hoverImg: "img/sponsor/full/Bose-family-full-Grand.jpg",
+        family: "Bose Family",
+        level: "Grand Sponsor",
+        className: "grand-sponsor"
+    },
+    {
+        img: "img/sponsor/Mukhopadhyay-family2-platinum.png",
+        hoverImg: "img/sponsor/full/Mukhopadhyay-family2-full-platinum.jpg",
+        family: "Mukhopadhyay family",
+        level: "Platinum Sponsor",
+        className: "platinum-sponsor"
     }
 ];
 
@@ -361,6 +375,13 @@ const corporate_sponsors = [
         img: "img/sponsor/SW Constructions.png",
         hoverImg: "img/sponsor/full/SW-Constructions.jpg",
         family: "SW Constructions", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/VarundsSponser.png",
+        hoverImg: "img/sponsor/full/VarundsSponser.jpg",
+        family: "Vrunda Parlor", 
         level: "Sponsor", 
         className: "general-sponsor" 
     }

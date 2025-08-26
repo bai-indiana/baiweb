@@ -332,6 +332,13 @@ const community_sponsors = [
         family: "Radhika's-family",
         level: "Sponsor",
         className: "general-sponsor"
+    },
+    {
+        img: "img/sponsor/Bardhan-Akala-Family-gold.png",
+        hoverImg: "img/sponsor/full/Bardhan-Akala-Family-full-gold.jpg",
+        family: "Bardhan-Akala family",
+        level: "Gold Sponsor",
+        className: "gold-sponsor"
     }
 ];
 

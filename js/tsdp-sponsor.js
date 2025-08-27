@@ -2,6 +2,7 @@
 const community_sponsors = [
     {
         img: "img/sponsor/das-family.png",
+        hoverImg: "img/sponsor/full/das-family.jpg",
         family: "Das Family",
         level: "Grand Sponsor",
         className: "grand-sponsor"

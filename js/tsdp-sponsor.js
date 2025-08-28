@@ -412,7 +412,7 @@ const corporate_sponsors = [
         hoverImg: "img/sponsor/full/Amit-Mishra-Realtor.jpg",
         family: "Amit Mishra", 
         level: "Sponsor", 
-        className: "general-sponsor" 
+        className: "platinum-sponsor" 
     }
 ];
 

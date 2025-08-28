@@ -406,6 +406,13 @@ const corporate_sponsors = [
         family: "Vrunda Parlor", 
         level: "Sponsor", 
         className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/Amit-Mishra-Realtor.png",
+        hoverImg: "img/sponsor/full/Amit-Mishra-Realtor.jpg",
+        family: "Amit Mishra", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
     }
 ];
 

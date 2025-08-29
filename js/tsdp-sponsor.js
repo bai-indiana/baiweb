@@ -209,6 +209,13 @@ const community_sponsors = [
         className: "bronze-sponsor"
     },
     {
+        img: "img/sponsor/Majumdar-Family-Bronze.png",
+        hoverImg: "img/sponsor/full/Majumdar-Family-full-Bronze.jpg",
+        family: "Majumdar family",
+        level: "Bronze Sponsor",
+        className: "bronze-sponsor"
+    },
+    {
         img: "img/sponsor/Shaw-family-Silver.png",
         hoverImg: "img/sponsor/full/Shaw-family-full-Silver.jpg",
         family: "Shaw Family",
@@ -275,13 +282,6 @@ const community_sponsors = [
         img: "img/sponsor/Karmakar-family-Bronze.png",
         hoverImg: "img/sponsor/full/Karmakar-family-full-Bronze.jpg",
         family: "Karmakar family",
-        level: "Bronze Sponsor",
-        className: "bronze-sponsor"
-    },
-    {
-        img: "img/sponsor/Majumdar-Family-Bronze.png",
-        hoverImg: "img/sponsor/full/Majumdar-Family-full-Bronze.jpg",
-        family: "Majumdar family",
         level: "Bronze Sponsor",
         className: "bronze-sponsor"
     },

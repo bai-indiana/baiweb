@@ -19,6 +19,7 @@
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/bai.css" rel="stylesheet">
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Define the CSS for the transparent white div */
         .transparent-white-div {
@@ -38,7 +39,7 @@
 </head>
 
 <body>
-     
+    
     <!-- Events -->
     <div class="parallax-window" data-image-src="img/durga-bg.png" data-parallax="scroll" id="events">
         <nav class="fixed w-full bg-black bg-opacity-70" id="tm-nav">
@@ -76,6 +77,22 @@
                     <span class="announcement-text">Tri State Durga Puja Sept 26th to 28th, 2025 !!</span>
                     </h2>
             </div>
+            <!-- Pujo Countdown Section -->
+            <section class="container mx-auto px-4 text-white" >
+                <div id="pujo-countdown" class="my-10 flex justify-center">
+                <div class="bg-black bg-opacity-70 rounded-xl p-6 text-center shadow-lg w-full max-w-xl">
+                    <h2 class="text-3xl font-bold tm-text-gold mb-4">Durga Pujo Countdown</h2>
+                    <p class="text-gray-300 mb-6">Counting down to <span class="tm-text-gold font-semibold">Friday, September 26, 2025</span></p>
+                    <div class="grid grid-cols-4 gap-4 text-center">
+                    <div class="bg-gray-800 rounded-lg p-4"><div class="text-4xl font-extrabold" id="dd">—</div><div class="text-gray-400">Days</div></div>
+                    <div class="bg-gray-800 rounded-lg p-4"><div class="text-4xl font-extrabold" id="hh">—</div><div class="text-gray-400">Hours</div></div>
+                    <div class="bg-gray-800 rounded-lg p-4"><div class="text-4xl font-extrabold" id="mm">—</div><div class="text-gray-400">Minutes</div></div>
+                    <div class="bg-gray-800 rounded-lg p-4"><div class="text-4xl font-extrabold" id="ss">—</div><div class="text-gray-400">Seconds</div></div>
+                    </div>
+                   
+                    
+                </div>
+            </section>
             <div class="flex flex-col lg:flex-row justify-around items-center">
                 <div class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-brown bg-opacity-90 tm-item-container">
                     <div class="flex items-start mb-6 tm-menu-item">
@@ -392,6 +409,7 @@
     <script src="js/parallax.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>
     <script src="js/announcementText.js"></script>
+     <script src="js/countdown.js"></script>
     <script>
         // Function to handle sharing when the button is clicked
         document.getElementById('shareButton').addEventListener('click', function () {

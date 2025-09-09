@@ -427,6 +427,13 @@ const corporate_sponsors = [
         family: "Amit Mishra", 
         level: "Sponsor", 
         className: "platinum-sponsor" 
+    },
+    { 
+        img: "img/sponsor/1947.png",
+        hoverImg: "img/sponsor/full/1947.jpg",
+        family: "1947 Restaurant", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
     }
 ];
 

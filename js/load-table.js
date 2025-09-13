@@ -26,7 +26,7 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
                 headerRow.appendChild(th);
             });
             thead.appendChild(headerRow);
-            thead.className = 'bg-black bg-opacity-70 text-white';
+            thead.className = 'row-header';
 
             // Rows
             lines.slice(1).forEach((line, idx) => {
@@ -35,8 +35,8 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
 
                 const row = document.createElement('tr');
                 row.className = idx % 2 === 0
-                    ? 'bg-gold text-center js-table-text  bg-opacity-70 transition'
-                    : 'bg-gold1 text-center  js-table-text bg-opacity-70 transition';
+                    ? 'row-odd text-center js-table-text  bg-opacity-70 transition'
+                    : 'row-even text-center  js-table-text bg-opacity-70 transition';
 
                 cols.forEach((col, colIndex) => {
                     const td = document.createElement('td');

@@ -1,0 +1,97 @@
+/* ===========================
+   HEADER ROW
+   =========================== */
+.row-header {
+  position: relative;                 /* safe for ::before if needed later */
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.10)),
+    #334155;                          /* slate base */
+  box-shadow: inset 0 -1px rgba(0,0,0,0.22);
+}
+
+/* Header cells: padding, separators, tidy text */
+.row-header > th,
+.row-header > td {
+  padding: 10px 12px;                 /* mirrors your py-2 px-4 intent */
+  background-clip: padding-box;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border-right: 1px solid rgba(255,255,255,0.18);  /* column separator */
+  white-space: nowrap;                                 /* prevent jitter */
+}
+.row-header > th:last-child,
+.row-header > td:last-child { border-right: none; }
+
+/* (Optional) Sticky header: uncomment if table sits in a scrollable wrapper */
+/*
+.row-header > th,
+.row-header > td { position: sticky; top: 0; z-index: 2; }
+*/
+
+/* ===========================
+   BODY ROWS: ODD / EVEN
+   =========================== */
+
+/* Ensure positioned ancestor for effects if you add ::before later */
+.row-odd,
+.row-even { position: relative; }
+
+/* --- ODD ROW: warm almond (slightly transparent) --- */
+.row-odd {
+  background-color: rgba(247, 226, 199, 0.95); /* warm almond */
+  color: #111;
+  transition: background-color 160ms ease;
+}
+.row-odd:hover {
+  background-color: rgba(235, 205, 166, 0.92);
+}
+
+/* --- EVEN ROW: matte image with soft white veil --- */
+.row-even {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.60), rgba(255,255,255,0.90)), /* veil */
+    url("/img/matte_background.png");  /* your generated matte texture */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #111;
+  transition: background 160ms ease;
+}
+.row-even:hover {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.40), rgba(255,255,255,0.80)),
+    url("/img/matte_background.png");
+}
+
+/* Column separators + subtle 3D paper feel — applied from the row only */
+.row-odd > th,
+.row-odd > td,
+.row-even > th,
+.row-even > td {
+  padding: 10px 12px;                   /* consistent spacing */
+  background-clip: padding-box;         /* prevent bg bleeding under borders */
+  border-right: 1px solid rgba(17,17,17,0.12); /* column separator */
+  /* inner highlight (top) + bottom crease for gentle 3D */
+  box-shadow:
+    inset 0 1px rgba(255,255,255,0.55),
+    inset 0 -1px rgba(17,17,17,0.10);
+}
+.row-odd > th:last-child,
+.row-odd > td:last-child,
+.row-even > th:last-child,
+.row-even > td:last-child {
+  border-right: none;                    /* clean right edge */
+}
+
+/* Focus state for keyboard users */
+.row-odd:focus-within > td,
+.row-even:focus-within > td {
+  outline: 2px solid rgba(17,17,17,0.18);
+  outline-offset: -2px;
+}
+
+/* Reduce motion for sensitive users */
+@media (prefers-reduced-motion: reduce) {
+  .row-header, .row-odd, .row-even { transition: none; }
+}

@@ -558,39 +558,43 @@ video {
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
 }
 
+/* Base: full width, centered, comfy gutters + safe-area for notches */
 .container {
   width: 100%;
+  margin-inline: auto;
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
+/* Tiny phones (iPhone SE / older 320px) */
+@media (min-width: 320px) { .container { max-width: 320px; } }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
+/* iPhone 11/12/13/14/15 mini/Pro (375px) */
+@media (min-width: 375px) { .container { max-width: 375px; } }
 
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
+/* iPhone 12/13/14/15 (390px) */
+@media (min-width: 390px) { .container { max-width: 390px; } }
 
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
+/* iPhone Plus/Max older (414px) */
+@media (min-width: 414px) { .container { max-width: 414px; } }
 
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
+/* iPhone 14/15 Plus & 15 Pro Max portrait (428px) */
+@media (min-width: 428px) { .container { max-width: 428px; } }
+
+/* Tablet-ish & larger phones landscape comfort steps */
+@media (min-width: 568px) { .container { max-width: 568px; } }   /* 5/SE landscape */
+@media (min-width: 667px) { .container { max-width: 667px; } }   /* 6/7/8 landscape */
+@media (min-width: 736px) { .container { max-width: 736px; } }   /* Plus landscape */
+@media (min-width: 812px) { .container { max-width: 812px; } }   /* X/11 Pro landscape */
+@media (min-width: 844px) { .container { max-width: 844px; } }   /* 13/14 Pro landscape */
+@media (min-width: 852px) { .container { max-width: 852px; } }   /* 15 Pro landscape */
+@media (min-width: 896px) { .container { max-width: 896px; } }   /* XR/11/Plus landscape */
+@media (min-width: 932px) { .container { max-width: 932px; } }   /* 14/15 Plus landscape */
+
+/* Then scale up to your existing desktop breakpoints */
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1280px; } }
+@media (min-width: 1536px) { .container { max-width: 1536px; } }
 
 .fixed {
   position: fixed;

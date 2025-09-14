@@ -22,12 +22,38 @@ footer span a { color: #FFF; }
     font-family: 'Oswald', sans-serif;
 }
 
-/* Container gets side padding on phones */
-.tm-container { 
-  max-width: 1200px; 
-  margin-inline: auto; 
-  padding-inline: 1rem; 
+/* Mobile-safe container with notch-aware gutters */
+.tm-container {
+  width: 100%;
+  margin-inline: auto;
+  /* comfy gutters + safe area for notches */
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
+  max-width: 1200px; /* hard cap stays */
 }
+
+/* iPhone portrait widths */
+@media (min-width: 320px) { .tm-container { max-width: min(320px, 1200px); } }  /* SE */
+@media (min-width: 375px) { .tm-container { max-width: min(375px, 1200px); } }  /* 11/12/13/14/15/Pro */
+@media (min-width: 390px) { .tm-container { max-width: min(390px, 1200px); } }  /* 12/13/14/15 std */
+@media (min-width: 414px) { .tm-container { max-width: min(414px, 1200px); } }  /* Plus (older) */
+@media (min-width: 428px) { .tm-container { max-width: min(428px, 1200px); } }  /* 14/15 Plus, 15PM */
+
+/* Common iPhone landscape steps */
+@media (min-width: 568px) { .tm-container { max-width: min(568px, 1200px); } }
+@media (min-width: 667px) { .tm-container { max-width: min(667px, 1200px); } }
+@media (min-width: 736px) { .tm-container { max-width: min(736px, 1200px); } }
+@media (min-width: 812px) { .tm-container { max-width: min(812px, 1200px); } }
+@media (min-width: 844px) { .tm-container { max-width: min(844px, 1200px); } }
+@media (min-width: 852px) { .tm-container { max-width: min(852px, 1200px); } }
+@media (min-width: 896px) { .tm-container { max-width: min(896px, 1200px); } }
+@media (min-width: 932px) { .tm-container { max-width: min(932px, 1200px); } }
+
+/* Desktop/larger — respect your 1200px cap */
+@media (min-width: 1024px) { .tm-container { max-width: min(1024px, 1200px); } }
+@media (min-width: 1280px) { .tm-container { max-width: 1200px; } }
+@media (min-width: 1536px) { .tm-container { max-width: 1200px; } }
+
 
 /* Reduce heavy parallax area on phones */
 @media (max-width: 640px) {

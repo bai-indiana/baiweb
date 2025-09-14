@@ -22,16 +22,20 @@ footer span a { color: #FFF; }
     font-family: 'Oswald', sans-serif;
 }
 
-/* Fluid container with safe side gutters */
-.tm-container{
-  width:100%;
-  max-width:min(1200px, 100% - 2rem); /* 1rem gutters on both sides */
-  margin-inline:auto;
+/* Container gets side padding on phones */
+.tm-container { 
+  max-width: 1200px; 
+  margin-inline: auto; 
+  padding-inline: 1rem; 
 }
 
-/* Slightly wider gutters on very small screens */
-@media (max-width:480px){
-  .tm-container{ max-width: calc(100% - 2.5rem); }
+/* Reduce heavy parallax area on phones */
+@media (max-width: 640px) {
+  .parallax-window {
+    min-height: 420px; /* was 600px */
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .parallax-window {

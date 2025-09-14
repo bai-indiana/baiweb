@@ -22,8 +22,16 @@ footer span a { color: #FFF; }
     font-family: 'Oswald', sans-serif;
 }
 
-.tm-container {
-    max-width: 1200px;
+/* Fluid container with safe side gutters */
+.tm-container{
+  width:100%;
+  max-width:min(1200px, 100% - 2rem); /* 1rem gutters on both sides */
+  margin-inline:auto;
+}
+
+/* Slightly wider gutters on very small screens */
+@media (max-width:480px){
+  .tm-container{ max-width: calc(100% - 2.5rem); }
 }
 
 .parallax-window {

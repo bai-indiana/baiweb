@@ -434,6 +434,13 @@ const corporate_sponsors = [
         family: "1947 Restaurant", 
         level: "Sponsor", 
         className: "general-sponsor" 
+    },
+    { 
+        img: "img/sponsor/LIV.png",
+        hoverImg: "img/sponsor/full/LIV.jpg",
+        family: "Powell & Exp", 
+        level: "Sponsor", 
+        className: "general-sponsor" 
     }
 ];
 

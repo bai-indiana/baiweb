@@ -9,6 +9,8 @@ function highlightActiveRow() {
   const availableTabs = Array.from(document.querySelectorAll('.tab-btn')).map(btn => btn.dataset.tab);
   const finalTabId = availableTabs.includes(activeTabId) ? activeTabId : availableTabs[0];
 
+  setActiveTab(finalTabId);
+
   // Activate correct tab button
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active-tab', btn.dataset.tab === finalTabId);

@@ -14,30 +14,38 @@ function getVideoModal() {
   const modal = document.createElement('div');
   modal.className = 'video-modal';
 
-  // Close button
-  const closeBtn = document.createElement('button');
-  closeBtn.className = 'close-btn';
-  closeBtn.setAttribute('aria-label', 'Close video');
-  closeBtn.innerHTML = '&times;';
-
-  // Video
+  // Video (UNMUTED by default)
   const video = document.createElement('video');
   video.preload = 'metadata';
   video.setAttribute('autoplay', '');
-  video.setAttribute('muted', '');        // Required for autoplay reliability
   video.setAttribute('playsinline', '');  // iOS inline
   video.setAttribute('controls', '');
+  video.muted = false;                    // ensure unmuted
+  video.volume = 1.0;
 
-  modal.appendChild(closeBtn);
   modal.appendChild(video);
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
+  const tryPlayWithFallback = () => {
+    // Try to play; if blocked (autoplay policy), require one user click
+    return video.play().catch(() => {
+      const once = () => {
+        video.play().finally(() => {
+          overlay.removeEventListener('click', once);
+        });
+      };
+      overlay.addEventListener('click', once, { once: true });
+    });
+  };
+
   const show = (src) => {
     __isVideoModalOpen = true;
-    video.src = src;      // set/replace source
+    video.src = src;               // set/replace source
+    video.muted = false;           // keep unmuted
     overlay.classList.add('show');
-    try { video.currentTime = 0; video.play(); } catch(e) {}
+    try { video.currentTime = 0; } catch (e) {}
+    tryPlayWithFallback();
     // optional: lock scroll while open
     document.documentElement.style.overflow = 'hidden';
   };
@@ -51,12 +59,6 @@ function getVideoModal() {
     __isVideoModalOpen = false;
     document.documentElement.style.overflow = '';
   };
-
-  // Close via X
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    hide();
-  });
 
   // Close on backdrop click
   overlay.addEventListener('click', (e) => {
@@ -154,7 +156,7 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
             icon.setAttribute('aria-label', 'Play video');
             icon.setAttribute('title', 'Play video');
 
-            // Open modal on hover (desktop) and on click (mobile/desktop)
+            // Open modal on hover and on click
             const openModal = () => {
               if (__isVideoModalOpen) return; // prevent instant reopen after close
               getVideoModal().show(src);

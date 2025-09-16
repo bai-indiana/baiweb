@@ -105,9 +105,14 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
       // Header
       const headers = lines[0].split(',').map(h => h.trim());
       const headerRow = document.createElement('tr');
+
+      // NEW: Add a blank header cell at the very beginning
+      const blankHeader = document.createElement('th');
+      blankHeader.textContent = '';
+      headerRow.appendChild(blankHeader);
+
       headers.forEach((header) => {
         const th = document.createElement('th');
-        th.className = 'py-2 px-4';
         th.textContent = header;
         headerRow.appendChild(th);
       });
@@ -124,9 +129,13 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
           ? 'row-odd text-center js-table-text bg-opacity-70 transition'
           : 'row-even text-center js-table-text bg-opacity-70 transition';
 
+        // NEW: Add a blank cell at the very start of each row
+        const blankTd = document.createElement('td');
+        blankTd.textContent = '';
+        row.appendChild(blankTd);
+
         cols.forEach((col, colIndex) => {
           const td = document.createElement('td');
-          td.className = 'py-2 px-4';
 
           // First column icon (existing behavior)
           if (colIndex === 0 && firstColIsIcon) {
@@ -137,16 +146,13 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
           }
 
           // Find @video tokens and strip them from visible text
-          // Example: "Opening Ceremony @NU1.mpg"
           const videoRegex = /@([^\s,;]+?\.(mp4|webm|ogg|mov|m4v|mpg|mpeg))/i;
           const videoMatch = col.match(videoRegex);
           const visibleText = col.replace(/@\S+\.(mp4|webm|ogg|mov|m4v|mpg|mpeg)/ig, '').trim();
 
-          // Compose cell content with video icon AT THE START
           td.innerHTML = '';
           const frag = document.createDocumentFragment();
 
-          // If video present, prepend the icon
           if (videoMatch) {
             const fileName = videoMatch[1];
             const src = resolveVideoSrc(fileName, table);
@@ -156,20 +162,18 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
             icon.setAttribute('aria-label', 'Play video');
             icon.setAttribute('title', 'Play video');
 
-            // Open modal on hover and on click
             const openModal = () => {
-              if (__isVideoModalOpen) return; // prevent instant reopen after close
+              if (__isVideoModalOpen) return;
               getVideoModal().show(src);
             };
             icon.addEventListener('mouseenter', openModal);
-            td.addEventListener('mouseenter', openModal); // hover anywhere in the cell
+            td.addEventListener('mouseenter', openModal);
             icon.addEventListener('click', openModal);
             td.addEventListener('click', openModal);
 
             frag.appendChild(icon);
           }
 
-          // Then the remaining text (if any)
           const textSpan = document.createElement('span');
           textSpan.textContent = visibleText;
           frag.appendChild(textSpan);

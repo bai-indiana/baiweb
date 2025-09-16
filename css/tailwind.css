@@ -710,10 +710,6 @@ video {
   width: 100%;
 }
 
-.w-full-80 {
-  width: 80%;
-}
-
 .flex-1 {
   flex: 1 1 0%;
 }

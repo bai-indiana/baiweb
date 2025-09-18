@@ -106,14 +106,18 @@
                                                         <span class="flex items-center gap-2">
                                                             🍽️ Friday Dinner
                                                             <video
-                                                                src="img/food/FridayDinner.mp4"
-                                                                autoplay
-                                                                loop
+                                                                class="rounded-md inline-block"
                                                                 muted
                                                                 playsinline
+                                                                webkit-playsinline
+                                                                loop
                                                                 preload="metadata"
+                                                                autoplay
                                                                 aria-label="Friday Dinner preview"
-                                                                class="rounded-md inline-block w-24 h-16 object-cover">
+                                                                poster="img/food/friday-dinner.png">
+                                                                <source src="img/food/friday-dinner.mp4" type="video/mp4">
+                                                                <!-- Optional: a WebM for browsers that can use it (iOS may ignore) -->
+                                                                <!-- <source src="img/food/FridayDinner.webm" type="video/webm"> -->
                                                             </video>
                                                         </span>
                                                     </h3>
@@ -214,7 +218,7 @@
                                                                 preload="metadata"
                                                                 aria-label="Saturday Lunch preview"
                                                                 class="rounded-md inline-block w-18 h-8 object-cover"
-                                                                style="width: 150x; height: 125px;">
+                                                                style="width: 150px; height: 125px;">
                                                             </video>                                                            
                                                         </li>
                                                         <li class="flex">
@@ -405,7 +409,7 @@
                                                                 preload="metadata"
                                                                 aria-label="Saturday Lunch preview"
                                                                 class="rounded-md inline-block w-18 h-8 object-cover"
-                                                                style="width: 150x; height: 125px;">
+                                                                style="width: 150px; height: 125px;">
                                                             </video>
                                                         </li>
                                                         <br/>
@@ -545,7 +549,7 @@
                                                                 preload="metadata"
                                                                 aria-label="Saturday Lunch preview"
                                                                 class="rounded-md inline-block w-18 h-8 object-cover"
-                                                                style="width: 150x; height: 125px;">
+                                                                style="width: 150px; height: 125px;">
                                                             </video>
                                                         </li>
                                                         <li class="flex"><span

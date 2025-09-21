@@ -295,3 +295,45 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
     transform: translateY(calc(-100% + 7.5rem));
   }
 }
+
+
+
+
+
+/* ========================= CSS HOOKS (put in your CSS) =========================
+.audio-modal-overlay { display: none; }
+.audio-modal-overlay.show { display: block; }
+
+/* Non-blocking overlay so page scrolls normally */
+.audio-modal-overlay.nonblocking {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;    /* overlay doesn’t eat scroll/clicks */
+  background: transparent;
+  z-index: 9998;
+}
+
+/* Mini floating player remains clickable */
+.audio-modal-overlay.nonblocking .audio-modal.mini {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  pointer-events: auto;    /* panel itself IS clickable */
+  background: #111;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 8px 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  z-index: 9999;
+}
+.audio-modal.mini audio {
+  width: 260px;
+  height: 28px;
+}
+
+/* Optional polish for buttons/slider */
+.audio-controls .btn-audio { background:#111; color:#fff; border-color:#444; }
+.audio-controls .btn-audio:hover { filter: brightness(1.1); }
+.audio-seek-wrap { margin-top: 4px; }
+/*=============================================================================== */

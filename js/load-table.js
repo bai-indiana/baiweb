@@ -1,10 +1,22 @@
 /* ========================= load-table.js (FULL) =========================
-   - Keeps your working VIDEO modal (hover/click open, unmuted, scroll-locked)
-   - Adds AUDIO modal that is non-blocking (no scroll lock), mini floater
-   - Audio UI per row: single Play/Pause toggle, Stop, Seek slider
-   - Supports @video and @audio tokens inside CSV cells
+   - VIDEO modal: hover/click open, explicitly unmuted, scroll-locked
+   - AUDIO modal: non-blocking overlay (page keeps scrolling), mini floater
+   - Row controls: tiny icon Play/Pause (left), Seek (center, grows), Stop (right)
+   - CSV cells support @video and @audio tokens
    - Keeps firstColIsIcon behavior and leading blank header/cell
 ========================================================================== */
+
+/* --- Small icon toggle helper for audio --- */
+function __setAudioToggleState(btn, state /* 'play' | 'pause' */) {
+  if (!btn) return;
+  btn.dataset.state = state;
+  btn.setAttribute('aria-pressed', state === 'pause' ? 'true' : 'false');
+  btn.setAttribute('aria-label', state === 'pause' ? 'Pause audio' : 'Play audio');
+  btn.title = state === 'pause' ? 'Pause' : 'Play';
+  btn.innerHTML = state === 'pause'
+    ? '<i class="fas fa-pause"></i>'
+    : '<i class="fas fa-play"></i>';
+}
 
 /* ---------- Single video modal (created once, reused) ---------- */
 let __videoModal = null;
@@ -16,7 +28,7 @@ function getVideoModal() {
   // Overlay
   const overlay = document.createElement('div');
   overlay.id = 'video-modal-overlay';
-  overlay.className = 'video-modal-overlay'; // styled in load-table.css
+  overlay.className = 'video-modal-overlay'; // styled in CSS
 
   // Modal
   const modal = document.createElement('div');
@@ -36,7 +48,6 @@ function getVideoModal() {
   document.body.appendChild(overlay);
 
   const tryPlayWithFallback = () => {
-    // Try to play; if blocked (autoplay policy), require one user click
     return video.play().catch(() => {
       const once = () => {
         video.play().finally(() => {
@@ -54,7 +65,7 @@ function getVideoModal() {
     overlay.classList.add('show');
     try { video.currentTime = 0; } catch (e) {}
     tryPlayWithFallback();
-    // optional: lock scroll while open
+    // lock scroll while open
     document.documentElement.style.overflow = 'hidden';
   };
 
@@ -103,8 +114,8 @@ function getAudioModal() {
   const audio = document.createElement('audio');
   audio.preload = 'metadata';
   audio.setAttribute('autoplay', '');
-  audio.setAttribute('controls', '');
-  // NOTE: we never touch audio.muted
+  audio.setAttribute('controls', ''); // keep native; remove if you want only custom
+  // NOTE: never touch audio.muted
 
   modal.appendChild(audio);
   overlay.appendChild(modal);
@@ -120,14 +131,12 @@ function getAudioModal() {
 
   const show = (src) => {
     __isAudioModalOpen = true;
-    // only reload if different source
     if (!audio.src || !audio.currentSrc || !audio.currentSrc.endsWith(src)) {
       audio.src = src;
     }
     overlay.classList.add('show');
     try { audio.currentTime = audio.currentTime || 0; } catch (e) {}
     tryPlayWithFallback();
-    // IMPORTANT: no scroll locking for audio
   };
 
   const pause = () => { try { audio.pause(); } catch (e) {} };
@@ -141,47 +150,45 @@ function getAudioModal() {
 
     // Reset active UI labels/seek
     if (__activeAudioUI) {
-      __activeAudioUI.toggleBtn.textContent = 'Play';
+      __setAudioToggleState(__activeAudioUI.toggleBtn, 'play');
       if (__activeAudioUI.slider) __activeAudioUI.slider.value = 0;
     }
   };
 
   // Sync UI on metadata/time changes
   audio.addEventListener('loadedmetadata', () => {
-    if (__activeAudioUI && (__activeAudioUI.src === audio.src || audio.currentSrc.endsWith(__activeAudioUI.src))) {
-      const d = audio.duration;
-      if (isFinite(d) && d > 0 && __activeAudioUI.slider) {
-        __activeAudioUI.slider.max = Math.floor(d);
-        __activeAudioUI.slider.value = Math.floor(audio.currentTime || 0);
-        __activeAudioUI.slider.disabled = false;
-      }
+    if (!__activeAudioUI) return;
+    const d = audio.duration;
+    if (isFinite(d) && d > 0 && __activeAudioUI.slider) {
+      __activeAudioUI.slider.max = Math.floor(d);
+      __activeAudioUI.slider.value = Math.floor(audio.currentTime || 0);
+      __activeAudioUI.slider.disabled = false;
     }
   });
 
   audio.addEventListener('timeupdate', () => {
-    if (__activeAudioUI && (__activeAudioUI.src === audio.src || audio.currentSrc.endsWith(__activeAudioUI.src)) && __activeAudioUI.slider) {
-      const d = audio.duration;
-      if (isFinite(d) && d > 0) {
-        __activeAudioUI.slider.max = Math.floor(d);
-        __activeAudioUI.slider.value = Math.floor(audio.currentTime || 0);
-      }
+    if (!__activeAudioUI || !__activeAudioUI.slider) return;
+    const d = audio.duration;
+    if (isFinite(d) && d > 0) {
+      __activeAudioUI.slider.max = Math.floor(d);
+      __activeAudioUI.slider.value = Math.floor(audio.currentTime || 0);
     }
   });
 
   audio.addEventListener('play', () => {
-    if (__activeAudioUI) __activeAudioUI.toggleBtn.textContent = 'Pause';
+    if (__activeAudioUI) __setAudioToggleState(__activeAudioUI.toggleBtn, 'pause');
   });
 
   audio.addEventListener('pause', () => {
-    if (__activeAudioUI) __activeAudioUI.toggleBtn.textContent = 'Play';
+    if (__activeAudioUI) __setAudioToggleState(__activeAudioUI.toggleBtn, 'play');
   });
 
   audio.addEventListener('ended', () => {
     if (__activeAudioUI) {
-      __activeAudioUI.toggleBtn.textContent = 'Play';
+      __setAudioToggleState(__activeAudioUI.toggleBtn, 'play');
       if (__activeAudioUI.slider) __activeAudioUI.slider.value = 0;
     }
-    // Auto-close on end (optional; keep if desired)
+    // Auto-close on end (optional)
     stop();
   });
 
@@ -302,6 +309,7 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
               if (__isVideoModalOpen) return;
               getVideoModal().show(src);
             };
+            // Hover + click
             icon.addEventListener('mouseenter', openModal);
             td.addEventListener('mouseenter', openModal);
             icon.addEventListener('click', openModal);
@@ -315,42 +323,39 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
           textSpan.textContent = visibleText;
           frag.appendChild(textSpan);
 
-          // ---------- Audio controls (single toggle + stop + seek under the name) ----------
+          // ---------- Audio controls (compact row: [play/pause] [seek flex] [stop]) ----------
           if (audioMatch) {
             const fileName = audioMatch[1];
             const src = resolveAudioSrc(fileName, table);
 
             const controlsWrap = document.createElement('div');
-            controlsWrap.className = 'audio-controls mt-1 flex items-center justify-center gap-2 flex-col sm:flex-row';
+            controlsWrap.className = 'audio-controls-row';
 
-            // Toggle Play/Pause button
+            // Toggle Play/Pause (icon-only, tiny)
             const btnToggle = document.createElement('button');
             btnToggle.type = 'button';
-            btnToggle.className = 'btn-audio btn-audio-toggle px-2 py-1 text-xs rounded border';
-            btnToggle.setAttribute('aria-label', 'Play or Pause audio');
-            btnToggle.textContent = 'Play';
+            btnToggle.className = 'btn-audio btn-icon btn-audio-toggle tiny';
+            btnToggle.setAttribute('aria-label', 'Play audio');
+            __setAudioToggleState(btnToggle, 'play'); // initial icon = play
 
-            // Stop button
-            const btnStop = document.createElement('button');
-            btnStop.type = 'button';
-            btnStop.className = 'btn-audio btn-audio-stop px-2 py-1 text-xs rounded border';
-            btnStop.setAttribute('aria-label', 'Stop audio');
-            btnStop.textContent = 'Stop';
-
-            // Seek slider
-            const seekWrap = document.createElement('div');
-            seekWrap.className = 'audio-seek-wrap w-full max-w-xs';
+            // Seek slider (flex-grow center)
             const seek = document.createElement('input');
             seek.type = 'range';
-            seek.className = 'audio-seek w-full align-middle';
+            seek.className = 'audio-seek flex-grow';
             seek.min = 0;
             seek.max = 0;            // set after metadata loads
             seek.value = 0;
-            seek.disabled = true;    // enabled after metadata loads
+            seek.disabled = true;    // enable after metadata loads
             seek.step = 1;
-            seekWrap.appendChild(seek);
 
-            // Hook this row UI as "active"
+            // Stop (icon-only, tiny, right)
+            const btnStop = document.createElement('button');
+            btnStop.type = 'button';
+            btnStop.className = 'btn-audio btn-icon btn-audio-stop tiny';
+            btnStop.setAttribute('aria-label', 'Stop audio');
+            btnStop.title = 'Stop';
+            btnStop.innerHTML = '<i class="fas fa-stop"></i>';
+
             function registerActiveUI() {
               __activeAudioUI = { slider: seek, toggleBtn: btnToggle, stopBtn: btnStop, src: src };
             }
@@ -359,27 +364,26 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
               const am = getAudioModal();
               const currentSrc = am.audio.src;
               const same = !!currentSrc && (currentSrc === src || currentSrc.endsWith(fileName));
-
               registerActiveUI();
 
               if (!__isAudioModalOpen) {
                 am.show(src);
-                btnToggle.textContent = 'Pause';
+                __setAudioToggleState(btnToggle, 'pause');
                 return;
               }
 
               if (same) {
                 if (am.audio.paused) {
                   am.audio.play();
-                  btnToggle.textContent = 'Pause';
+                  __setAudioToggleState(btnToggle, 'pause');
                 } else {
                   am.audio.pause();
-                  btnToggle.textContent = 'Play';
+                  __setAudioToggleState(btnToggle, 'play');
                 }
               } else {
                 // Switch to this track
                 am.show(src);
-                btnToggle.textContent = 'Pause';
+                __setAudioToggleState(btnToggle, 'pause');
               }
             });
 
@@ -387,19 +391,18 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
               const am = getAudioModal();
               if (__isAudioModalOpen) {
                 am.stop();
-                btnToggle.textContent = 'Play';
+                __setAudioToggleState(btnToggle, 'play');
                 seek.value = 0;
               }
             });
 
-            // Seek behavior
+            // Scrub on input
             seek.addEventListener('input', () => {
               const am = getAudioModal();
               registerActiveUI();
               const needOpen = !__isAudioModalOpen || !am.audio.src || (!am.audio.currentSrc.endsWith(fileName));
               if (needOpen) {
                 am.show(src);
-                // slight delay to ensure metadata
                 setTimeout(() => {
                   am.audio.currentTime = Number(seek.value) || 0;
                 }, 50);
@@ -408,9 +411,10 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
               }
             });
 
+            // Assemble row: left toggle, center seek (flex), right stop
             controlsWrap.appendChild(btnToggle);
+            controlsWrap.appendChild(seek);
             controlsWrap.appendChild(btnStop);
-            controlsWrap.appendChild(seekWrap);
             frag.appendChild(controlsWrap);
           }
 
@@ -422,3 +426,4 @@ function loadTableFromCSV(tableId, csvFileName, firstColIsIcon = false) {
       });
     });
 }
+

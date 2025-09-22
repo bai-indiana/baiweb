@@ -298,42 +298,55 @@ textarea::-ms-input-placeholder { /* Microsoft Edge */
 
 
 
+/* ========================= CSS HOOKS (paste into your CSS) ====================
 
+.video-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:9998; align-items:center; justify-content:center; }
+.video-modal-overlay.show { display:flex; }
+.video-modal { max-width:min(90vw,1000px); max-height:90vh; }
+.video-modal video { width:100%; height:auto; max-height:90vh; }
 
-/* ========================= CSS HOOKS (put in your CSS) =========================
-.audio-modal-overlay { display: none; }
-.audio-modal-overlay.show { display: block; }
-
-/* Non-blocking overlay so page scrolls normally */
-.audio-modal-overlay.nonblocking {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;    /* overlay doesn’t eat scroll/clicks */
-  background: transparent;
-  z-index: 9998;
-}
-
+/* Non-blocking audio overlay so page scrolls normally */
+.audio-modal-overlay { display:none; }
+.audio-modal-overlay.show { display:block; }
+.audio-modal-overlay.nonblocking { position:fixed; inset:0; pointer-events:none; background:transparent; z-index:9998; }
 /* Mini floating player remains clickable */
 .audio-modal-overlay.nonblocking .audio-modal.mini {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  pointer-events: auto;    /* panel itself IS clickable */
-  background: #111;
-  color: #fff;
-  border: 1px solid #444;
-  border-radius: 10px;
-  padding: 8px 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  z-index: 9999;
+  position:fixed; right:16px; bottom:16px; pointer-events:auto;
+  background:#111; color:#fff; border:1px solid #444; border-radius:10px;
+  padding:8px 10px; box-shadow:0 8px 24px rgba(0,0,0,.35); z-index:9999;
 }
-.audio-modal.mini audio {
-  width: 260px;
-  height: 28px;
+.audio-modal.mini audio { width:260px; height:28px; }
+
+/* Compact audio controls row under the cell text */
+:root{ --vermillion:#FF5D00; --btn-bg:#111; --btn-fg:#fff; --btn-border:#444; }
+.audio-controls-row{
+  display:flex; align-items:center; gap:8px;
+  width:100%; max-width:440px; margin:6px auto 0;
 }
 
-/* Optional polish for buttons/slider */
-.audio-controls .btn-audio { background:#111; color:#fff; border-color:#444; }
-.audio-controls .btn-audio:hover { filter: brightness(1.1); }
-.audio-seek-wrap { margin-top: 4px; }
+/* Icon buttons: smaller, round */
+.btn-audio.btn-icon{
+  width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--btn-border); border-radius:9999px; background:var(--btn-bg); color:var(--btn-fg);
+  line-height:0; cursor:pointer; transition:transform .06s ease, filter .12s ease, box-shadow .12s ease;
+}
+.btn-audio.btn-icon.tiny .fas{ font-size:10px; }
+.btn-audio.btn-icon:hover{ filter:brightness(1.1); }
+.btn-audio.btn-icon:active{ transform: translateY(1px); }
+.btn-audio.btn-icon:focus-visible{ outline:2px solid var(--vermillion); outline-offset:2px; }
+/* When "pressed" (i.e., playing now) */
+.btn-audio.btn-icon[aria-pressed="true"]{ border-color:var(--vermillion); box-shadow:0 0 0 2px rgba(255,93,0,.22); }
+
+/* Seek slider (center, grows) */
+.audio-seek{
+  flex:1 1 auto;
+  -webkit-appearance:none; appearance:none; height:4px; border-radius:9999px; background:#333; outline:none;
+}
+.audio-seek::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:10px; height:10px; border-radius:50%;
+  background:var(--vermillion); border:none;
+}
+.audio-seek::-moz-range-thumb{
+  width:10px; height:10px; border-radius:50%; background:var(--vermillion); border:none;
+}
 /*=============================================================================== */

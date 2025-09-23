@@ -274,7 +274,7 @@ const community_sponsors = [
     {
         img: "img/sponsor/Das-Family-silver.png",
         hoverImg: "img/sponsor/full/Das-Family-full-silver.jpg",
-        family: "Dan family",
+        family: "Das family",
         level: "Silver Sponsor",
         className: "silver-sponsor"
     },

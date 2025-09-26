@@ -1,3 +1,4 @@
+/* ---------- main: highlight active row ---------- */
 function highlightActiveRow() {
   const now = new Date();
   const dayMap = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
@@ -21,11 +22,17 @@ function highlightActiveRow() {
     content.classList.toggle('hidden', content.id !== finalTabId);
   });
 
-  // Process the visible table(s)
   const allTables = document.querySelectorAll('table[id]');
   allTables.forEach(table => {
     const isVisible = !table.closest('.tab-content')?.classList.contains('hidden');
     if (!isVisible) return;
+
+    // Determine column indexes from THEAD
+    const idx = detectColumnIndexes(table);
+    if (idx.time < 0 || idx.event < 0) {
+      console.warn('Time/Event columns not detected for table:', table.id, idx);
+      return;
+    }
 
     // Clear old highlights so re-runs don't stack
     table.querySelectorAll('.blink-row').forEach(el => el.classList.remove('blink-row'));
@@ -36,12 +43,12 @@ function highlightActiveRow() {
 
     rows.forEach(row => {
       const tds = row.querySelectorAll('td');
-      const timeCell = tds[1];
-      const eventCell = tds[2];
+      const timeCell = tds[idx.time];
+      const eventCell = tds[idx.event];
       if (!timeCell) return;
 
-      const timeText = timeCell.textContent.trim();
-      const eventName = eventCell ? eventCell.textContent.trim() : '';
+      const timeText = (timeCell.textContent || '').trim();
+      const eventName = eventCell ? (eventCell.textContent || '').trim() : '';
 
       let startMin = null, endMin = null;
 
@@ -87,6 +94,30 @@ function highlightActiveRow() {
     if (mer === 'AM' && hour === 12) hour = 0;
     return hour * 60 + minutes;
   }
+
+  function detectColumnIndexes(table) {
+    // Read header row (handle THEAD -> TR -> TH/TD)
+    const headRow = table.querySelector('thead tr');
+    const headers = headRow ? Array.from(headRow.children) : [];
+    let timeIdx = -1, eventIdx = -1;
+
+    headers.forEach((th, i) => {
+      const txt = (th.textContent || '').trim().toLowerCase();
+      if (timeIdx < 0 && txt.startsWith('time')) timeIdx = i;
+      if (eventIdx < 0 && txt.startsWith('event')) eventIdx = i;
+    });
+
+    // Fallbacks (in case header texts aren’t standard)
+    // If we found only one, try to infer the other around it
+    if (timeIdx < 0 && headers.length >= 2) {
+      // common layouts: [icon][Time][Event]...
+      const guess = headers.findIndex(h => (h.textContent || '').toLowerCase().includes(':') || (h.textContent || '').toLowerCase().includes('am') || (h.textContent || '').toLowerCase().includes('pm'));
+      if (guess >= 0) timeIdx = guess;
+    }
+    if (eventIdx < 0 && timeIdx >= 0 && headers[timeIdx + 1]) eventIdx = timeIdx + 1;
+
+    return { time: timeIdx, event: eventIdx };
+  }
 }
 
 /* ---------- helpers: center last blinking row ---------- */
@@ -111,8 +142,6 @@ function centerBlinkRow() {
 function centerInWindow(el, behavior = 'smooth') {
   const rect = el.getBoundingClientRect();
   const elCenter = rect.top + window.scrollY + rect.height / 2;
-  const viewportCenter = window.scrollY + window.innerHeight / 2;
-
   window.scrollTo({
     top: Math.max(0, elCenter - (window.innerHeight / 2)),
     behavior
@@ -124,25 +153,19 @@ function centerInContainer(el, container, behavior = 'smooth') {
   const elRect = el.getBoundingClientRect();
   const cRect  = container.getBoundingClientRect();
   const offsetTop = elRect.top - cRect.top + container.scrollTop;
-
   const target = Math.max(0, offsetTop - (container.clientHeight / 2) + (elRect.height / 2));
   container.scrollTo({ top: target, behavior });
 }
 
 /* ---------- bootstrapping & refresh ---------- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // run once on load
-  highlightActiveRow();
- 
+  highlightActiveRow(); // run once on load
 });
 
-// Re-center when returning to the tab
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) {
-    highlightActiveRow(); // re-evaluate rows
-    // ensure centering happens after DOM paints
-    requestAnimationFrame(centerBlinkRow);
+    highlightActiveRow();           // re-evaluate rows
+    requestAnimationFrame(centerBlinkRow); // ensure centering after paint
   }
 });
- 
+

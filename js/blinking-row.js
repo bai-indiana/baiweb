@@ -1,3 +1,6 @@
+
+const DEBUG = false; // turn on to see which rows are detected
+
 function highlightActiveRow() {
   const now = new Date();
   const dayMap = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
@@ -9,102 +12,82 @@ function highlightActiveRow() {
   const availableTabs = Array.from(document.querySelectorAll('.tab-btn')).map(btn => btn.dataset.tab);
   const finalTabId = availableTabs.includes(activeTabId) ? activeTabId : availableTabs[0];
 
-  if (typeof setActiveTab === 'function') {
-    setActiveTab(finalTabId);
-  }
+  if (typeof setActiveTab === 'function') setActiveTab(finalTabId);
 
-  // Activate correct tab button
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active-tab', btn.dataset.tab === finalTabId);
   });
-
-  // Show matching tab content
   document.querySelectorAll('.tab-content').forEach(content => {
     content.classList.toggle('hidden', content.id !== finalTabId);
   });
 
-  // ---------- Process the visible table(s) ----------
+  // ---------- Process visible table(s) ----------
   const allTables = document.querySelectorAll('table[id]');
   allTables.forEach(table => {
     const isVisible = !table.closest('.tab-content')?.classList.contains('hidden');
     if (!isVisible) return;
 
-    // Determine column indexes from THEAD
     const idx = detectColumnIndexes(table);
     if (idx.time < 0 || idx.event < 0) {
       console.warn('Time/Event columns not detected for table:', table.id, idx);
       return;
     }
 
-    // Clear old highlights so re-runs don't stack
-    table.querySelectorAll('.blink-row').forEach(el => el.classList.remove('blink-row'));
+    // Clear old flags
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      tr.classList.remove('blink-row');
+      tr.removeAttribute('data-active');
+      tr.removeAttribute('data-upnext');
+    });
 
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     const activeRows = [];
     let nextRow = null;
     let nextRowStartMin = Number.POSITIVE_INFINITY;
 
-    rows.forEach(row => {
+    rows.forEach((row, rowIdx) => {
       const tds = row.querySelectorAll('td');
       const timeCell = tds[idx.time];
       const eventCell = tds[idx.event];
       if (!timeCell) return;
 
-      const timeText = (timeCell.textContent || '').trim();
+      const timeTextRaw = (timeCell.textContent || '').trim();
+      const timeText = normalizeDashes(timeTextRaw).replace(/\s+/g, ' ');
       const eventName = eventCell ? (eventCell.textContent || '').trim() : '';
 
-      let startMin = null, endMin = null;
-
-      // Try range "9:30 AM - 11 AM"
-      const range = timeText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?\s*-\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i);
+      const range = parseTimeRangeToMinutes(timeText);
       if (range) {
-        startMin = parseTimeToMinutes(range[1], range[2], range[3]);
-        endMin   = parseTimeToMinutes(range[4], range[5], range[6]);
-      } else {
-        // Try single time "3 PM" (assume 60 mins)
-        const single = timeText.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
-        if (single) {
-          startMin = parseTimeToMinutes(single[1], single[2], single[3]);
-          endMin = startMin + 60;
-        }
-      }
-
-      if (startMin !== null && endMin !== null) {
+        const { startMin, endMin } = range;
         if (currentMinutes >= startMin && currentMinutes <= endMin) {
-          activeRows.push(row); // collect ALL active rows
+          activeRows.push(row);
+          row.dataset.active = '1';
+          if (DEBUG) console.log('[ACTIVE]', table.id, rowIdx, eventName, timeText, startMin, endMin);
         } else if (currentMinutes < startMin && startMin < nextRowStartMin) {
-          // track the earliest upcoming row
           nextRowStartMin = startMin;
           nextRow = row;
+          if (DEBUG) console.log('[CANDIDATE NEXT]', table.id, rowIdx, eventName, timeText, startMin);
         }
       } else {
-        console.warn('Time format mismatch:', { eventName, timeText });
+        if (DEBUG) console.warn('Time format mismatch:', { table: table.id, row: rowIdx, eventName, timeText: timeTextRaw });
       }
     });
 
-    // Blink all active rows; otherwise blink the earliest upcoming one
+    // Blink ALL active rows; otherwise blink the earliest upcoming one
     if (activeRows.length) {
       activeRows.forEach(r => r.classList.add('blink-row'));
     } else if (nextRow) {
       nextRow.classList.add('blink-row');
+      nextRow.dataset.upnext = '1';
     }
+
+    if (DEBUG) console.log(`Table ${table.id}: active=${activeRows.length} next=${!!nextRow}`);
   });
 
-  // After highlighting, center the last blinking row (if any)
+  // Center after highlighting
   centerBlinkRow();
 
-  // ---------- helpers inside ----------
-  function parseTimeToMinutes(hourStr, minuteStr, ampm) {
-    let hour = parseInt(hourStr, 10);
-    let minutes = minuteStr ? parseInt(minuteStr, 10) : 0;
-    const mer = ampm ? ampm.toUpperCase() : null;
-    if (mer === 'PM' && hour !== 12) hour += 12;
-    if (mer === 'AM' && hour === 12) hour = 0;
-    return hour * 60 + minutes;
-  }
-
+  // ---------- helpers ----------
   function detectColumnIndexes(table) {
-    // Read header row (handle THEAD -> TR -> TH/TD)
     const headRow = table.querySelector('thead tr');
     const headers = headRow ? Array.from(headRow.children) : [];
     let timeIdx = -1, eventIdx = -1;
@@ -119,13 +102,91 @@ function highlightActiveRow() {
     if (timeIdx < 0 && headers.length) {
       const guess = headers.findIndex(h => {
         const t = (h.textContent || '').toLowerCase();
-        return /\d?\d:\d{2}/.test(t) || t.includes('am') || t.includes('pm');
+        return t.includes('time');
       });
       if (guess >= 0) timeIdx = guess;
     }
     if (eventIdx < 0 && timeIdx >= 0 && headers[timeIdx + 1]) eventIdx = timeIdx + 1;
 
     return { time: timeIdx, event: eventIdx };
+  }
+
+  function normalizeDashes(s) {
+    // replace en/em dashes with hyphen
+    return s.replace(/[–—]/g, '-');
+  }
+
+  function parseTimeRangeToMinutes(text) {
+    // Accepts:
+    // "9:30 AM - 11 AM", "09:00 - 11:30" (24h), "3 PM - 4 PM", "10:15am-12:00pm"
+    const parts = text.split('-').map(p => p.trim());
+    if (parts.length === 2) {
+      const a = parseClock(parts[0]);
+      const b = parseClock(parts[1], a?.ampm); // carry AM/PM if right side lacks it
+      if (a && b) {
+        let startMin = a.minutes;
+        let endMin = b.minutes;
+        // If end rolls past midnight or is earlier due to missing meridian, gently correct:
+        if (endMin < startMin) {
+          // assume same-day event finishing after start; add 12h if meridian ambiguity
+          if (a.ampm && !b.ampm) endMin += 12 * 60;
+          if (endMin < startMin) endMin = startMin; // final guard
+        }
+        return { startMin, endMin };
+      }
+      return null;
+    }
+
+    // Single time "3 PM" (assume 60 mins)
+    const single = parseClock(text);
+    if (single) {
+      return { startMin: single.minutes, endMin: single.minutes + 60 };
+    }
+    return null;
+  }
+
+  function parseClock(token, carryAmPm) {
+    const t = token.toUpperCase().replace(/\s+/g, ' ').trim();
+
+    // 12-hour with optional minutes, optional AM/PM (but may be provided on either side)
+    const m12 = t.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?$/i);
+    if (m12) {
+      let h = parseInt(m12[1], 10);
+      let mi = m12[2] ? parseInt(m12[2], 10) : 0;
+      let mer = (m12[3] || carryAmPm || '').toUpperCase();
+
+      if (!mer && h <= 24) {
+        // Could be 24-hour like "13:30" (falls through to 24h below). Handle here only if <=12.
+        if (h > 12) { /* fall through to 24h */ }
+        else {
+          // Default to closest interpretation: if carry provided from the other side, use it.
+          // If none, assume AM for 1-7, PM for 8-12 (tweak if you like).
+          mer = carryAmPm || (h >= 8 ? 'PM' : 'AM');
+        }
+      }
+
+      if (mer === 'PM' && h !== 12) h += 12;
+      if (mer === 'AM' && h === 12) h = 0;
+
+      // If still no meridian AND hour > 12, treat as 24-hour
+      if (!mer && h > 12) {
+        // handled by 24-hour parser below
+      } else {
+        return { minutes: (h * 60 + mi), ampm: mer || null };
+      }
+    }
+
+    // 24-hour "13:05" or "9:00"
+    const m24 = t.match(/^(\d{1,2})(?::(\d{2}))$/);
+    if (m24) {
+      let h = parseInt(m24[1], 10);
+      let mi = parseInt(m24[2], 10);
+      if (h >= 0 && h < 24 && mi >= 0 && mi < 60) {
+        return { minutes: (h * 60 + mi), ampm: null };
+      }
+    }
+
+    return null;
   }
 }
 
@@ -136,7 +197,6 @@ function centerBlinkRow() {
 
   const last = blinks[blinks.length - 1];
 
-  // Prefer instant centering on reload; smooth otherwise
   const nav = performance.getEntriesByType?.('navigation')?.[0];
   const isReload = nav && nav.type === 'reload';
 
@@ -156,7 +216,6 @@ function centerInWindow(el, behavior = 'smooth') {
   });
 }
 
-// If your table lives in an overflowed container, use this instead and pass it that container
 function centerInContainer(el, container, behavior = 'smooth') {
   const elRect = el.getBoundingClientRect();
   const cRect  = container.getBoundingClientRect();
@@ -167,12 +226,11 @@ function centerInContainer(el, container, behavior = 'smooth') {
 
 /* ---------- bootstrapping & refresh ---------- */
 document.addEventListener('DOMContentLoaded', () => {
-  highlightActiveRow(); // run once on load
+  highlightActiveRow();
 });
-
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) {
-    highlightActiveRow();           // re-evaluate rows
-    requestAnimationFrame(centerBlinkRow); // ensure centering after paint
+    highlightActiveRow();
+    requestAnimationFrame(centerBlinkRow);
   }
 });

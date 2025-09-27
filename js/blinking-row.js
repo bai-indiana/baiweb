@@ -1,16 +1,17 @@
-/* ---------- main: highlight active row ---------- */
 function highlightActiveRow() {
   const now = new Date();
   const dayMap = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
   const today = dayMap[now.getDay()];
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-  // Auto-select tab by day (fallback to first available)
+  // ---------- Auto-select tab by day (fallback to first available) ----------
   const activeTabId = today + '-tab';
   const availableTabs = Array.from(document.querySelectorAll('.tab-btn')).map(btn => btn.dataset.tab);
   const finalTabId = availableTabs.includes(activeTabId) ? activeTabId : availableTabs[0];
 
-  setActiveTab(finalTabId);
+  if (typeof setActiveTab === 'function') {
+    setActiveTab(finalTabId);
+  }
 
   // Activate correct tab button
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -22,6 +23,7 @@ function highlightActiveRow() {
     content.classList.toggle('hidden', content.id !== finalTabId);
   });
 
+  // ---------- Process the visible table(s) ----------
   const allTables = document.querySelectorAll('table[id]');
   allTables.forEach(table => {
     const isVisible = !table.closest('.tab-content')?.classList.contains('hidden');
@@ -37,9 +39,10 @@ function highlightActiveRow() {
     // Clear old highlights so re-runs don't stack
     table.querySelectorAll('.blink-row').forEach(el => el.classList.remove('blink-row'));
 
-    const rows = table.querySelectorAll('tbody tr');
-    let activeRowFound = false;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const activeRows = [];
     let nextRow = null;
+    let nextRowStartMin = Number.POSITIVE_INFINITY;
 
     rows.forEach(row => {
       const tds = row.querySelectorAll('td');
@@ -68,17 +71,21 @@ function highlightActiveRow() {
 
       if (startMin !== null && endMin !== null) {
         if (currentMinutes >= startMin && currentMinutes <= endMin) {
-          row.classList.add('blink-row');
-          activeRowFound = true;
-        } else if (!activeRowFound && currentMinutes < startMin && !nextRow) {
-          nextRow = row; // first upcoming row
+          activeRows.push(row); // collect ALL active rows
+        } else if (currentMinutes < startMin && startMin < nextRowStartMin) {
+          // track the earliest upcoming row
+          nextRowStartMin = startMin;
+          nextRow = row;
         }
       } else {
         console.warn('Time format mismatch:', { eventName, timeText });
       }
     });
 
-    if (!activeRowFound && nextRow) {
+    // Blink all active rows; otherwise blink the earliest upcoming one
+    if (activeRows.length) {
+      activeRows.forEach(r => r.classList.add('blink-row'));
+    } else if (nextRow) {
       nextRow.classList.add('blink-row');
     }
   });
@@ -86,6 +93,7 @@ function highlightActiveRow() {
   // After highlighting, center the last blinking row (if any)
   centerBlinkRow();
 
+  // ---------- helpers inside ----------
   function parseTimeToMinutes(hourStr, minuteStr, ampm) {
     let hour = parseInt(hourStr, 10);
     let minutes = minuteStr ? parseInt(minuteStr, 10) : 0;
@@ -107,11 +115,12 @@ function highlightActiveRow() {
       if (eventIdx < 0 && txt.startsWith('event')) eventIdx = i;
     });
 
-    // Fallbacks (in case header texts aren’t standard)
-    // If we found only one, try to infer the other around it
-    if (timeIdx < 0 && headers.length >= 2) {
-      // common layouts: [icon][Time][Event]...
-      const guess = headers.findIndex(h => (h.textContent || '').toLowerCase().includes(':') || (h.textContent || '').toLowerCase().includes('am') || (h.textContent || '').toLowerCase().includes('pm'));
+    // Fallback heuristics
+    if (timeIdx < 0 && headers.length) {
+      const guess = headers.findIndex(h => {
+        const t = (h.textContent || '').toLowerCase();
+        return /\d?\d:\d{2}/.test(t) || t.includes('am') || t.includes('pm');
+      });
       if (guess >= 0) timeIdx = guess;
     }
     if (eventIdx < 0 && timeIdx >= 0 && headers[timeIdx + 1]) eventIdx = timeIdx + 1;
@@ -120,15 +129,14 @@ function highlightActiveRow() {
   }
 }
 
-/* ---------- helpers: center last blinking row ---------- */
-
+/* ---------- center last blinking row ---------- */
 function centerBlinkRow() {
   const blinks = document.querySelectorAll('.blink-row');
   if (!blinks.length) return;
 
   const last = blinks[blinks.length - 1];
 
-  // Prefer instant centering right after a page reload; smooth otherwise
+  // Prefer instant centering on reload; smooth otherwise
   const nav = performance.getEntriesByType?.('navigation')?.[0];
   const isReload = nav && nav.type === 'reload';
 
@@ -168,4 +176,3 @@ document.addEventListener('visibilitychange', () => {
     requestAnimationFrame(centerBlinkRow); // ensure centering after paint
   }
 });
-
